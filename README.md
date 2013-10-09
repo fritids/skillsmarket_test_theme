@@ -7,6 +7,7 @@ easier to maintain and to locate relevant code modules.
 
 **Directories:**
 
+<pre>
 /growth-hacks - main directory for testing growth hacks
 	/tweet-to-unlock - one of growth hacks. It has its own stylesheets
 		/compass - stylesheet compiler that builds final stylesheet based on SASS partials
@@ -23,7 +24,7 @@ easier to maintain and to locate relevant code modules.
 	/javascripts - all javascript files
 	/lib - repository for The Skills Market functions
 	/tmp - repository for The Skills Market template files
-
+</pre>
 **OTHER DIRECTORIES (default for this theme)**
 
 /admin - admin functions repository
