@@ -5,7 +5,7 @@ This is an attempt to create separate functions and hacks so they
 can be moved over to a structured template system that will be 
 easier to maintain and to locate relevant code modules.
 
-Directories:
+**Directories:**
 
 /growth-hacks - main directory for testing growth hacks
 	/tweet-to-unlock - one of growth hacks. It has its own stylesheets
@@ -15,7 +15,7 @@ Directories:
 			/sass - source stylesheet files
 			/stylesheets - compiled stylesheets to import into theme's style.css
 
-			**IMPORTANT:** DO NOT EDIT FILES IN /compass/stylesheets
+			IMPORTANT: DO NOT EDIT FILES IN /compass/stylesheets
 
 		/assets - images
 	/css - jQuery UI stylesheet and icons
