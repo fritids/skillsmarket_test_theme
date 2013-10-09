@@ -27,14 +27,17 @@ easier to maintain and to locate relevant code modules.
 </pre>
 **OTHER DIRECTORIES (default for this theme)**
 
+<pre>
 /admin - admin functions repository
 /images - default layout images
 /languages - language repository
 /library - repository for The Skills Market current theme functions
 /compass - stylesheet compiler that builds final stylesheet based on SASS partials - theme stylesheets
+</pre>
 
 **FILES (default for this theme)**
 
+<pre>
 /header.php - theme header file
 /footer.php - theme footer file
 /functions.php - theme library functions. In general, we only set up calls here
@@ -42,3 +45,4 @@ easier to maintain and to locate relevant code modules.
 /options.php
 /style.php - WordPress theme's required stylesheet file. Should not include CSS
 			 customisations - these should be done in the compass/sass folder
+</pre>
