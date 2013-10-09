@@ -1,0 +1,549 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+.clearfix:after, body nav:after, footer .wrapper:after, .ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-button:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix, body nav, footer .wrapper, .ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-button {
+  display: inline-block;
+}
+
+html[xmlns] .clearfix, html[xmlns] body nav, body html[xmlns] nav, html[xmlns] footer .wrapper, footer html[xmlns] .wrapper, html[xmlns] .ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-button, .ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one html[xmlns] .tweet-button {
+  display: block;
+}
+
+* html .clearfix, * html body nav, body * html nav, * html footer .wrapper, footer * html .wrapper, * html .ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-button, .ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one * html .tweet-button {
+  height: 1%;
+  overflow: visible;
+}
+
+body {
+  background: #3f3137 !important;
+  color: #bca2a8 !important;
+  font-family: "Open Sans", sans-serif !important;
+  padding-top: 160px !important;
+}
+body a {
+  color: #dd8026;
+  text-decoration: none;
+}
+body a:hover {
+  color: #b4671c;
+  text-decoration: none;
+}
+body nav {
+  /* Displays Links as Blocks */
+  /* Styling for all of the Sub Menus  */
+  /* Makes drop downs not appear by default unless the mouse hovers */
+}
+body nav #navigation {
+  float: right;
+  margin-top: 66px;
+  font: 12px 'Open Sans', sans-serif;
+}
+body nav ul.dropdown {
+  list-style: none;
+  float: right;
+  width: 100%;
+  padding: 0;
+}
+body nav ul.dropdown li {
+  float: left;
+  position: relative;
+}
+body nav ul.dropdown li:not(:last-child):after {
+  content: " \2022 ";
+  padding-left: 15px;
+  color: #DDDDDD;
+}
+body nav ul.dropdown a {
+  color: #808083;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 7px;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  border-bottom: 4px solid #FFF;
+}
+body nav ul.dropdown li:hover a {
+  color: #DD8026;
+  border-bottom: 4px solid #DD8026;
+}
+body nav ul.dropdown li ul a {
+  display: block;
+}
+body nav ul.dropdown ul {
+  list-style: none;
+  /* Gets rid of bullets */
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  /* Width of the Drop Down Box */
+  position: absolute;
+  /* States that you are going to define exactly in pixels where the drop down appears */
+}
+body nav ul.dropdown li ul {
+  top: 24px;
+  /* The Drop Down Box appears 24px below the menu when the menu is hovered over*/
+}
+body nav ul.dropdown ul ul {
+  /* Styling for secondary drop downs (Drop Downs of a Drop Down) */
+  top: 0;
+  left: 100%;
+}
+body nav ul.dropdown ul li {
+  float: none;
+}
+body nav ul.dropdown ul,
+body nav ul.dropdown li:hover ul ul,
+body nav ul.dropdown ul li:hover ul ul {
+  display: none;
+}
+body nav ul.dropdown li:hover ul,
+body nav ul.dropdown ul li:hover ul,
+body nav ul.dropdown ul li ul li:hover ul {
+  display: block;
+}
+body nav ul.dropdown li * a:hover {
+  /* Styling for every link that is hovered over */
+  background: #A11C46;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 0 #000000;
+}
+body .navbar,
+body .navbar .navbar-inner {
+  height: 160px;
+}
+body .navbar .brand {
+  padding: 20px !important;
+}
+body input, body textarea, body button {
+  outline: none !important;
+}
+body .crumbs {
+  line-height: 32px;
+}
+body #header-right {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  float: right;
+  width: 560px;
+  height: 160px;
+  color: #0033FF;
+  font-weight: bold;
+  text-align: right;
+  padding-top: 32px;
+}
+body #header-right #top-login a {
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  background: #808083;
+  color: #FFFFFF;
+  font-size: 11px;
+  text-decoration: none;
+  margin-right: 10px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.45s;
+  -moz-transition-duration: 0.45s;
+  -o-transition-duration: 0.45s;
+  transition-duration: 0.45s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+body #header-right #top-login a:hover {
+  background: #DD8026;
+}
+body #tweet-to-unlock {
+  width: 100%;
+  text-align: center;
+}
+body #tweet-to-unlock header h2 {
+  font-family: 'Lobster', cursive;
+  font-weight: 400;
+  font-size: 40px;
+  color: #DD8026;
+  text-shadow: 0 1px 0 #9e5a19;
+}
+body #tweet-to-unlock button#save_color_scheme {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  height: 37px;
+  border: 1px solid #994F21;
+  color: #362C37;
+  font-family: 'Arial';
+  font-weight: 400 !important;
+  background-image: -webkit-linear-gradient(left top, #dbae2a, #da7d25);
+  background-image: -moz-linear-gradient(left top, #dbae2a, #da7d25);
+  background-image: -o-linear-gradient(left top, #dbae2a, #da7d25);
+  background-image: linear-gradient(to right bottom, #dbae2a, #da7d25);
+  padding-left: 15px;
+  padding-right: 15px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+body #tweet-to-unlock .info {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  width: 200px;
+  background-color: #f9fde8;
+  border: 1px solid #a2bc13;
+  border-top: none;
+  color: #525f0a;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 7px 13px;
+  margin: 0 auto;
+}
+body #tweet-to-unlock .info.notsent {
+  color: #FF3A2D;
+  background-color: #ffddda;
+  border: 1px solid #c60c00;
+  border-top: none;
+}
+body #tweet-to-unlock .wrapper {
+  text-align: left;
+  padding-top: 20px;
+  width: 960px;
+  position: relative;
+  margin: 0 auto;
+}
+body .ajax_loader.small {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  width: 16px;
+  height: 11px;
+  position: relative;
+  left: 8px;
+  background-image: url(../../assets/ajax-loader.gif);
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+body .saved {
+  background-color: #f9fde8;
+  border: 1px solid #a2bc13;
+  color: #525f0a;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  padding: 7px 13px;
+  position: relative;
+  top: 2px;
+}
+
+footer {
+  width: 100% !important;
+  background-color: #DD8026;
+  border-top: 6px solid #30262B;
+  margin-top: 50px;
+  color: #3F3137;
+  font-size: 12px;
+  font-weight: 600;
+  min-height: 235px;
+}
+footer #inner-footer {
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: left;
+}
+footer .wrapper {
+  display: block;
+  margin: 0 auto;
+  width: 970px;
+  padding-left: 20px;
+}
+footer .wrapper .copy {
+  margin-left: 24px;
+}
+footer .wrapper .copy, footer .wrapper .sitemap, footer .wrapper .social, footer .wrapper .support {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  width: 220px;
+  min-height: 138px;
+  margin-top: 30px;
+  border-right: 1px solid #3F3137;
+}
+footer .wrapper .social {
+  padding-left: 30px;
+  text-transform: uppercase;
+}
+footer .wrapper .social img {
+  margin-left: -10px;
+}
+footer .wrapper .sitemap ul {
+  margin: 0;
+  padding: 0 0 0 30px;
+}
+footer .wrapper .sitemap ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #3F3137;
+  line-height: 21px;
+}
+footer .wrapper .support {
+  border: 0;
+  width: 210px;
+  padding-left: 30px;
+}
+footer .wrapper .support img {
+  margin-left: -10px;
+}
+
+#demo-data {
+  margin: 40px 0 60px;
+}
+#demo-data > span {
+  display: block;
+}
+#demo-data > span > span.name {
+  font-weight: bold;
+}
+
+.ui-dialog {
+  font-family: 'Open Sans Condensed', sans-serif;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  border: none;
+}
+.ui-dialog.unlock-with-tweet .ui-dialog-titlebar {
+  display: none !important;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet {
+  font-family: 'Open Sans Condensed', sans-serif;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  border: none;
+  background-color: #df8127;
+  width: 455px;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-left: 0;
+  margin-right: 0;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one {
+  padding: 0;
+  position: relative;
+  height: 510px;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one h1 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 55px;
+  line-height: 55px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  margin-top: 40px;
+  letter-spacing: -3px;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .close-modal {
+  z-index: 10;
+  width: 22px;
+  height: 20px;
+  float: right;
+  position: relative;
+  right: 8px;
+  top: 8px;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .close-modal:hover {
+  cursor: pointer;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .floppy,
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .arrow.down,
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-button {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  width: 100%;
+  text-align: center;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .floppy {
+  margin-top: 10px;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .arrow.down {
+  margin-top: 10px;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-button {
+  margin-top: 30px;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-button img {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-button img:hover {
+  cursor: pointer;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-frame {
+  position: relative;
+  top: 100px;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-frame.tweet-posted {
+  top: 30px;
+  text-align: center;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-frame.tweet-posted img {
+  margin-top: 20px;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-frame.tweet-posted h2 {
+  font-size: 28px;
+  line-height: 28px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  margin-top: 20px;
+  letter-spacing: -1px;
+}
+.ui-dialog.unlock-with-tweet .modal.unlock-with-tweet.step-one .tweet-frame #tweet .ajax_loader.large {
+  background-image: url(../../assets/AjaxLoader.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 346px;
+  height: 346px;
+  margin: 0 auto;
+}

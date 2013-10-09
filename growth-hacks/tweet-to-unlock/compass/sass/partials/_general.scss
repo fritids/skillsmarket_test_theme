@@ -1,0 +1,292 @@
+body {
+	background: #3F3137!important;
+	color: #BCA2A8!important;
+	font-family: 'Open Sans', sans-serif!important;
+	padding-top: 160px!important;
+
+	a {
+		color: rgb(221, 128, 38);
+		text-decoration: none;
+		&:hover {
+			color: darken(rgb(221, 128, 38), 10%);
+			text-decoration: none;
+		}
+	}
+	nav {
+		@extend .clearfix;
+		#navigation {
+			float:right;
+			margin-top: 66px;
+			font: 12px 'Open Sans', sans-serif; 
+		}
+		ul.dropdown {
+			list-style:none;
+			float:right;
+			width:100%;
+			padding:0;
+		}
+
+		ul.dropdown  li{
+			float:left;
+			position:relative;
+		}
+
+		ul.dropdown  li:not(:last-child):after{
+		    content: " \2022 ";
+			padding-left: 15px;
+			color: #DDDDDD;
+		}
+
+		ul.dropdown a { 
+			color:#808083;
+			font-weight: 600; 
+			text-decoration:none;
+			text-transform: uppercase;
+			padding-top: 10px;
+			padding-bottom: 20px;
+			padding-left: 0px;
+			padding-right: 0px;
+			margin-left: 7px;
+			@include transition-property(all);
+			@include transition-duration(0.30s);
+			@include transition-timing-function(ease-in-out);
+			border-bottom: 4px solid #FFF; 		
+		}
+
+
+
+		ul.dropdown li:hover a {
+			color: #DD8026; 
+			border-bottom: 4px solid #DD8026; 
+		}
+
+		/* Displays Links as Blocks */
+		ul.dropdown li ul a {
+			display:block;
+		}
+
+		/* Styling for all of the Sub Menus  */
+
+		ul.dropdown ul {
+			list-style: none; /* Gets rid of bullets */
+			margin:0;
+			padding:0;
+			width:200px; /* Width of the Drop Down Box */
+			position:absolute; /* States that you are going to define exactly in pixels where the drop down appears */
+		}
+
+		ul.dropdown li ul {
+			top:24px; /* The Drop Down Box appears 24px below the menu when the menu is hovered over*/
+		}
+
+		ul.dropdown ul ul { /* Styling for secondary drop downs (Drop Downs of a Drop Down) */
+			top:0;
+			left:100%;
+		}
+
+		ul.dropdown ul li {
+			float:none;
+		}
+
+		/* Makes drop downs not appear by default unless the mouse hovers */
+		ul.dropdown ul,
+		ul.dropdown li:hover ul ul,
+		ul.dropdown ul li:hover ul ul
+		{ display: none; }
+
+		ul.dropdown li:hover ul,
+		ul.dropdown ul li:hover ul ,
+		ul.dropdown ul li ul li:hover ul
+		{ display: block;}
+
+		ul.dropdown li * a:hover { /* Styling for every link that is hovered over */
+			background: #A11C46;
+			color: #FFFFFF;
+			text-shadow:1px 1px 0 #000000;
+		}
+	}
+	.navbar,
+	.navbar .navbar-inner {
+		height: 160px;
+	}
+	.navbar .brand {
+		padding: 20px!important;
+	}
+
+	input,textarea,button {
+		outline: none!important;
+	}
+	.crumbs {
+		line-height: 32px;
+	}
+	#header-right{
+		@include inline-block;
+		float: right;
+		width: 560px;
+		height: 160px;
+		color: #0033FF;
+		font-weight: bold;
+		text-align: right;
+		padding-top: 32px;
+
+		#top-login a {
+			padding-left: 35px;
+			padding-right: 35px;
+			padding-top: 9px;
+			padding-bottom: 9px;
+			background: #808083;
+			color: #FFFFFF;
+			font-size: 11px;
+			text-decoration:none;
+			margin-right: 10px;
+			@include border-radius(25px);
+			@include transition-property(all);
+			@include transition-duration(0.45s);
+			@include transition-timing-function(ease-in-out);
+		}
+
+		#top-login a:hover {
+			background: #DD8026;
+		}
+	}
+	#tweet-to-unlock {
+		width: 100%;
+		text-align: center;
+		header {
+			h2 {
+				font-family: 'Lobster', cursive;
+				font-weight: 400;
+				font-size: 40px;
+				color: #DD8026;
+				text-shadow: 0 1px 0 darken(#DD8026,15%);
+			}
+		}
+		button#save_color_scheme {
+			@include border-radius(5px);
+			height: 37px;
+			border: 1px solid #994F21;
+			color: #362C37;
+			font-family: 'Arial';
+			font-weight: 400!important;
+			@include background-image(linear-gradient(left top, #dbae2a, #da7d25));
+			padding-left: 15px;
+			padding-right: 15px;
+			text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+		}
+		.info {
+			@include inline-block;
+			width: 200px;
+			background-color: #f9fde8;
+			border: 1px solid #a2bc13;
+			border-top: none;
+			color: darken(#a2bc13, 20%);
+			&.notsent {
+				color: #FF3A2D;
+				background-color: lighten(#FF3A2D,34%);
+				border: 1px solid darken(#FF3A2D, 20%);
+				border-top: none;
+			}
+			@include border-bottom-left-radius(8px);
+			@include border-bottom-right-radius(8px);
+			padding: 7px 13px;
+			margin: 0 auto;
+		}
+		.wrapper {
+			text-align: left;
+			padding-top: 20px;
+			width: 960px;
+			position: relative;
+			margin: 0 auto;
+		} // .wrapper
+	} // #tweet-to-unlock
+	.ajax_loader.small {
+		@include inline-block;
+		width: 16px;
+		height: 11px;
+		position: relative;
+		left: 8px;
+		background-image: url(../../assets/ajax-loader.gif);
+		background-repeat: no-repeat;
+		background-position: top left;
+	}
+	.saved {
+		background-color: #f9fde8;
+		border: 1px solid #a2bc13;
+		color: darken(#a2bc13, 20%);
+		@include border-radius(8px);
+		padding: 7px 13px;
+		position: relative;
+		top: 2px;
+	}
+}
+footer {
+	width: 100%!important;
+	background-color: #DD8026;
+	border-top: 6px solid #30262B;
+	margin-top: 50px;
+	color: #3F3137;
+	font-size: 12px;
+	font-weight: 600;
+	min-height: 235px;
+
+	#inner-footer {
+		width: 100%;
+		padding-left: 0px;
+		padding-right: 0px;
+		text-align: left;
+	}
+	.wrapper {
+		display: block;
+		@extend .clearfix;
+		margin: 0 auto;
+		width: 970px;
+		padding-left: 20px;
+		.copy {
+			margin-left: 24px;
+		}
+		.copy, .sitemap, .social, .support {
+			@include inline-block;
+			width: 220px;
+			min-height: 138px;
+			margin-top: 30px;
+			border-right: 1px solid #3F3137;
+		}
+		.social {
+			padding-left: 30px;
+			text-transform: uppercase;
+			img {
+				margin-left: -10px;
+			}
+		}
+		.sitemap ul {
+			margin: 0;
+			padding: 0 0 0 30px;
+			li a {
+				text-transform: uppercase;
+				text-decoration: none;
+				color: #3F3137;
+				line-height: 21px;
+			}
+		}
+		.support {
+			border: 0;
+			width: 210px;
+			padding-left: 30px;
+			img {
+				margin-left: -10px;
+			}
+		}
+	}
+}
+
+#demo-data {
+	margin: 40px 0 60px;
+	> span {
+		display: block;
+		>span.name {
+			font-weight: bold;
+		}
+	}
+}
+
+@import "modal";

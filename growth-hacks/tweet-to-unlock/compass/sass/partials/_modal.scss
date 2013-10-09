@@ -1,0 +1,107 @@
+.ui-dialog {
+	font-family: 'Open Sans Condensed', sans-serif;
+	@include full_no_radius;
+	@include full_no_padding;
+	border: none;
+	&.unlock-with-tweet {
+		.ui-dialog-titlebar {
+			display: none!important;
+		}
+		.modal.unlock-with-tweet {
+			font-family: 'Open Sans Condensed', sans-serif;
+			@include full_no_radius;
+			@include full_no_padding;
+			border: none;
+			background-color: $modal_orange;
+			width: 455px;
+			position: relative;
+			top: 0;
+			left: 0;
+			margin-left: 0;
+			margin-right: 0;
+			@include user-select(none);
+			&.step-one {
+				padding: 0;
+				position: relative;
+				height: 510px;
+				h1 {
+					font-family: 'Open Sans Condensed', sans-serif;
+					font-size: 55px;
+					line-height: 55px;
+					text-transform: uppercase;
+					text-align: center;
+					color: white;
+					font-weight: 900;
+					margin-top: 40px;
+					letter-spacing: -3px;
+				}
+				.close-modal {
+					z-index:10;
+					width:22px;
+					height: 20px;
+					float: right;
+					position: relative;
+					right: 8px;
+					top: 8px;
+					&:hover {
+						cursor: pointer;
+					}
+				}
+				.floppy,
+				.arrow.down,
+				.tweet-button {
+					@include inline-block;
+					width: 100%;
+					text-align: center;
+				}
+				.floppy {
+					margin-top: 10px;
+				}
+				.arrow.down {
+					margin-top: 10px;
+				}
+				.tweet-button {
+					@extend .clearfix;
+					margin-top: 30px;
+					img {
+						@include appearance(button);
+						&:hover {
+							cursor: pointer;
+						}
+					}
+				}
+				.tweet-frame {
+					position: relative;
+					top: 100px;
+					&.tweet-posted {
+						top:30px;
+						text-align: center;
+						img {
+							margin-top: 20px;
+						}
+						h2 {
+							font-size: 28px;
+							line-height: 28px;
+							text-transform: uppercase;
+							text-align: center;
+							color: white;
+							font-weight: 900;
+							margin-top: 20px;
+							letter-spacing: -1px;
+						}
+					}
+					#tweet {
+						.ajax_loader.large {
+							background-image: url(../../assets/AjaxLoader.gif);
+							background-repeat: no-repeat;
+							background-position: center center;
+							width: 346px;
+							height: 346px;
+							margin: 0 auto;
+						}
+					}
+				}
+			} // .step-one
+		} // .modal.unlock-with-tweet
+	} // .ui-dialog.unlock-with-tweet
+} // .ui-dialog
