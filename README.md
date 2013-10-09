@@ -32,7 +32,8 @@ easier to maintain and to locate relevant code modules.
 /images - default layout images
 /languages - language repository
 /library - repository for The Skills Market current theme functions
-/compass - stylesheet compiler that builds final stylesheet based on SASS partials - theme stylesheets
+/compass - stylesheet compiler that builds final stylesheet based on 
+		   SASS partials - theme stylesheets
 </pre>
 
 **FILES (default for this theme)**
