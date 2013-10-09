@@ -5,6 +5,8 @@ This is an attempt to create separate functions and hacks so they
 can be moved over to a structured template system that will be 
 easier to maintain and to locate relevant code modules.
 
+Does not require any plugins.
+
 **Directories:**
 
 <pre>
@@ -25,7 +27,7 @@ easier to maintain and to locate relevant code modules.
 	/lib - repository for The Skills Market functions
 	/tmp - repository for The Skills Market template files
 </pre>
-**OTHER DIRECTORIES (default for this theme)**
+**Other theme directories**
 
 <pre>
 /admin - admin functions repository
@@ -36,7 +38,7 @@ easier to maintain and to locate relevant code modules.
 		   SASS partials - theme stylesheets
 </pre>
 
-**FILES (default for this theme)**
+**Theme files**
 
 <pre>
 /header.php - theme header file
