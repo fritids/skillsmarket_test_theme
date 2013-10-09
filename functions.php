@@ -22,6 +22,8 @@ require_once('library/shortcodes.php');
 include('growth-hacks/functions.php');
 include('growth-hacks/lib/ajax.php');
 
+require_once('library/dashboard-widgets/dashboard_widgets.php');
+
 // Admin Functions (commented out by default)
 // require_once('library/admin.php');         // custom admin functions
 
