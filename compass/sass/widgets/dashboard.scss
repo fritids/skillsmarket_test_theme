@@ -1,3 +1,106 @@
+@import "../partials/imports";
+
+$sm_dark_color: #30262B;
+$sm_orange_color: #DD8026;
+
+@mixin full_no_radius {
+	@include border-top-left-radius(0);
+	@include border-top-right-radius(0);
+	@include border-bottom-left-radius(0);
+	@include border-bottom-right-radius(0);
+}
+
+@mixin full_no_padding {
+	padding-top: 0!important;
+	padding-right: 0!important;
+	padding-bottom: 0!important;
+	padding-left: 0!important;
+}
+
+.clearfix:after {
+   content: ".";
+   display: block;
+   clear: both;
+   visibility: hidden;
+   line-height: 0;
+   height: 0;
+}
+ 
+.clearfix {
+   display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+   display: block;
+}
+ 
+* html .clearfix {
+   height: 1%;
+   overflow: visible;
+}
+
+
 .postbox#sm_insights_dashboard_widget {
 	display: block;
+	border: 1px solid $sm_dark_color;
+	@include border-top-left-radius(10px);
+	@include border-top-right-radius(10px);
+	@include border-bottom-left-radius(0);
+	@include border-bottom-right-radius(0);
+
+	div.handlediv {
+		background: $sm_dark_color;
+		@include border-top-left-radius(10px);
+		@include border-top-right-radius(10px);
+	}
+	h3.hndle {
+		border: 1px solid $sm_dark_color;
+		@include border-top-left-radius(10px);
+		@include border-top-right-radius(10px);
+		@extend .clearfix;
+		height: 50px;
+		line-height: 45px;
+		background: $sm_dark_color;
+		font-size: 20px;
+		> span {
+			display: none;
+		}
+		#holder-left,
+		#holder-right {
+			@include inline-block;
+			line-height: 50px;
+		}
+		#holder-left {
+			float: left;
+			font-family: 'Lobster', cursive;
+			font-weight: 400;
+			font-size: 20px;
+			color: $sm_orange_color;
+			text-shadow: 0 1px 0 #9e5a19;
+		}
+		#holder-right {
+			float: right;
+			a {
+				display: block;
+				height: 40px;
+				position: relative;
+				top: 5px;
+			}
+		}
+	}
+	div.inside {
+		padding: 0;
+		margin: 0;
+		#smInsightsDashboard {
+			background: #3f3137;
+			header {
+				padding-left: 10px;
+				h2 {
+					font-family: 'Open Sans Condensed', sans-serif;
+					color: $sm_orange_color;
+					text-shadow: none;
+				}
+			}
+		} // widget content
+	}
 }

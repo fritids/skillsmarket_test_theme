@@ -23,6 +23,8 @@ include('growth-hacks/functions.php');
 include('growth-hacks/lib/ajax.php');
 
 require_once('library/dashboard-widgets/dashboard_widgets.php');
+require_once('library/taxonomies/taxonomies.php');
+require_once('library/post_types/post_types.php');
 
 // Admin Functions (commented out by default)
 // require_once('library/admin.php');         // custom admin functions
