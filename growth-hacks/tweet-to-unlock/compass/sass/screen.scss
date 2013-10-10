@@ -11,4 +11,84 @@
 @import "compass/css3/transition";
 
 @import "partials/constants_and_mixins";
-@import "partials/general";
+@import "partials/modal";
+
+#tweet-to-unlock {
+	width: 100%;
+	text-align: center;
+	header {
+		h2 {
+			font-family: 'Lobster', cursive;
+			font-weight: 400;
+			font-size: 40px;
+			color: #DD8026;
+			text-shadow: 0 1px 0 darken(#DD8026,15%);
+		}
+	}
+	button#save_color_scheme {
+		@include border-radius(5px);
+		height: 37px;
+		border: 1px solid #994F21;
+		color: #362C37;
+		font-family: 'Arial';
+		font-weight: 400!important;
+		@include background-image(linear-gradient(left top, #dbae2a, #da7d25));
+		padding-left: 15px;
+		padding-right: 15px;
+		text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+	}
+	.info {
+		@include inline-block;
+		width: 200px;
+		background-color: #f9fde8;
+		border: 1px solid #a2bc13;
+		border-top: none;
+		color: darken(#a2bc13, 20%);
+		&.notsent {
+			color: #FF3A2D;
+			background-color: lighten(#FF3A2D,34%);
+			border: 1px solid darken(#FF3A2D, 20%);
+			border-top: none;
+		}
+		@include border-bottom-left-radius(8px);
+		@include border-bottom-right-radius(8px);
+		padding: 7px 13px;
+		margin: 0 auto;
+	}
+	.wrapper {
+		text-align: left;
+		padding-top: 20px;
+		width: 960px;
+		position: relative;
+		margin: 0 auto;
+	} // .wrapper
+} // #tweet-to-unlock
+.ajax_loader.small {
+	@include inline-block;
+	width: 16px;
+	height: 11px;
+	position: relative;
+	left: 8px;
+	background-image: url(../../assets/ajax-loader.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+.saved {
+	background-color: #f9fde8;
+	border: 1px solid #a2bc13;
+	color: darken(#a2bc13, 20%);
+	@include border-radius(8px);
+	padding: 7px 13px;
+	position: relative;
+	top: 2px;
+}
+
+#demo-data {
+	margin: 40px 0 60px;
+	> span {
+		display: block;
+		>span.name {
+			font-weight: bold;
+		}
+	}
+}

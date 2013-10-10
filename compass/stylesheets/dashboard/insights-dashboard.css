@@ -1,0 +1,36 @@
+/* line 20, ../../sass/partials/_constants_and_mixins.scss */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+/* line 29, ../../sass/partials/_constants_and_mixins.scss */
+.clearfix {
+  display: inline-block;
+}
+
+/* line 33, ../../sass/partials/_constants_and_mixins.scss */
+html[xmlns] .clearfix {
+  display: block;
+}
+
+/* line 37, ../../sass/partials/_constants_and_mixins.scss */
+* html .clearfix {
+  height: 1%;
+  overflow: visible;
+}
+
+/* line 5, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard header {
+  height: 50px;
+  line-height: 50px;
+}
+/* line 8, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard header h1 {
+  font-family: 'Lobster', 'sans-serif';
+  color: #dd8026;
+}

@@ -9,7 +9,7 @@
 		<?php if( isset( $wp_query->query_vars['hacks'] ) && get_query_var( 'hacks' ) == 1 ) { ?>
 			<?php get_template_part('growth-hacks/tmp/base'); ?>
 		<?php } else { ?>
-			<?php get_template_part('templates/index'); ?>
+			<?php get_template_part('templates/template'); ?>
 		<?php } ?>
 	</div> <!-- end #main -->
 </div> <!-- end #content -->

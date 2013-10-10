@@ -1,7 +1,7 @@
 <?php
 
-add_action('wp_enqueue_scripts', 'sm_setup_scripts');
-function sm_setup_scripts() {
+add_action('wp_enqueue_scripts', 'sm_setup_hacks_scripts');
+function sm_setup_hacks_scripts() {
 	global $wp_query;
 
 	$rtdir =    get_template_directory_uri() . '/growth-hacks/'; // wp theme root dir
@@ -14,17 +14,13 @@ function sm_setup_scripts() {
 
 	/////////////////////////////////////////////
 	/* Enqueue all scripts here */
-	wp_enqueue_script( 'jquery-ui-core' );
-	wp_enqueue_script( 'jquery-ui-dialog' );
 
 	if( get_query_var('hacks') == 1 ) {
 		if( get_query_var('hack_term') == 'tweet-to-unlock' ) {
+			wp_enqueue_style( 'tweet-to-unlock', $rtdir . 'tweet-to-unlock/compass/stylesheets/screen.css', array(), '', 'screen' );
+			wp_enqueue_script( 'jquery-ui-core' );
+			wp_enqueue_script( 'jquery-ui-dialog' );
 			wp_enqueue_script( 'tweet-to-unlock' );
 		}
 	}
-
-	/////////////////////////////////////////////
-	/* Enqueue all stylesheets here */
-	wp_enqueue_style( 'tweet-to-unlock', $rtdir . 'tweet-to-unlock/compass/stylesheets/screen.css', array(), '', 'screen' );
-
 }

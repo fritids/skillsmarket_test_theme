@@ -1,0 +1,13 @@
+@import "../partials/imports";
+@import "../partials/constants_and_mixins";
+
+#insights-dashboard {
+	header {
+		height: 50px;
+		line-height: 50px;
+		h1 {
+			font-family: 'Lobster', 'sans-serif';
+			color: $sm_orange_color;
+		}
+	}
+}

@@ -7,24 +7,26 @@ This is where you can drop your custom functions or
 just edit things like thumbnail sizes, header images, 
 sidebars, comments, ect.
 */
-
+$libdir = trailingslashit( get_template_directory() ) . 'library/';
 // Get Bones Core Up & Running!
-require_once('library/bones.php');            // core functions (don't remove)
-require_once('library/plugins.php');          // plugins & extra functions (optional)
+require_once($libdir.'bones.php');            // core functions (don't remove)
+require_once($libdir.'plugins.php');          // plugins & extra functions (optional)
 
 // Options panel
-require_once('library/options-panel.php');
+require_once($libdir.'options-panel.php');
 
 // Shortcodes
-require_once('library/shortcodes.php');
+require_once($libdir.'shortcodes.php');
 
-// The Skills Market custom stuff
+// The Skills Market growth hacks
 include('growth-hacks/functions.php');
 include('growth-hacks/lib/ajax.php');
+include($libdir.'theskillsmarket.php');
+// The Skills Market custom functionality
+require_once($libdir.'dashboard-widgets/dashboard_widgets.php');
+require_once($libdir.'taxonomies/taxonomies.php');
+require_once($libdir.'post_types/post_types.php');
 
-require_once('library/dashboard-widgets/dashboard_widgets.php');
-require_once('library/taxonomies/taxonomies.php');
-require_once('library/post_types/post_types.php');
 
 // Admin Functions (commented out by default)
 // require_once('library/admin.php');         // custom admin functions
