@@ -10,4 +10,14 @@
 			color: $sm_orange_color;
 		}
 	}
+	.dashboard-content {
+		ul {
+			padding: 0;
+			margin: 0;
+
+			li {
+				@include inline-block;
+			}
+		}
+	} // .dashboard-content
 }

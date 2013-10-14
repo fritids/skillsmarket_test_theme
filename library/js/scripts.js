@@ -99,5 +99,7 @@ jQuery(document).ready(function($) {
 	$('.alert-message').alert();
 	
 	$('.dropdown-toggle').dropdown();
+
+	$( '#masonry-container' ).masonry( { columnWidth: 220 } );
  
 }); /* end of as page load scripts */

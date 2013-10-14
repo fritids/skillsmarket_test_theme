@@ -10,7 +10,7 @@ function sm_setup_scripts() {
 
 	/////////////////////////////////////////////
 	/* Register all scripts first */
-	wp_register_script( 'insights-dashboard', $jsdir . 'dashboard/insights-dashboard.js', array( 'jquery' ), null, false ); // jquery dotdotdot
+	wp_register_script( 'insights-dashboard', $jsdir . 'dashboard/insights-dashboard.js', array( 'jquery' ), null, false ); // Insights Dashboard
 
 	/////////////////////////////////////////////
 	/* Enqueue all scripts here */
@@ -23,6 +23,7 @@ function sm_setup_scripts() {
 			if( get_query_var('sm_term') == 'insights' ) {
 				wp_enqueue_style( 'insights-dashboard', $rtdir . 'compass/stylesheets/dashboard/insights-dashboard.css', array(), '', 'screen' );
 				wp_enqueue_script( 'insights-dashboard' );
+				wp_enqueue_script( 'jquery-masonry' );
 			}
 		}
 

@@ -44,7 +44,9 @@ class Insights_Profile_Views extends WP_Widget {
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
-		echo __( 'Hello, World!', 'skillsmarket' );
+		
+		get_template_part('templates/dashboard/insights-sections-templates/profile_views');
+
 		echo $args['after_widget'];
 	}
 
@@ -103,7 +105,9 @@ class Insights_Number_Students extends WP_Widget {
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
-		echo __( 'Hello, World!', 'skillsmarket' );
+		
+		get_template_part('templates/dashboard/insights-sections-templates/number_of_students');
+
 		echo $args['after_widget'];
 	}
 
@@ -162,7 +166,9 @@ class Insights_Average_Rating extends WP_Widget {
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
-		echo __( 'Hello, World!', 'skillsmarket' );
+		
+		get_template_part('templates/dashboard/insights-sections-templates/average_rating');
+
 		echo $args['after_widget'];
 	}
 
@@ -221,7 +227,9 @@ class Insights_Gender_Ratio extends WP_Widget {
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
-		echo __( 'Hello, World!', 'skillsmarket' );
+		
+		get_template_part('templates/dashboard/insights-sections-templates/gender_ratio');
+
 		echo $args['after_widget'];
 	}
 
@@ -280,7 +288,9 @@ class Insights_Calendar extends WP_Widget {
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
-		echo __( 'Hello, World!', 'skillsmarket' );
+		
+		get_template_part('templates/dashboard/insights-sections-templates/calendar');
+
 		echo $args['after_widget'];
 	}
 
@@ -339,7 +349,9 @@ class Insights_Next_Lesson extends WP_Widget {
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
-		echo __( 'Hello, World!', 'skillsmarket' );
+		
+		get_template_part('templates/dashboard/insights-sections-templates/next_lesson');
+
 		echo $args['after_widget'];
 	}
 
@@ -398,7 +410,9 @@ class Insights_Age_Demographic extends WP_Widget {
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
-		echo __( 'Hello, World!', 'skillsmarket' );
+		
+		get_template_part('templates/dashboard/insights-sections-templates/age_demographic');
+
 		echo $args['after_widget'];
 	}
 
