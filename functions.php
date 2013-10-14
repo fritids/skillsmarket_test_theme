@@ -22,10 +22,6 @@ require_once($libdir.'shortcodes.php');
 include('growth-hacks/functions.php');
 include('growth-hacks/lib/ajax.php');
 include($libdir.'theskillsmarket.php');
-// The Skills Market custom functionality
-require_once($libdir.'dashboard-widgets/dashboard_widgets.php');
-require_once($libdir.'taxonomies/taxonomies.php');
-require_once($libdir.'post_types/post_types.php');
 
 
 // Admin Functions (commented out by default)

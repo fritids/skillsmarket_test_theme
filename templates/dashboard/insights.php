@@ -12,8 +12,10 @@ $insights_sections = 'templates/dashboard/insights-sections-templates/';
 		<h1>Insights Dashboard</h1>
 	</header>
 	<div class="dashboard-content">
-		<?php get_template_part( $insights_sections . 'teachers' ); // load Teachers ?>
-		<?php get_template_part( $insights_sections . 'students' ); // load Students ?>
-		<?php get_template_part( $insights_sections . 'classes' ); // load Students ?>
+		<?php 
+			/* Display all Dahboard widgets */
+			if ( function_exists( 'dynamic_sidebar' ) )
+				dynamic_sidebar( 'insights-dashboard-sidebar' );
+		?>
 	</div>
 </div>

@@ -4,8 +4,13 @@
 
 // register all Insights widgets
 function sm_register_insights_dashboard_widgets() {
-    register_widget( 'Insights_Profile_Views' );
-    register_widget( 'Insights_Number_Students' );
+    register_widget( 'Insights_Profile_Views' ); // Profile views widget
+    register_widget( 'Insights_Number_Students' ); // Number of Students widget
+    register_widget( 'Insights_Average_Rating' ); // Average Rating widget
+    register_widget( 'Insights_Gender_Ratio' ); // Gender ratio widget
+    register_widget( 'Insights_Calendar' ); // Calendar widget
+    register_widget( 'Insights_Next_Lesson' ); // Next lesson widget
+    register_widget( 'Insights_Age_Demographic' ); // Age Demographic widget
 }
 add_action( 'widgets_init', 'sm_register_insights_dashboard_widgets' );
 
@@ -69,7 +74,7 @@ class Insights_Profile_Views extends WP_Widget {
 } // class Profile Views
 
 /**
- * Adds Profile Views Dasboard widget.
+ * Adds Number of Students Dasboard widget.
  */
 class Insights_Number_Students extends WP_Widget {
 
@@ -126,3 +131,298 @@ class Insights_Number_Students extends WP_Widget {
 	}
 
 } // class Profile Views
+
+/**
+ * Adds Average Rating Dasboard widget.
+ */
+class Insights_Average_Rating extends WP_Widget {
+
+	/**
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'Insights_Average_Rating', // Base ID
+			__('Insights - Average Rating', 'skillsmarket'), // Name
+			array( 'description' => __( 'A Average Rating widget', 'skillsmarket' ), ) // Args
+		);
+	}
+
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+		$title = apply_filters( 'widget_title', $instance['title'] );
+
+		echo $args['before_widget'];
+		if ( ! empty( $title ) )
+			echo $args['before_title'] . $title . $args['after_title'];
+		echo __( 'Hello, World!', 'skillsmarket' );
+		echo $args['after_widget'];
+	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+	}
+
+} // class Average Rating
+
+/**
+ * Adds Gender Ratio Dasboard widget.
+ */
+class Insights_Gender_Ratio extends WP_Widget {
+
+	/**
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'Insights_Gender_Ratio', // Base ID
+			__('Insights - Male to Female Ratio', 'skillsmarket'), // Name
+			array( 'description' => __( 'A Gender Ratio widget', 'skillsmarket' ), ) // Args
+		);
+	}
+
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+		$title = apply_filters( 'widget_title', $instance['title'] );
+
+		echo $args['before_widget'];
+		if ( ! empty( $title ) )
+			echo $args['before_title'] . $title . $args['after_title'];
+		echo __( 'Hello, World!', 'skillsmarket' );
+		echo $args['after_widget'];
+	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+	}
+
+} // class Gender Ratio
+
+/**
+ * Adds Calendar Dasboard widget.
+ */
+class Insights_Calendar extends WP_Widget {
+
+	/**
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'Insights_Calendar', // Base ID
+			__('Insights - Calendar', 'skillsmarket'), // Name
+			array( 'description' => __( 'A Calendar widget', 'skillsmarket' ), ) // Args
+		);
+	}
+
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+		$title = apply_filters( 'widget_title', $instance['title'] );
+
+		echo $args['before_widget'];
+		if ( ! empty( $title ) )
+			echo $args['before_title'] . $title . $args['after_title'];
+		echo __( 'Hello, World!', 'skillsmarket' );
+		echo $args['after_widget'];
+	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+	}
+
+} // class Calendar
+
+/**
+ * Adds Next Lesson Dasboard widget.
+ */
+class Insights_Next_Lesson extends WP_Widget {
+
+	/**
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'Insights_Next_Lesson', // Base ID
+			__('Insights - Next lesson', 'skillsmarket'), // Name
+			array( 'description' => __( 'A Next lesson widget', 'skillsmarket' ), ) // Args
+		);
+	}
+
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+		$title = apply_filters( 'widget_title', $instance['title'] );
+
+		echo $args['before_widget'];
+		if ( ! empty( $title ) )
+			echo $args['before_title'] . $title . $args['after_title'];
+		echo __( 'Hello, World!', 'skillsmarket' );
+		echo $args['after_widget'];
+	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+	}
+
+} // class Next Lesson
+
+/**
+ * Adds Age Demographic Dasboard widget.
+ */
+class Insights_Age_Demographic extends WP_Widget {
+
+	/**
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'Insights_Age_Demographic', // Base ID
+			__('Insights - Age Demographic', 'skillsmarket'), // Name
+			array( 'description' => __( 'A Age Demographic widget', 'skillsmarket' ), ) // Args
+		);
+	}
+
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+		$title = apply_filters( 'widget_title', $instance['title'] );
+
+		echo $args['before_widget'];
+		if ( ! empty( $title ) )
+			echo $args['before_title'] . $title . $args['after_title'];
+		echo __( 'Hello, World!', 'skillsmarket' );
+		echo $args['after_widget'];
+	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+	}
+
+} // class Age Demographic
