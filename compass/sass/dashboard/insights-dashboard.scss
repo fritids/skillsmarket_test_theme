@@ -17,7 +17,364 @@
 
 			li {
 				@include inline-block;
+				width: columns(1,3);
+				min-width: 300px;
+
+				// Profile Views
+				&.widget_insights_profile_views {
+
+					#profile_views_chart {
+						.highcharts-legend {
+							width: 300px;
+							height: 70px;
+						}
+					}
+				}
+
+
+				&.widget_insights_average_rating {
+					height: 210px;
+					width: 300px;
+					position: relative;
+
+					#widget-average-ratio {
+						@include border-radius(5px);
+						background-color: $sm_widget_bg_color;
+						height: 210px;
+						position: relative;
+						width: 100%;
+
+						header {
+							background-color: #7f6c72;
+							@include border-top-left-radius(5px);
+							@include border-top-right-radius(5px);
+							text-align: center;
+							font-color: #fffdfe;
+							font-weight: bold;
+							text-transform: uppercase;
+						}
+
+						.widget-content { 
+							position: relative; 
+							width: 100%;
+							height: 100%;
+						}
+
+						.star-five {
+							margin-top: 4em;
+							margin-bottom: 0;
+							margin-left: auto;
+							margin-right: auto;
+							position: relative;
+							display: block;
+							width: 0;
+							height: 0;
+							border-right: 5em solid transparent;
+							border-bottom: 3.5em solid #FFAE00;
+							border-left: 5em solid transparent;
+							@include transform(rotate(35deg));
+
+							&:before {
+								top: -2.25em;
+								left: -3.25em;
+								border-bottom: 4em solid #FFAE00;
+								border-left: 1.5em solid transparent;
+								border-right: 1.5em solid transparent;
+								@include transform(rotate(-35deg));
+							}
+
+							&:before, &:after {
+								content: '';
+								position: absolute;
+								display: block;
+								width: 0;
+								height: 0;
+								z-index: -1;
+							}
+
+							&:after {
+								top: 0.15em;
+								left: -5.25em;
+								border-right: 5em solid transparent;
+								border-bottom: 3.5em solid #FFAE00;
+								border-left: 5em solid transparent;
+								@include transform(rotate(-70deg));
+							}
+
+							.rating {
+								@include transform(rotate(-35deg));
+								position: relative;
+								width: 60px;
+								height: 60px;
+								padding: 0;
+								margin: 0;
+								left: -24px;
+								top: -10px;
+								line-height: 60px;
+								font-size: 32px;
+								color: white;
+							}
+						}
+					}
+				}
+
+				&.widget_insights_gender_ratio {
+					height: 168px;
+
+					#widget-gender-ratio {
+						@include border-radius(5px);
+						background-color: $sm_widget_bg_color;
+						height: 168px;
+						position: relative;
+						width: 100%;
+
+						header {
+							background-color: #7f6c72;
+							@include border-top-left-radius(5px);
+							@include border-top-right-radius(5px);
+							text-align: center;
+							font-color: #fffdfe;
+							font-weight: bold;
+							text-transform: uppercase;
+						}
+
+						.widget-content {
+							height: 90px;
+							padding: 10px;
+							@include pie-clearfix;
+							text-align: center;
+
+							.male,
+							.female { 
+								@include inline-block;
+								width: 40%;
+								img {
+									height: 104px;
+								}
+
+								span {
+									padding: 0 10px;
+									line-height: 32px;
+									margin-left: 5px;
+									@include border-radius(12px);
+									font-size: 16px;
+									font-weight: bold;
+								}
+							}
+							.male span {
+								background-color: $sm_blue-color;
+							}
+							.female span {
+								background-color: $sm_purple_color;
+							}
+						}
+					}
+				}
+
+				&.widget_insights_calendar {
+					height: 315px;
+
+					#calendar {
+						width: 100%;
+
+						.datepicker {
+							
+						}
+					}
+				}
 			}
 		}
 	} // .dashboard-content
+}
+
+div.datepicker {
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	width: 196px;
+	height: 147px;
+	position: absolute;
+	cursor: default;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.datepickerContainer {
+	background: #121212;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.datepickerBorderT {
+	position: absolute;
+	left: 10px;
+	top: 0;
+	right: 10px;
+	height: 10px;
+	background: url(../img/datepicker_t.png);
+}
+.datepickerBorderB {
+	position: absolute;
+	left: 10px;
+	bottom: 0;
+	right: 10px;
+	height: 10px;
+	background: url(../img/datepicker_b.png);
+}
+.datepickerBorderL {
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	top: 10px;
+	width: 10px;
+	background: url(../img/datepicker_l.png);
+}
+.datepickerBorderR {
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	top: 10px;
+	width: 10px;
+	background: url(../img/datepicker_r.png);
+}
+.datepickerBorderTL {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	background: url(../img/datepicker_tl.png);
+}
+.datepickerBorderTR {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 10px;
+	height: 10px;
+	background: url(../img/datepicker_tr.png);
+}
+.datepickerBorderBL {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	background: url(../img/datepicker_bl.png);
+}
+.datepickerBorderBR {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 10px;
+	height: 10px;
+	background: url(../img/datepicker_br.png);
+}
+.datepickerHidden {
+	display: none;
+}
+div.datepicker table {
+	border-collapse:collapse;
+}
+div.datepicker a {
+	color: #eee;
+	text-decoration: none;
+	cursor: default;
+	outline: none;
+}
+div.datepicker table td {
+	text-align: right;
+	padding: 0;
+	margin: 0;
+}
+div.datepicker th {
+	text-align: center;
+	color: #999;
+	font-weight: normal;
+}
+div.datepicker tbody th {
+	text-align: left;
+}
+div.datepicker tbody a {
+	display: block;
+}
+.datepickerDays a {
+	width: 20px;
+	line-height: 16px;
+	height: 16px;
+	padding-right: 2px;
+}
+.datepickerYears a,
+.datepickerMonths a{
+	width: 44px;
+	line-height: 36px;
+	height: 36px;
+	text-align: center;
+}
+td.datepickerNotInMonth a {
+	color: #666;
+}
+tbody.datepickerDays td.datepickerSelected{
+	background: #136A9F;
+}
+tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
+	background: #17384d;
+}
+tbody.datepickerYears td.datepickerSelected,
+tbody.datepickerMonths td.datepickerSelected{
+	background: #17384d;
+}
+div.datepicker a:hover,
+div.datepicker a:hover {
+	color: #88c5eb;
+}
+div.datepicker td.datepickerNotInMonth a:hover {
+	color: #999;
+}
+div.datepicker tbody th {
+	text-align: left;
+}
+.datepickerSpace div {
+	width: 20px;
+}
+.datepickerGoNext a,
+.datepickerGoPrev a,
+.datepickerMonth a {
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+}
+.datepickerGoNext a {
+	float: right;
+	width: 20px;
+}
+.datepickerGoPrev a {
+	float: left;
+	width: 20px;
+}
+table.datepickerViewDays tbody.datepickerMonths,
+table.datepickerViewDays tbody.datepickerYears {
+	display: none;
+}
+table.datepickerViewMonths tbody.datepickerDays,
+table.datepickerViewMonths tbody.datepickerYears,
+table.datepickerViewMonths tr.datepickerDoW {
+	display: none;
+}
+table.datepickerViewYears tbody.datepickerDays,
+table.datepickerViewYears tbody.datepickerMonths,
+table.datepickerViewYears tr.datepickerDoW {
+	display: none;
+}
+td.datepickerDisabled a,
+td.datepickerDisabled.datepickerNotInMonth a{
+	color: #333;
+}
+td.datepickerDisabled a:hover {
+	color: #333;
+}
+td.datepickerSpecial a {
+	background: #700;
+}
+td.datepickerSpecial.datepickerSelected a {
+	background: #a00;
 }

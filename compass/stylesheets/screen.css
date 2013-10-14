@@ -67,7 +67,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 20, ../sass/partials/_constants_and_mixins.scss */
+/* line 23, ../sass/partials/_constants_and_mixins.scss */
 .clearfix:after, body nav:after, footer .wrapper:after {
   content: ".";
   display: block;
@@ -77,17 +77,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   height: 0;
 }
 
-/* line 29, ../sass/partials/_constants_and_mixins.scss */
+/* line 32, ../sass/partials/_constants_and_mixins.scss */
 .clearfix, body nav, footer .wrapper {
   display: inline-block;
 }
 
-/* line 33, ../sass/partials/_constants_and_mixins.scss */
+/* line 36, ../sass/partials/_constants_and_mixins.scss */
 html[xmlns] .clearfix, html[xmlns] body nav, body html[xmlns] nav, html[xmlns] footer .wrapper, footer html[xmlns] .wrapper {
   display: block;
 }
 
-/* line 37, ../sass/partials/_constants_and_mixins.scss */
+/* line 40, ../sass/partials/_constants_and_mixins.scss */
 * html .clearfix, * html body nav, body * html nav, * html footer .wrapper, footer * html .wrapper {
   height: 1%;
   overflow: visible;

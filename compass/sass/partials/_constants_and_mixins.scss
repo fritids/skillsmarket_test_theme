@@ -2,6 +2,9 @@ $default_border_light: 1px solid #f5f5f5;
 $modal_orange: #df8127;
 $sm_dark_color: #30262B;
 $sm_orange_color: #DD8026;
+$sm_purple_color: #6e1992;
+$sm_blue_color: #13649c;
+$sm_widget_bg_color: #df8127;
 
 @mixin full_no_radius {
 	@include border-top-left-radius(0);

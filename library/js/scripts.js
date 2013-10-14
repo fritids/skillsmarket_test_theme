@@ -100,6 +100,10 @@ jQuery(document).ready(function($) {
 	
 	$('.dropdown-toggle').dropdown();
 
-	$( '#masonry-container' ).masonry( { columnWidth: 220 } );
+	$( '#masonry-container' ).masonry( {
+		itemSelector: 'li.widget',
+		columnWidth: 300, 
+		gutterWidth: 10
+	} );
  
 }); /* end of as page load scripts */
