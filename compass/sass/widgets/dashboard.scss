@@ -40,7 +40,7 @@ html[xmlns] .clearfix {
 }
 
 
-.postbox#sm_insights_dashboard_widget {
+#sm_insights_dashboard_widget {
 	display: block;
 	border: 1px solid $sm_dark_color;
 	@include border-top-left-radius(10px);

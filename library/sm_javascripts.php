@@ -15,13 +15,16 @@ function sm_setup_scripts() {
 	/////////////////////////////////////////////
 	/* Enqueue all scripts here */
 
+	if( ! is_admin() ) {
 
-	wp_enqueue_style( 'sm_style', $rtdir . 'compass/stylesheets/screen.css', array(), '', 'screen' );
+		wp_enqueue_style( 'sm_style', $rtdir . 'compass/stylesheets/screen.css', array(), '', 'screen' );
 
-	if( is_sm_dashboard() ) {
-		if( get_query_var('sm_term') == 'insights' ) {
-			wp_enqueue_style( 'insights-dashboard', $rtdir . 'compass/stylesheets/dashboard/insights-dashboard.css', array(), '', 'screen' );
-			wp_enqueue_script( 'insights-dashboard' );
+		if( is_sm_dashboard() ) {
+			if( get_query_var('sm_term') == 'insights' ) {
+				wp_enqueue_style( 'insights-dashboard', $rtdir . 'compass/stylesheets/dashboard/insights-dashboard.css', array(), '', 'screen' );
+				wp_enqueue_script( 'insights-dashboard' );
+			}
 		}
-	}
+
+	} // end if admin
 }
