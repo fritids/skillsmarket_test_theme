@@ -2,21 +2,30 @@ body {
 	background: #3F3137!important;
 	color: #BCA2A8!important;
 	font-family: 'Open Sans', sans-serif!important;
-	padding-top: 160px!important;
+	padding-top: 0!important;
 
 	a {
 		color: rgb(221, 128, 38);
 		text-decoration: none;
+		&.brand {
+			width: 40%;
+			width: auto\9;
+		}
 		&:hover {
 			color: darken(rgb(221, 128, 38), 10%);
 			text-decoration: none;
 		}
 	}
+	#header-right {
+		position: absolute;
+	}
 	nav {
-		@extend .clearfix;
+		@include pie-clearfix;
+		position: relative;
 		#navigation {
-			float:right;
-			margin-top: 66px;
+			position: absolute;
+			width: 100%;
+			margin-top: 3.5em;
 			font: 12px 'Open Sans', sans-serif; 
 		}
 		ul.dropdown {
@@ -168,7 +177,7 @@ footer {
 	}
 	.wrapper {
 		display: block;
-		@extend .clearfix;
+		@include pie-clearfix;
 		margin: 0 auto;
 		width: 970px;
 		padding-left: 20px;
@@ -177,13 +186,13 @@ footer {
 		}
 		.copy, .sitemap, .social, .support {
 			@include inline-block;
-			width: 220px;
+			width: 23%;
 			min-height: 138px;
-			margin-top: 30px;
+			margin-top: 2em;
 			border-right: 1px solid #3F3137;
 		}
 		.social {
-			padding-left: 30px;
+			padding-left: 2em;
 			text-transform: uppercase;
 			img {
 				margin-left: -10px;
@@ -191,7 +200,7 @@ footer {
 		}
 		.sitemap ul {
 			margin: 0;
-			padding: 0 0 0 30px;
+			padding: 0 0 0 2em;
 			li a {
 				text-transform: uppercase;
 				text-decoration: none;
@@ -202,7 +211,7 @@ footer {
 		.support {
 			border: 0;
 			width: 210px;
-			padding-left: 30px;
+			padding-left: 2em;
 			img {
 				margin-left: -10px;
 			}

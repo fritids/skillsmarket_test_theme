@@ -31,6 +31,67 @@
 					}
 				}
 
+				&.widget_insights_number_students {
+					#ss_chart,
+					#ss_chart .highcharts-container {
+						@include border-top-left-radius(5px);
+						@include border-top-right-radius(5px);
+					}
+					#ss_detailed_info {
+						height: 200px;
+						max-height: 200px;
+						@include border-bottom-left-radius(5px);
+						@include border-bottom-right-radius(5px);
+						background-color: #7f6c72;
+
+						.btn-group {
+							text-align: center;
+						}
+
+						a.btn {
+							text-align: center;
+							padding: 0 10px;
+							line-height: 32px;
+							display: inline-block;
+							margin-top: 20px;
+						}
+
+						.details {
+							padding-top: 10px;
+							width: 100%;
+
+							.wrapper {
+								width: 86%;
+								margin: 0 7%;
+								position: relative;
+
+								> section {
+									display: block;
+									float: none;
+									width: 100%;
+									margin-bottom: 5px;
+									padding-bottom: 5px;
+									font-size: 16px;
+									font-weight: bold;
+								}
+
+								.month {
+									color: white;
+								}
+								.year {
+									color: #8b91ab;
+								}
+								.plus {
+									color: #e54b65;
+								}
+							}
+						}
+					}
+					.highcharts-legend {
+						@include border-bottom-left-radius(5px);
+						@include border-bottom-right-radius(5px);
+					}
+				}
 
 				&.widget_insights_average_rating {
 					height: 210px;
@@ -179,6 +240,44 @@
 
 						.datepicker {
 							
+						}
+					}
+				}
+
+				&.widget_insights_next_lesson {
+					#widget-next-lesson {
+						@include border-radius(5px);
+						background-color: $sm_widget_bg_color;
+						position: relative;
+						width: 100%;
+
+						header {
+							background-color: #7f6c72;
+							@include border-top-left-radius(5px);
+							@include border-top-right-radius(5px);
+							text-align: center;
+							font-color: #fffdfe;
+							font-weight: bold;
+							text-transform: uppercase;
+						}
+
+						.widget-content {
+							#headshot {
+								margin: 20px auto 0;
+								overflow: hidden;
+								max-width: 150px;
+								max-height: 150px;
+								img {
+									@include border-radius(75px);
+								}
+							}
+							.details {
+								text-align: center;
+								padding: 20px 0;
+								font-size: 15px;
+								color: white;
+								font-weight: bold;
+							}
 						}
 					}
 				}

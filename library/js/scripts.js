@@ -103,7 +103,13 @@ jQuery(document).ready(function($) {
 	$( '#masonry-container' ).masonry( {
 		itemSelector: 'li.widget',
 		columnWidth: 300, 
-		gutterWidth: 10
+		gutterWidth: 10,
+		isAnimated: true,
+		animationOptions: {
+			duration: 500,
+			easing: 'linear',
+			queue: false
+		}
 	} );
  
 }); /* end of as page load scripts */

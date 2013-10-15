@@ -1,52 +1,112 @@
 <div id="widget-number-students" class="sm_widget">
 	<div class="widget-content">
-		<div id="students_stats_chart" style="max-width: 300px; width: 300px; height: 400px; max-height: 400px; margin: 0"></div>
+		<div id="students_stats_chart" style="max-width: 300px; width: 300px; height: 400px; max-height: 400px; margin: 0">
+            <div id="ss_chart" style="max-width: 300px; width: 300px; height: 200px; max-height: 200px; margin: 0">
+                
+            </div>
+            <div id="ss_detailed_info">
+                <div class="btn-toolbar">
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="#fakelink">Week</a>
+                        <a class="btn btn-primary" href="#fakelink">Month</a>
+                        <a class="btn btn-primary" href="#fakelink">Year</a>
+                    </div>
+                </div>
+                <div class="details clearfix">
+                    <div class="wrapper clearfix">
+                        <section class="month-april clearfix">
+                            <div class="pull-left">
+                                <span class="month">Apr</span>
+                                <span class="year">2013</span>
+                            </div>
+                            <div class="pull-right">
+                                <span class="plus">+</span>
+                                <span class="percent">21%</span>
+                            </div>
+                        </section>
+                        <section class="month-may clearfix">
+                            <div class="pull-left">
+                                <span class="month">May</span>
+                                <span class="year">2013</span>
+                            </div>
+                            <div class="pull-right">
+                                <span class="plus">+</span>
+                                <span class="percent">48%</span>
+                            </div>
+                        </section>
+                        <section class="month-june clearfix">
+                            <div class="pull-left">
+                                <span class="month">June</span>
+                                <span class="year">2013</span>
+                            </div>
+                            <div class="pull-right">
+                                <span class="plus">+</span>
+                                <span class="percent">35%</span>
+                            </div>
+                        </section>
+                        <section class="month-july clearfix">
+                            <div class="pull-left">
+                                <span class="month">July</span>
+                                <span class="year">2013</span>
+                            </div>
+                            <div class="pull-right">
+                                <span class="plus">+</span>
+                                <span class="percent">12%</span>
+                            </div>
+                        </section>                        
+                    </div>
+                </div>
+            </div>
+        </div>
 	</div>
 </div>
 
 <script type="text/javascript">
 jQuery(function($){
 	/*################## NUMBER OF STUDENTS ###################*/
-	$('#students_stats_chart').highcharts({
-            chart: {
-                type: 'line'
-            },
-            title: {
-                text: 'Monthly Average Temperature'
-            },
-            subtitle: {
-                text: 'Source: WorldClimate.com'
-            },
-            xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            },
-            yAxis: {
-                title: {
-                    text: 'Temperature (°C)'
-                }
-            },
-            tooltip: {
-                enabled: false,
-                formatter: function() {
-                    return '<b>'+ this.series.name +'</b><br/>'+
-                        this.x +': '+ this.y +'°C';
-                }
-            },
-            plotOptions: {
-                line: {
-                    dataLabels: {
-                        enabled: true
-                    },
-                    enableMouseTracking: false
-                }
-            },
-            series: [{
-                name: 'Tokyo',
-                data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-            }, {
-                name: 'London',
-                data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-            }]
-        });
+	$('#students_stats_chart #ss_chart').highcharts({
+        chart: {
+            type: 'line',
+            backgroundColor: '#df8127',
+            height: 200,
+            margin: [60, 30, 40, 40],
+            spacing: [15, 0, 0, 0],
+            plotBorderWidth: 0,
+            plotShadow: false,
+            borderRadius: 0
+        },
+        title: {
+            text: 'No of Students',
+            useHTML: true,
+            style: {
+                color: '#FFFFFF',
+                fontWeight: 'bold'
+            }
+        },
+        xAxis: {
+            categories: ['Apr', 'May', 'Jun', 'Jul']
+        },
+        yAxis: {
+            title: false
+        },
+        legend: false,
+        tooltip: {
+            enabled: false
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: '',
+            data: [6, 13, 15, 9],
+            size: '80%',
+            color: '#FFFFFF'
+        }]
+    });
 })
 </script>
