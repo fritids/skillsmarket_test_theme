@@ -1,6 +1,7 @@
-README
-======
+The Skills Market test theme
+============================
 
+<img src="http://theskillsmarket.org/wp/wp-content/uploads/2013/05/skillsmarketlogo2.png">
 
 This is an attempt to create separate functions and hacks so they 
 can be moved over to a structured template system that will be 
