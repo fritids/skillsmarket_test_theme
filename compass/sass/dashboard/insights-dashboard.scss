@@ -11,6 +11,17 @@
 		}
 	}
 	.dashboard-content {
+		
+		.sm_widget {
+			&.unavailable-widget {
+				//overflow: hidden;
+				@include filter(blur(3px));
+				@include opacity(.9);
+				@include user-select(none);
+				pointer-events: none;
+			}
+		}
+
 		ul {
 			padding: 0;
 			margin: 0;

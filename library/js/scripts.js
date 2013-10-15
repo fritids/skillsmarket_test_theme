@@ -111,5 +111,7 @@ jQuery(document).ready(function($) {
 			queue: false
 		}
 	} );
+
+	//$('.unavailable-widget').foggy();
  
 }); /* end of as page load scripts */

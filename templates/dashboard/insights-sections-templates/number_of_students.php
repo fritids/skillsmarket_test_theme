@@ -1,4 +1,4 @@
-<div id="widget-number-students" class="sm_widget">
+<div id="widget-number-students" class="sm_widget unavailable-widget">
 	<div class="widget-content">
 		<div id="students_stats_chart" style="max-width: 300px; width: 300px; height: 400px; max-height: 400px; margin: 0">
             <div id="ss_chart" style="max-width: 300px; width: 300px; height: 200px; max-height: 200px; margin: 0">

@@ -19,6 +19,7 @@ function sm_setup_scripts() {
 	wp_register_script( 'datepicker-utils', $jsdir . 'calendar/utils.js', array( 'jquery' ), null, false ); // Insights Dashboard
 	wp_register_script( 'datepicker-layout', $jsdir . 'calendar/layout.js', array( 'jquery' ), null, false ); // Insights Dashboard
 	wp_register_script( 'yui', $jsdir . 'calendar/yui-min.js', array( 'jquery' ), null, false ); // Yahoo! YUI framework
+	wp_register_script( 'blur', $jsdir . 'blur.min.js', array( 'jquery' ), null, false ); // jQuery blur effect
 
 	## Register Flat UI here ##
 	wp_register_script( 'touch-punch', $flatuidir . 'js/jquery.ui.touch-punch.min.js', array( 'jquery' ), null, true );
@@ -45,6 +46,7 @@ function sm_setup_scripts() {
 				wp_enqueue_style( 'insights-dashboard', $rtdir . 'compass/stylesheets/dashboard/insights-dashboard.css', array(), '', 'screen' );
 
 				wp_enqueue_script( 'insights-dashboard' );
+				//wp_enqueue_script( 'blur' );
 				wp_enqueue_script( 'yui' );
 				wp_enqueue_script( 'jquery-masonry' );
 				wp_enqueue_script( 'jquery-highcharts' );

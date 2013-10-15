@@ -1,4 +1,4 @@
-<div id="widget-age-demographic" class="sm_widget">
+<div id="widget-age-demographic" class="sm_widget unavailable-widget">
 	<div class="widget-content">
 		<div id="age-demographic-chart">
 
