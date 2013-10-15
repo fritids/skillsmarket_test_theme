@@ -49,13 +49,14 @@ $(function () {
 			plotShadow: false,
 			width: 270,
 			height: 315,
-			backgroundColor: '#df8127'
+			backgroundColor: '#df8127',
+			spacingTop: 15
 		},
 		title: {
 			text: 'Age Demographic',
 			style: {
 				color: '#FFFFFF',
-				fontWeight: 'bold'
+				fontWeight: 'bold',
 			}
 		},
 		tooltip: {

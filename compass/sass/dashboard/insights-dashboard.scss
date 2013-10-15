@@ -45,6 +45,53 @@
 							height: 70px;
 						}
 					}
+					#profile_views_legend {
+						background-color: $sm_orange_color;
+
+						.city {
+							text-align: center;
+							background-color: #7f6c72;
+							width: 74px;
+							height: 67px;
+							border-top: 3px solid;
+							@include inline-block;
+							float: left;
+							margin: 0;
+							padding: 0;
+							margin-right: 1px;
+							&:last-child {
+								margin-right: 0;
+								width: 75px;
+							}
+
+							&:first-child {
+								border-top-color: #1e63bd;
+							}
+							&:nth-child(2) {
+								border-top-color: #06121d;
+							}
+							&:nth-child(3) {
+								border-top-color: #76a718;
+							}
+							&:last-child {
+								border-top-color: #820000;
+							}
+
+							> span {
+								display: block;
+								&.name {
+									color: #8f98b7;
+									font-weight: bold;
+									margin-top: 0.75em;
+								}
+								&.percent {
+									color: 	#f7f5f6;
+									font-size: 16px;
+									font-weight: bold;
+								}
+							}
+						}
+					}
 				}
 
 				&.widget_insights_number_students {
@@ -131,6 +178,7 @@
 							font-color: #fffdfe;
 							font-weight: bold;
 							text-transform: uppercase;
+							color: white;
 						}
 
 						.widget-content { 
@@ -216,6 +264,7 @@
 							font-color: #fffdfe;
 							font-weight: bold;
 							text-transform: uppercase;
+							color: white;
 						}
 
 						.widget-content {
@@ -252,12 +301,70 @@
 				}
 
 				&.widget_insights_calendar {
+					* {
+						outline: 0;
+					}
 					height: 315px;
 					width: 300px;
 					clear: left;
 
 					#calendar {
-						width: 100%;
+						width: 300px;
+						padding: 0!important;
+						border: 0;
+						@include border-radius(0);
+						background: none!important;
+						background-color: $sm_orange_color;
+
+						.yui3-u-1 {
+							margin: 0 10px;
+						}
+
+						.yui3-calendar-header {
+							padding-left: 0;
+							padding-right: 0;
+							padding-bottom: 0;
+							padding-top: 0;
+							height: 50px;
+							line-height: 50px;
+							background: #7f6c72;
+							position: relative!important;
+
+							.yui3-calendar-header-label {
+								color: white;
+							}
+
+							a.yui3-calendarnav-prevmonth {
+								position: absolute;
+								left: 20px;
+								margin-left: 0;
+								@include inline-block;
+								width: 20px;
+								height: 20px;
+								color: white;
+								text-decoration: none;
+
+								span {
+									color: white;
+									display: block!important;
+								}
+							}
+							a.yui3-calendarnav-nextmonth {
+								position: absolute;
+								right: 20px;
+								margin-right: 0;
+								@include inline-block;
+								width: 20px;
+								height: 20px;
+								color: white;
+								text-decoration: none;
+
+								span {
+									color: white;
+									display: block!important;
+								}								
+							}
+						}
 
 						.datepicker {
 							
@@ -283,6 +390,7 @@
 							font-color: #fffdfe;
 							font-weight: bold;
 							text-transform: uppercase;
+							color: white;
 						}
 
 						.widget-content {
@@ -301,6 +409,16 @@
 								font-size: 15px;
 								color: white;
 								font-weight: bold;
+
+								.title {
+									margin-bottom: 5px;
+								}
+								.date,
+								.location,
+								.subject {
+									font-weight: 400;
+									font-size: 13px;
+								}
 							}
 						}
 					}
@@ -367,194 +485,345 @@
 	} // .dashboard-content
 }
 
-div.datepicker {
-	position: relative;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	width: 196px;
-	height: 147px;
-	position: absolute;
-	cursor: default;
-	top: 0;
-	left: 0;
-	display: none;
+/*
+YUI 3.13.0 (build 508226d)
+Copyright 2013 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+
+tr th { text-align:center; }
+tr.yui3-calendar-weekdayrow {
+	color: #ec3d68;
 }
-.datepickerContainer {
-	background: #121212;
-	position: absolute;
-	top: 10px;
-	left: 10px;
+tr.yui3-calendar-row {
+	color: #716d6e;
 }
-.datepickerBorderT {
-	position: absolute;
-	left: 10px;
-	top: 0;
-	right: 10px;
-	height: 10px;
-	background: url(../img/datepicker_t.png);
+td.yui3-calendar-prevmonth-day,
+td.yui3-calendar-nextmonth-day {
+	color: white!important;
 }
-.datepickerBorderB {
-	position: absolute;
-	left: 10px;
-	bottom: 0;
-	right: 10px;
-	height: 10px;
-	background: url(../img/datepicker_b.png);
+table.yui3-calendar-grid {
+	margin-top: 0.5em;
 }
-.datepickerBorderL {
-	position: absolute;
-	left: 0;
-	bottom: 10px;
-	top: 10px;
-	width: 10px;
-	background: url(../img/datepicker_l.png);
+
+.yui3-widget-hidden {
+    display: none;
 }
-.datepickerBorderR {
-	position: absolute;
-	right: 0;
-	bottom: 10px;
-	top: 10px;
-	width: 10px;
-	background: url(../img/datepicker_r.png);
+.yui3-widget-content {
+    overflow: hidden;
 }
-.datepickerBorderTL {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 10px;
-	height: 10px;
-	background: url(../img/datepicker_tl.png);
+.yui3-widget-content-expanded {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%}
+.yui3-widget-tmp-forcesize {
+    overflow: hidden!important;
 }
-.datepickerBorderTR {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 10px;
-	height: 10px;
-	background: url(../img/datepicker_tr.png);
+#yui3-css-stamp.skin-sam-widget-base {
+    display: none;
 }
-.datepickerBorderBL {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 10px;
-	height: 10px;
-	background: url(../img/datepicker_bl.png);
+/*
+YUI 3.13.0 (build 508226d)
+Copyright 2013 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+
+.yui3-calendar-pane {
+    width: 100%}
+.yui3-calendar-grid {
+    width: 100%}
+.yui3-calendar-column-hidden, .yui3-calendar-hidden {
+    display: none;
 }
-.datepickerBorderBR {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 10px;
-	height: 10px;
-	background: url(../img/datepicker_br.png);
+.yui3-skin-sam .yui3-calendar-content {
+    padding: 10px;
+    color: #000;
+    border: 1px solid gray;
+    background: #f2f2f2;
+    background: -moz-linear-gradient(top, #f9f9f9 0, #f2f2f2 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f9f9f9), color-stop(100%, #f2f2f2));
+    background: -webkit-linear-gradient(top, #f9f9f9 0, #f2f2f2 100%);
+    background: -o-linear-gradient(top, #f9f9f9 0, #f2f2f2 100%);
+    background: -ms-linear-gradient(top, #f9f9f9 0, #f2f2f2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#f2f2f2', GradientType=0);
+    background: linear-gradient(top, #f9f9f9 0, #f2f2f2 100%);
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
-.datepickerHidden {
-	display: none;
+.yui3-skin-sam .yui3-calendar-grid {
+    padding: 5px;
+    border-collapse: collapse;
 }
-div.datepicker table {
-	border-collapse:collapse;
+.yui3-skin-sam .yui3-calendar-header {
+    padding-bottom: 10px;
 }
-div.datepicker a {
-	color: #eee;
-	text-decoration: none;
-	cursor: default;
-	outline: none;
+.yui3-skin-sam .yui3-calendar-header-label {
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
 }
-div.datepicker table td {
-	text-align: right;
-	padding: 0;
-	margin: 0;
+.yui3-skin-sam .yui3-calendar-day, .yui3-skin-sam .yui3-calendar-prevmonth-day, .yui3-skin-sam .yui3-calendar-nextmonth-day {
+    padding: 5px;
+    border: 0;
+    background: $sm_orange_color;
+    text-align: center;
 }
-div.datepicker th {
-	text-align: center;
-	color: #999;
-	font-weight: normal;
+.yui3-calendar-day {
+	height: 30px!important;
+	@include border-radius(20px);
 }
-div.datepicker tbody th {
-	text-align: left;
+.yui3-skin-sam .yui3-calendar-day:hover {
+    background-color: #ec3d68;
+    color: white;
 }
-div.datepicker tbody a {
-	display: block;
+.yui3-skin-sam .yui3-calendar-selection-disabled, .yui3-skin-sam .yui3-calendar-selection-disabled:hover {
+    color: #a6a6a6;
+    background: #ccc;
 }
-.datepickerDays a {
-	width: 20px;
-	line-height: 16px;
-	height: 16px;
-	padding-right: 2px;
+.yui3-skin-sam .yui3-calendar-weekday {
+    font-weight: bold;
 }
-.datepickerYears a,
-.datepickerMonths a{
-	width: 44px;
-	line-height: 36px;
-	height: 36px;
-	text-align: center;
+.yui3-skin-sam .yui3-calendar-prevmonth-day, .yui3-skin-sam .yui3-calendar-nextmonth-day {
+    color: #a6a6a6;
 }
-td.datepickerNotInMonth a {
-	color: #666;
+.yui3-skin-sam .yui3-calendar-day {
+    font-weight: bold;
 }
-tbody.datepickerDays td.datepickerSelected{
-	background: #136A9F;
+.yui3-skin-sam .yui3-calendar-day-selected {
+    background-color: #ec3d68;
+    color: white;
 }
-tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
-	background: #17384d;
+.yui3-skin-sam .yui3-calendar-header-label {
+    text-align: center;
 }
-tbody.datepickerYears td.datepickerSelected,
-tbody.datepickerMonths td.datepickerSelected{
-	background: #17384d;
+.yui3-skin-sam .yui3-calendar-left-grid {
+    margin-right: 1em;
 }
-div.datepicker a:hover,
-div.datepicker a:hover {
-	color: #88c5eb;
+.yui3-skin-sam .yui3-calendar-right-grid {
+    margin-left: 1em;
 }
-div.datepicker td.datepickerNotInMonth a:hover {
-	color: #999;
+.yui3-skin-sam .yui3-calendar-day-highlighted {
+    background-color: #dcdef5;
 }
-div.datepicker tbody th {
-	text-align: left;
+.yui3-skin-sam .yui3-calendar-day-selected.yui3-calendar-day-highlighted {
+    background-color: #758fbb;
 }
-.datepickerSpace div {
-	width: 20px;
+#yui3-css-stamp.skin-sam-calendar-base {
+    display: none;
 }
-.datepickerGoNext a,
-.datepickerGoPrev a,
-.datepickerMonth a {
-	text-align: center;
-	height: 20px;
-	line-height: 20px;
+/*
+YUI 3.13.0 (build 508226d)
+Copyright 2013 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+
+.yui3-calendar-header {
+    padding-left: 15px;
+    padding-right: 15px;
 }
-.datepickerGoNext a {
-	float: right;
-	width: 20px;
+.yui3-calendar-header-label {
+    width: 100%}
+.yui3-calendarnav-prevmonth {
+    cursor: pointer;
 }
-.datepickerGoPrev a {
-	float: left;
-	width: 20px;
+.yui3-calendarnav-nextmonth {
+    cursor: pointer;
 }
-table.datepickerViewDays tbody.datepickerMonths,
-table.datepickerViewDays tbody.datepickerYears {
-	display: none;
+.yui3-skin-sam .yui3-calendarnav-prevmonth, .yui3-skin-sam .yui3-calendarnav-nextmonth {
+    color: #000;
+    width: 12px;
+    height: 14px;
+    //background: transparent url(data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABgAAAAOCAYAAAA1+Nx+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKNJREFUeNpiYCAeSAPxUiiWZqAi4ATiaiD+DMT/ofgzVIyTUsMDgfghksHo+CFUDcnAAIgP4DEYHR+A6iEIhIB4GgkGo+NpUDMwADMQFwHxBwoMh+EPULOYYYZ7APFVKhiMjkFmejBBLWFjoD5gQ+dQO4iwOloUiOdQYPgcqBkDl0zRQRQRGS2KGkVFHRB/QzL4G1SMk5qpQg6psJMjVhNAgAEAH+qPqeiPEUsAAAAASUVORK5CYII=);
+    background-repeat: no-repeat;
 }
-table.datepickerViewMonths tbody.datepickerDays,
-table.datepickerViewMonths tbody.datepickerYears,
-table.datepickerViewMonths tr.datepickerDoW {
-	display: none;
+.yui3-skin-sam .yui3-calendarnav-prevmonth:hover, .yui3-skin-sam .yui3-calendarnav-nextmonth:hover {
+    //background: transparent url(data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABgAAAAOCAYAAAA1+Nx+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPpJREFUeNpi/P//PwMxQD9jszSQ6oJyyy7O8H1KjD5GQhYADeYEUkVAXAHEPFDhL0DcAcR9QIu+k20B0PBAIDUBiOVwKHkExAVAS9aTZAHQYAOowfYMxIGDUIsu4LUAaLAQkGoB4kwG8sB0IK4BWvQOxQKgwcxAdj4Q1wExPwNl4CMQNwHxRKBFfxn10jd5ADm9QKzFQF1wDYiLmaAcNgbqA7CZTEBv7ADS2iDboN5joEIQgczSBpmNHsmiQKodiJPJNHwuEFcCDX49MMkUi0VRUB/hy2ggFy+jtKgohRYVnFDh79CiopuiogLNIjmobxigrn5EjD6AAAMAok9vhfHG8wQAAAAASUVORK5CYII=);
+    color: #06c;
 }
-table.datepickerViewYears tbody.datepickerDays,
-table.datepickerViewYears tbody.datepickerMonths,
-table.datepickerViewYears tr.datepickerDoW {
-	display: none;
+.yui3-skin-sam .yui3-calendarnav-month-disabled, .yui3-skin-sam .yui3-calendarnav-month-disabled:hover {
+    //background: transparent url(data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABgAAAAOCAYAAAA1+Nx+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQhJREFUeNqs0yGLAlEUhuHrKoIgCFbBJghb3F+g0WrVarEqLIhBEEFYWKNNMBktU4z6C5RNkwyCyWQSTPuOfCOCrHNnxwMPyOGe73DAiTmOYywrhy/9/sTBZujN4k0KPbioi6teKuqCmsKGSN/10+q5ehN6QQkrLJB/Mp/Xm5VmAhdkMcEGZWNfZc1MlPGwII42dmiZ/1dLGW1lXhdU8YNvZEz0yijLy6z6FyTN6yvpX7DEOzo4vSD4pCwvc+lfcMEYBUwjhE+VMVbmw7/oiCY+sA4RvNZMUxmB38EWFTSwfxK815uKZkJ/yXMU0cf5rn9Wr6g3f1bC4nwvbIAZRup1Ay671a8AAwC3OzOqxK+rkwAAAABJRU5ErkJggg==);
+    cursor: default;
+    color: #ccc;
 }
-td.datepickerDisabled a,
-td.datepickerDisabled.datepickerNotInMonth a{
-	color: #333;
+.yui3-skin-sam .yui3-calendarnav-prevmonth, .yui3-skin-sam .yui3-calendarnav-prevmonth:hover {
+    background-position: 0 0;
+    margin-left: -12px;
 }
-td.datepickerDisabled a:hover {
-	color: #333;
+.yui3-skin-sam .yui3-calendarnav-nextmonth, .yui3-skin-sam .yui3-calendarnav-nextmonth:hover {
+    background-position: -12px 0;
+    margin-right: -12px;
 }
-td.datepickerSpecial a {
-	background: #700;
+.yui3-skin-sam .yui3-calendarnav-prevmonth span, .yui3-skin-sam .yui3-calendarnav-nextmonth span {
+    display: none;
+    *display: block;
 }
-td.datepickerSpecial.datepickerSelected a {
-	background: #a00;
+#yui3-css-stamp.skin-sam-calendarnavigator {
+    display: none;
+}
+/*
+YUI 3.13.0 (build 508226d)
+Copyright 2013 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+
+.yui3-calendar-column-hidden, .yui3-calendar-hidden {
+    display: none;
+}
+.yui3-calendar-day {
+    cursor: pointer;
+}
+.yui3-calendar-selection-disabled {
+    cursor: default;
+}
+.yui3-calendar-prevmonth-day {
+    cursor: default;
+}
+.yui3-calendar-nextmonth-day {
+    cursor: default;
+}
+.yui3-calendar-content:hover .yui3-calendar-day, .yui3-calendar-content:hover .yui3-calendar-prevmonth-day, .yui3-calendar-content:hover .yui3-calendar-nextmonth-day {
+    -moz-user-select: none;
+}
+.yui3-skin-sam .yui3-calendar-day-highlighted {
+    background-color: #dcdef5;
+}
+.yui3-skin-sam .yui3-calendar-day-selected.yui3-calendar-day-highlighted {
+    background-color: #758fbb;
+}
+#yui3-css-stamp.skin-sam-calendar {
+    display: none;
+}
+/*
+YUI 3.13.0 (build 508226d)
+Copyright 2013 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+
+.yui3-button {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    font-size: 100%;
+    *font-size: 90%;
+    *overflow: visible;
+    padding: .4em 1em .45em;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: baseline;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    color: #444;
+    color: rgba(0, 0, 0, 0.80);
+    *color: #444;
+    border: 1px solid #999;
+    border: none rgba(0, 0, 0, 0);
+    background-color: #e6e6e6;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80ffffff', endColorstr='#00ffffff', GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0.30)), color-stop(40%, rgba(255, 255, 255, 0.15)), to(transparent));
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.15) 40%, transparent);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.15) 40%, transparent);
+    background-image: -ms-linear-gradient(rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.15) 40%, transparent);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.15) 40%, transparent);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.15) 40%, transparent);
+    text-decoration: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 0 rgba(255, 255, 255, 0.30) inset, 0 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 0 rgba(255, 255, 255, 0.30) inset, 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 0 rgba(255, 255, 255, 0.30) inset, 0 1px 2px rgba(0, 0, 0, 0.15);
+    -webkit-transition: .1s linear -webkit-box-shadow;
+    -moz-transition: .1s linear -moz-box-shadow;
+    -ms-transition: .1s linear box-shadow;
+    -o-transition: .1s linear box-shadow;
+    transition: .1s linear box-shadow;
+}
+a.yui3-button {
+    color: rgba(0, 0, 0, 0.80);
+    color: #444;
+    text-decoration: none;
+}
+.yui3-button-hover, .yui3-button:hover {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#26000000', GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.15)));
+    background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.15));
+    background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.15));
+    background-image: -ms-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.15));
+    background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.15));
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.15));
+}
+.yui3-button-active, .yui3-button:active {
+    border: inset 1px solid #999;
+    border: none rgba(0, 0, 0, 0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1A000000', endColorstr='#26000000', GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.10)), to(rgba(0, 0, 0, 0.15)));
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.15));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.15));
+    background-image: -ms-linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.15));
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.15));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.15));
+    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 4px rgba(0, 0, 0, 0.30) inset;
+    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 4px rgba(0, 0, 0, 0.30) inset;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 4px rgba(0, 0, 0, 0.30) inset;
+}
+.yui3-button[disabled], .yui3-button-disabled, .yui3-button-disabled:hover, .yui3-button-disabled:active {
+    cursor: default;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: alpha(opacity=55);
+    -khtml-opacity: .55;
+    -moz-opacity: .55;
+    opacity: .55;
+    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset;
+    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset;
+}
+.yui3-button-hidden {
+    display: none;
+}
+.yui3-button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+.yui3-button:-moz-focusring {
+    outline: thin dotted;
+}
+.yui3-skin-sam .yui3-button-primary, .yui3-skin-sam .yui3-button-selected {
+    background-color: #345fcb;
+    color: #fff;
+    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 0 rgba(255, 255, 255, 0.17) inset, 0 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 0 rgba(255, 255, 255, 0.17) inset, 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 0 rgba(255, 255, 255, 0.17) inset, 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.yui3-skin-sam .yui3-button:-moz-focusring {
+    outline-color: rgba(0, 0, 0, 0.85);
+}
+.yui3-skin-night .yui3-button {
+    border: 0;
+    background-color: #343536;
+    color: #dcdcdc;
+    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.yui3-skin-night .yui3-button-primary, .yui3-skin-night .yui3-button-selected {
+    background-color: #747576;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+.yui3-skin-night .yui3-button:-moz-focusring {
+    outline-color: rgba(255, 255, 255, 0.85);
+}
+#yui3-css-stamp.cssbutton {
+    display: none;
 }

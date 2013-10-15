@@ -1,6 +1,24 @@
 <div id="widget-profile-views" class="sm_widget">
 	<div class="widget-content">
-		<div id="profile_views_chart" style="max-width: 300px; width: 300px; height: 400px; max-height: 400px; margin: 0"></div>
+		<div id="profile_views_chart" style="max-width: 300px; width: 300px; height: 330px; max-height: 330px; margin: 0"></div>
+		<div id="profile_views_legend" style="max-width: 300px; width: 300px; height: 70px; max-height: 70px; margin: 0">
+			<div class="city">
+				<span class="name">W. Green</span>
+				<span class="percent">55.11%</span>
+			</div>
+			<div class="city">
+				<span class="name">Battersea</span>
+				<span class="percent">21.63%</span>
+			</div>
+			<div class="city">
+				<span class="name">Rainham</span>
+				<span class="percent">11.94%</span>
+			</div>
+			<div class="city">
+				<span class="name">Romford</span>
+				<span class="percent">7.15%</span>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -44,11 +62,11 @@ jQuery(function ($) {
 		chart: {
 			type: 'pie',
 			backgroundColor: '#df8127',
-			margin: [0, 0, 0, 0],
+			margin: [10, 0, 0, 0],
 			spacing: [15, 0, 0, 0],
 			plotBorderWidth: 0,
 			plotShadow: false,
-			marginBottom: 70
+			marginBottom: 0
 		},
 		title: {
 			text: 'Profile Views',
@@ -58,7 +76,7 @@ jQuery(function ($) {
 				fontWeight: 'bold'
 			}
 		},
-		legend: {
+		legend: false, /*{
 			//width: 300,
 			floating: true,
 			align: 'center',
@@ -83,7 +101,7 @@ jQuery(function ($) {
 				padding: 0,
 				verticalAlign: 'middle'
 			}
-		},
+		},*/
 		yAxis: {
 			title: false
 		},
