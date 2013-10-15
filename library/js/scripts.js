@@ -100,9 +100,9 @@ jQuery(document).ready(function($) {
 	
 	$('.dropdown-toggle').dropdown();
 
-	$( '#masonry-container' ).masonry( {
-		itemSelector: 'li.widget',
-		columnWidth: 300, 
+	$( '#masonry-container div.sm_widget' ).masonry( {
+		itemSelector: '.sm_widget',
+		columnWidth: 300,
 		gutterWidth: 10,
 		isAnimated: true,
 		animationOptions: {

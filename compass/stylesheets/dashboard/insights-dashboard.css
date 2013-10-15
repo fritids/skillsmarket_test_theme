@@ -38,8 +38,27 @@ html[xmlns] .clearfix {
 #insights-dashboard .dashboard-content ul {
   padding: 0;
   margin: 0;
+  *zoom: 1;
 }
-/* line 18, ../../sass/dashboard/insights-dashboard.scss */
+/* line 38, ../../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+#insights-dashboard .dashboard-content ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 19, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul .widget {
+  background-color: #dd8026;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-right: 2.4em;
+}
+/* line 25, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul .widget:nth-child(3), #insights-dashboard .dashboard-content ul .widget:nth-child(4), #insights-dashboard .dashboard-content ul .widget:last-child {
+  margin-right: 0;
+}
+/* line 30, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li {
   display: -moz-inline-stack;
   display: inline-block;
@@ -47,15 +66,32 @@ html[xmlns] .clearfix {
   *vertical-align: auto;
   zoom: 1;
   *display: inline;
-  width: columns(1, 3);
-  min-width: 300px;
+  max-width: 400px;
+  float: left;
+  *zoom: 1;
 }
-/* line 27, ../../sass/dashboard/insights-dashboard.scss */
+/* line 38, ../../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+#insights-dashboard .dashboard-content ul li:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 38, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_profile_views {
+  width: 300px;
+  height: 400px;
+}
+/* line 43, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views #profile_views_chart .highcharts-legend {
   width: 300px;
   height: 70px;
 }
-/* line 36, ../../sass/dashboard/insights-dashboard.scss */
+/* line 50, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_number_students {
+  width: 300px;
+  height: 400px;
+}
+/* line 55, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_chart,
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_chart .highcharts-container {
   -moz-border-radius-topleft: 5px;
@@ -65,7 +101,7 @@ html[xmlns] .clearfix {
   -webkit-border-top-right-radius: 5px;
   border-top-right-radius: 5px;
 }
-/* line 40, ../../sass/dashboard/insights-dashboard.scss */
+/* line 59, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info {
   height: 200px;
   max-height: 200px;
@@ -77,11 +113,11 @@ html[xmlns] .clearfix {
   border-bottom-right-radius: 5px;
   background-color: #7f6c72;
 }
-/* line 47, ../../sass/dashboard/insights-dashboard.scss */
+/* line 66, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .btn-group {
   text-align: center;
 }
-/* line 51, ../../sass/dashboard/insights-dashboard.scss */
+/* line 70, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info a.btn {
   text-align: center;
   padding: 0 10px;
@@ -89,18 +125,18 @@ html[xmlns] .clearfix {
   display: inline-block;
   margin-top: 20px;
 }
-/* line 59, ../../sass/dashboard/insights-dashboard.scss */
+/* line 78, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .details {
   padding-top: 10px;
   width: 100%;
 }
-/* line 63, ../../sass/dashboard/insights-dashboard.scss */
+/* line 82, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .details .wrapper {
   width: 86%;
   margin: 0 7%;
   position: relative;
 }
-/* line 68, ../../sass/dashboard/insights-dashboard.scss */
+/* line 87, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .details .wrapper > section {
   display: block;
   float: none;
@@ -110,19 +146,19 @@ html[xmlns] .clearfix {
   font-size: 16px;
   font-weight: bold;
 }
-/* line 78, ../../sass/dashboard/insights-dashboard.scss */
+/* line 97, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .details .wrapper .month {
   color: white;
 }
-/* line 81, ../../sass/dashboard/insights-dashboard.scss */
+/* line 100, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .details .wrapper .year {
   color: #8b91ab;
 }
-/* line 84, ../../sass/dashboard/insights-dashboard.scss */
+/* line 103, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .details .wrapper .plus {
   color: #e54b65;
 }
-/* line 90, ../../sass/dashboard/insights-dashboard.scss */
+/* line 109, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students .highcharts-legend {
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -131,13 +167,12 @@ html[xmlns] .clearfix {
   -webkit-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-/* line 96, ../../sass/dashboard/insights-dashboard.scss */
+/* line 115, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating {
   height: 210px;
   width: 300px;
-  position: relative;
 }
-/* line 101, ../../sass/dashboard/insights-dashboard.scss */
+/* line 119, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -147,7 +182,7 @@ html[xmlns] .clearfix {
   position: relative;
   width: 100%;
 }
-/* line 108, ../../sass/dashboard/insights-dashboard.scss */
+/* line 126, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio header {
   background-color: #7f6c72;
   -moz-border-radius-topleft: 5px;
@@ -161,13 +196,13 @@ html[xmlns] .clearfix {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 118, ../../sass/dashboard/insights-dashboard.scss */
+/* line 136, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .widget-content {
   position: relative;
   width: 100%;
   height: 100%;
 }
-/* line 124, ../../sass/dashboard/insights-dashboard.scss */
+/* line 142, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .star-five {
   margin-top: 4em;
   margin-bottom: 0;
@@ -186,7 +221,7 @@ html[xmlns] .clearfix {
   -o-transform: rotate(35deg);
   transform: rotate(35deg);
 }
-/* line 138, ../../sass/dashboard/insights-dashboard.scss */
+/* line 156, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .star-five:before {
   top: -2.25em;
   left: -3.25em;
@@ -199,7 +234,7 @@ html[xmlns] .clearfix {
   -o-transform: rotate(-35deg);
   transform: rotate(-35deg);
 }
-/* line 147, ../../sass/dashboard/insights-dashboard.scss */
+/* line 165, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .star-five:before, #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .star-five:after {
   content: '';
   position: absolute;
@@ -208,7 +243,7 @@ html[xmlns] .clearfix {
   height: 0;
   z-index: -1;
 }
-/* line 156, ../../sass/dashboard/insights-dashboard.scss */
+/* line 174, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .star-five:after {
   top: 0.15em;
   left: -5.25em;
@@ -221,7 +256,7 @@ html[xmlns] .clearfix {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 165, ../../sass/dashboard/insights-dashboard.scss */
+/* line 183, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .star-five .rating {
   -webkit-transform: rotate(-35deg);
   -moz-transform: rotate(-35deg);
@@ -239,11 +274,12 @@ html[xmlns] .clearfix {
   font-size: 32px;
   color: white;
 }
-/* line 182, ../../sass/dashboard/insights-dashboard.scss */
+/* line 200, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio {
-  height: 168px;
+  height: 170px;
+  width: 300px;
 }
-/* line 185, ../../sass/dashboard/insights-dashboard.scss */
+/* line 204, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -253,7 +289,7 @@ html[xmlns] .clearfix {
   position: relative;
   width: 100%;
 }
-/* line 192, ../../sass/dashboard/insights-dashboard.scss */
+/* line 211, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio header {
   background-color: #7f6c72;
   -moz-border-radius-topleft: 5px;
@@ -267,7 +303,7 @@ html[xmlns] .clearfix {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 202, ../../sass/dashboard/insights-dashboard.scss */
+/* line 221, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content {
   height: 90px;
   padding: 10px;
@@ -280,7 +316,7 @@ html[xmlns] .clearfix {
   display: table;
   clear: both;
 }
-/* line 209, ../../sass/dashboard/insights-dashboard.scss */
+/* line 228, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .male,
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .female {
   display: -moz-inline-stack;
@@ -291,12 +327,12 @@ html[xmlns] .clearfix {
   *display: inline;
   width: 40%;
 }
-/* line 212, ../../sass/dashboard/insights-dashboard.scss */
+/* line 231, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .male img,
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .female img {
   height: 104px;
 }
-/* line 216, ../../sass/dashboard/insights-dashboard.scss */
+/* line 235, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .male span,
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .female span {
   padding: 0 10px;
@@ -308,23 +344,30 @@ html[xmlns] .clearfix {
   font-size: 16px;
   font-weight: bold;
 }
-/* line 225, ../../sass/dashboard/insights-dashboard.scss */
+/* line 244, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .male span {
   background-color: #13649c;
 }
-/* line 228, ../../sass/dashboard/insights-dashboard.scss */
+/* line 247, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .female span {
   background-color: #6e1992;
 }
-/* line 235, ../../sass/dashboard/insights-dashboard.scss */
+/* line 254, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_calendar {
   height: 315px;
+  width: 300px;
+  clear: left;
 }
-/* line 238, ../../sass/dashboard/insights-dashboard.scss */
+/* line 259, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_calendar #calendar {
   width: 100%;
 }
-/* line 248, ../../sass/dashboard/insights-dashboard.scss */
+/* line 268, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_next_lesson {
+  width: 250px;
+  height: 315px;
+}
+/* line 272, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -333,7 +376,7 @@ html[xmlns] .clearfix {
   position: relative;
   width: 100%;
 }
-/* line 254, ../../sass/dashboard/insights-dashboard.scss */
+/* line 278, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson header {
   background-color: #7f6c72;
   -moz-border-radius-topleft: 5px;
@@ -347,29 +390,108 @@ html[xmlns] .clearfix {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 265, ../../sass/dashboard/insights-dashboard.scss */
+/* line 289, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson .widget-content #headshot {
-  margin: 20px auto 0;
+  margin: 10px auto 0;
   overflow: hidden;
   max-width: 150px;
   max-height: 150px;
 }
-/* line 270, ../../sass/dashboard/insights-dashboard.scss */
+/* line 294, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson .widget-content #headshot img {
   -webkit-border-radius: 75px;
   -moz-border-radius: 75px;
   border-radius: 75px;
 }
-/* line 274, ../../sass/dashboard/insights-dashboard.scss */
+/* line 298, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson .widget-content .details {
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   font-size: 15px;
   color: white;
   font-weight: bold;
 }
+/* line 309, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic {
+  width: 350px;
+  height: 315px;
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 314, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic #age-demographic-chart {
+  width: 270px;
+  float: left;
+}
+/* line 318, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend {
+  width: 75px;
+  height: 315px;
+  float: right;
+  background-color: #7f6c72;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: relative;
+}
+/* line 327, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age {
+  height: 60px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  text-align: center;
+  width: 100%;
+}
+/* line 333, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age:first-child {
+  border-top: 3px solid #1e63bd;
+}
+/* line 336, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age:nth-child(2) {
+  border-top: 3px solid #06121d;
+}
+/* line 339, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age:nth-child(3) {
+  border-top: 3px solid #76a718;
+}
+/* line 342, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age:nth-child(4) {
+  border-top: 3px solid #820000;
+}
+/* line 345, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age:last-child {
+  border-top: 3px solid #19aacb;
+}
+/* line 349, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age > span {
+  display: block;
+}
+/* line 351, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age > span.range {
+  color: #8f98b7;
+  font-weight: bold;
+  margin-top: 0.60em;
+}
+/* line 356, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age > span.percent {
+  color: #f7f5f6;
+  font-size: 16px;
+  font-weight: bold;
+}
 
-/* line 289, ../../sass/dashboard/insights-dashboard.scss */
+/* line 370, ../../sass/dashboard/insights-dashboard.scss */
 div.datepicker {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
@@ -383,7 +505,7 @@ div.datepicker {
   display: none;
 }
 
-/* line 301, ../../sass/dashboard/insights-dashboard.scss */
+/* line 382, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerContainer {
   background: #121212;
   position: absolute;
@@ -391,7 +513,7 @@ div.datepicker {
   left: 10px;
 }
 
-/* line 307, ../../sass/dashboard/insights-dashboard.scss */
+/* line 388, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerBorderT {
   position: absolute;
   left: 10px;
@@ -401,7 +523,7 @@ div.datepicker {
   background: url(../img/datepicker_t.png);
 }
 
-/* line 315, ../../sass/dashboard/insights-dashboard.scss */
+/* line 396, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerBorderB {
   position: absolute;
   left: 10px;
@@ -411,7 +533,7 @@ div.datepicker {
   background: url(../img/datepicker_b.png);
 }
 
-/* line 323, ../../sass/dashboard/insights-dashboard.scss */
+/* line 404, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerBorderL {
   position: absolute;
   left: 0;
@@ -421,7 +543,7 @@ div.datepicker {
   background: url(../img/datepicker_l.png);
 }
 
-/* line 331, ../../sass/dashboard/insights-dashboard.scss */
+/* line 412, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerBorderR {
   position: absolute;
   right: 0;
@@ -431,7 +553,7 @@ div.datepicker {
   background: url(../img/datepicker_r.png);
 }
 
-/* line 339, ../../sass/dashboard/insights-dashboard.scss */
+/* line 420, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerBorderTL {
   position: absolute;
   top: 0;
@@ -441,7 +563,7 @@ div.datepicker {
   background: url(../img/datepicker_tl.png);
 }
 
-/* line 347, ../../sass/dashboard/insights-dashboard.scss */
+/* line 428, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerBorderTR {
   position: absolute;
   top: 0;
@@ -451,7 +573,7 @@ div.datepicker {
   background: url(../img/datepicker_tr.png);
 }
 
-/* line 355, ../../sass/dashboard/insights-dashboard.scss */
+/* line 436, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerBorderBL {
   position: absolute;
   bottom: 0;
@@ -461,7 +583,7 @@ div.datepicker {
   background: url(../img/datepicker_bl.png);
 }
 
-/* line 363, ../../sass/dashboard/insights-dashboard.scss */
+/* line 444, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerBorderBR {
   position: absolute;
   bottom: 0;
@@ -471,17 +593,17 @@ div.datepicker {
   background: url(../img/datepicker_br.png);
 }
 
-/* line 371, ../../sass/dashboard/insights-dashboard.scss */
+/* line 452, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerHidden {
   display: none;
 }
 
-/* line 374, ../../sass/dashboard/insights-dashboard.scss */
+/* line 455, ../../sass/dashboard/insights-dashboard.scss */
 div.datepicker table {
   border-collapse: collapse;
 }
 
-/* line 377, ../../sass/dashboard/insights-dashboard.scss */
+/* line 458, ../../sass/dashboard/insights-dashboard.scss */
 div.datepicker a {
   color: #eee;
   text-decoration: none;
@@ -489,31 +611,31 @@ div.datepicker a {
   outline: none;
 }
 
-/* line 383, ../../sass/dashboard/insights-dashboard.scss */
+/* line 464, ../../sass/dashboard/insights-dashboard.scss */
 div.datepicker table td {
   text-align: right;
   padding: 0;
   margin: 0;
 }
 
-/* line 388, ../../sass/dashboard/insights-dashboard.scss */
+/* line 469, ../../sass/dashboard/insights-dashboard.scss */
 div.datepicker th {
   text-align: center;
   color: #999;
   font-weight: normal;
 }
 
-/* line 393, ../../sass/dashboard/insights-dashboard.scss */
+/* line 474, ../../sass/dashboard/insights-dashboard.scss */
 div.datepicker tbody th {
   text-align: left;
 }
 
-/* line 396, ../../sass/dashboard/insights-dashboard.scss */
+/* line 477, ../../sass/dashboard/insights-dashboard.scss */
 div.datepicker tbody a {
   display: block;
 }
 
-/* line 399, ../../sass/dashboard/insights-dashboard.scss */
+/* line 480, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerDays a {
   width: 20px;
   line-height: 16px;
@@ -521,7 +643,7 @@ div.datepicker tbody a {
   padding-right: 2px;
 }
 
-/* line 406, ../../sass/dashboard/insights-dashboard.scss */
+/* line 487, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerYears a,
 .datepickerMonths a {
   width: 44px;
@@ -530,49 +652,49 @@ div.datepicker tbody a {
   text-align: center;
 }
 
-/* line 412, ../../sass/dashboard/insights-dashboard.scss */
+/* line 493, ../../sass/dashboard/insights-dashboard.scss */
 td.datepickerNotInMonth a {
   color: #666;
 }
 
-/* line 415, ../../sass/dashboard/insights-dashboard.scss */
+/* line 496, ../../sass/dashboard/insights-dashboard.scss */
 tbody.datepickerDays td.datepickerSelected {
   background: #136A9F;
 }
 
-/* line 418, ../../sass/dashboard/insights-dashboard.scss */
+/* line 499, ../../sass/dashboard/insights-dashboard.scss */
 tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
   background: #17384d;
 }
 
-/* line 422, ../../sass/dashboard/insights-dashboard.scss */
+/* line 503, ../../sass/dashboard/insights-dashboard.scss */
 tbody.datepickerYears td.datepickerSelected,
 tbody.datepickerMonths td.datepickerSelected {
   background: #17384d;
 }
 
-/* line 426, ../../sass/dashboard/insights-dashboard.scss */
+/* line 507, ../../sass/dashboard/insights-dashboard.scss */
 div.datepicker a:hover,
 div.datepicker a:hover {
   color: #88c5eb;
 }
 
-/* line 429, ../../sass/dashboard/insights-dashboard.scss */
+/* line 510, ../../sass/dashboard/insights-dashboard.scss */
 div.datepicker td.datepickerNotInMonth a:hover {
   color: #999;
 }
 
-/* line 432, ../../sass/dashboard/insights-dashboard.scss */
+/* line 513, ../../sass/dashboard/insights-dashboard.scss */
 div.datepicker tbody th {
   text-align: left;
 }
 
-/* line 435, ../../sass/dashboard/insights-dashboard.scss */
+/* line 516, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerSpace div {
   width: 20px;
 }
 
-/* line 440, ../../sass/dashboard/insights-dashboard.scss */
+/* line 521, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerGoNext a,
 .datepickerGoPrev a,
 .datepickerMonth a {
@@ -581,55 +703,55 @@ div.datepicker tbody th {
   line-height: 20px;
 }
 
-/* line 445, ../../sass/dashboard/insights-dashboard.scss */
+/* line 526, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerGoNext a {
   float: right;
   width: 20px;
 }
 
-/* line 449, ../../sass/dashboard/insights-dashboard.scss */
+/* line 530, ../../sass/dashboard/insights-dashboard.scss */
 .datepickerGoPrev a {
   float: left;
   width: 20px;
 }
 
-/* line 454, ../../sass/dashboard/insights-dashboard.scss */
+/* line 535, ../../sass/dashboard/insights-dashboard.scss */
 table.datepickerViewDays tbody.datepickerMonths,
 table.datepickerViewDays tbody.datepickerYears {
   display: none;
 }
 
-/* line 459, ../../sass/dashboard/insights-dashboard.scss */
+/* line 540, ../../sass/dashboard/insights-dashboard.scss */
 table.datepickerViewMonths tbody.datepickerDays,
 table.datepickerViewMonths tbody.datepickerYears,
 table.datepickerViewMonths tr.datepickerDoW {
   display: none;
 }
 
-/* line 464, ../../sass/dashboard/insights-dashboard.scss */
+/* line 545, ../../sass/dashboard/insights-dashboard.scss */
 table.datepickerViewYears tbody.datepickerDays,
 table.datepickerViewYears tbody.datepickerMonths,
 table.datepickerViewYears tr.datepickerDoW {
   display: none;
 }
 
-/* line 468, ../../sass/dashboard/insights-dashboard.scss */
+/* line 549, ../../sass/dashboard/insights-dashboard.scss */
 td.datepickerDisabled a,
 td.datepickerDisabled.datepickerNotInMonth a {
   color: #333;
 }
 
-/* line 471, ../../sass/dashboard/insights-dashboard.scss */
+/* line 552, ../../sass/dashboard/insights-dashboard.scss */
 td.datepickerDisabled a:hover {
   color: #333;
 }
 
-/* line 474, ../../sass/dashboard/insights-dashboard.scss */
+/* line 555, ../../sass/dashboard/insights-dashboard.scss */
 td.datepickerSpecial a {
   background: #700;
 }
 
-/* line 477, ../../sass/dashboard/insights-dashboard.scss */
+/* line 558, ../../sass/dashboard/insights-dashboard.scss */
 td.datepickerSpecial.datepickerSelected a {
   background: #a00;
 }

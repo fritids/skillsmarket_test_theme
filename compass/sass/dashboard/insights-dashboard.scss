@@ -14,14 +14,30 @@
 		ul {
 			padding: 0;
 			margin: 0;
+			@include pie-clearfix;
+
+			.widget {
+				background-color: $sm_orange_color;
+				@include border-radius(5px);
+				margin-right: 2.4em;
+				&:nth-child(3),
+				&:nth-child(4),
+				&:last-child {
+					margin-right: 0;
+				}
+			}
 
 			li {
 				@include inline-block;
-				width: columns(1,3);
-				min-width: 300px;
+				//width: columns(1,3);
+				max-width: 400px;
+				float: left;
+				@include pie-clearfix;
 
 				// Profile Views
 				&.widget_insights_profile_views {
+					width: 300px;
+					height: 400px;
 
 					#profile_views_chart {
 						.highcharts-legend {
@@ -32,6 +48,9 @@
 				}
 
 				&.widget_insights_number_students {
+					width: 300px;
+					height: 400px;
+
 					#ss_chart,
 					#ss_chart .highcharts-container {
 						@include border-top-left-radius(5px);
@@ -96,7 +115,6 @@
 				&.widget_insights_average_rating {
 					height: 210px;
 					width: 300px;
-					position: relative;
 
 					#widget-average-ratio {
 						@include border-radius(5px);
@@ -180,7 +198,8 @@
 				}
 
 				&.widget_insights_gender_ratio {
-					height: 168px;
+					height: 170px;
+					width: 300px;
 
 					#widget-gender-ratio {
 						@include border-radius(5px);
@@ -234,6 +253,8 @@
 
 				&.widget_insights_calendar {
 					height: 315px;
+					width: 300px;
+					clear: left;
 
 					#calendar {
 						width: 100%;
@@ -245,6 +266,9 @@
 				}
 
 				&.widget_insights_next_lesson {
+					width: 250px;
+					height: 315px;
+
 					#widget-next-lesson {
 						@include border-radius(5px);
 						background-color: $sm_widget_bg_color;
@@ -263,7 +287,7 @@
 
 						.widget-content {
 							#headshot {
-								margin: 20px auto 0;
+								margin: 10px auto 0;
 								overflow: hidden;
 								max-width: 150px;
 								max-height: 150px;
@@ -273,10 +297,67 @@
 							}
 							.details {
 								text-align: center;
-								padding: 20px 0;
+								padding: 10px 0;
 								font-size: 15px;
 								color: white;
 								font-weight: bold;
+							}
+						}
+					}
+				}
+
+				&.widget_insights_age_demographic {
+					width: 350px;
+					height: 315px;
+					@include pie-clearfix;
+
+					#age-demographic-chart {
+						width: 270px;
+						float: left;
+					}
+					.age-demographic-legend {
+						width: 75px;
+						height: 315px;
+						float: right;
+						background-color: #7f6c72;
+						@include border-top-right-radius(5px);
+						@include border-bottom-right-radius(5px);
+						position: relative;
+
+						.age {
+							height: 60px;
+							@include inline-block;
+							text-align: center;
+							width: 100%;
+							
+							&:first-child {
+								border-top: 3px solid #1e63bd;
+							}
+							&:nth-child(2) {
+								border-top: 3px solid #06121d;
+							}
+							&:nth-child(3) {
+								border-top: 3px solid #76a718;
+							}
+							&:nth-child(4) {
+								border-top: 3px solid #820000;
+							}
+							&:last-child {
+								border-top: 3px solid #19aacb;
+							}
+
+							> span {
+								display: block;
+								&.range {
+									color: #8f98b7;
+									font-weight: bold;
+									margin-top: 0.60em;
+								}
+								&.percent {
+									color: 	#f7f5f6;
+									font-size: 16px;
+									font-weight: bold;
+								}
 							}
 						}
 					}
