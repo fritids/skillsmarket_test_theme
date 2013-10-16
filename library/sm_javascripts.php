@@ -7,17 +7,14 @@ function sm_setup_scripts() {
 	$rtdir =    trailingslashit( get_template_directory_uri() ); // wp theme root dir
 	$jsdir =    $rtdir . 'library/js/'; // javascripts dir
 	$libdir =   $rtdir . 'library/'; // library dir
-	$flatuidir = $libdir . 'css/flat-ui-bootstrap/';
+	$flatuidir = $libdir . 'css/flat-ui-bootstrap/'; // flat UI dir
 
 	/////////////////////////////////////////////
 	/* Register all scripts first */
-	wp_register_script( 'skillsmarket-masonry', $jsdir . 'masonry.pkgd.js', array( 'jquery' ), null, false );
+	wp_register_script( 'modernizr', $jsdir . 'modernizr.custom.67578.js', array( 'jquery' ), null, false ); // Modernizr HTML & CSS detector
+	wp_register_script( 'skillsmarket-masonry', $jsdir . 'masonry.pkgd.js', array( 'jquery' ), null, false ); // Masonry layout
 	wp_register_script( 'insights-dashboard', $jsdir . 'dashboard/insights-dashboard.js', array( 'jquery' ), null, false ); // Insights Dashboard
 	wp_register_script( 'jquery-highcharts', $jsdir . 'Highcharts/js/highcharts.js', array( 'jquery' ), '3.0.6', false ); // Insights Dashboard
-	wp_register_script( 'datepicker', $jsdir . 'calendar/datepicker.js', array( 'jquery' ), null, false ); // Insights Dashboard
-	wp_register_script( 'datepicker-eye', $jsdir . 'calendar/eye.js', array( 'jquery' ), null, false ); // Insights Dashboard
-	wp_register_script( 'datepicker-utils', $jsdir . 'calendar/utils.js', array( 'jquery' ), null, false ); // Insights Dashboard
-	wp_register_script( 'datepicker-layout', $jsdir . 'calendar/layout.js', array( 'jquery' ), null, false ); // Insights Dashboard
 	wp_register_script( 'yui', $jsdir . 'calendar/yui-min.js', array( 'jquery' ), null, false ); // Yahoo! YUI framework
 	wp_register_script( 'blur', $jsdir . 'blur.min.js', array( 'jquery' ), null, false ); // jQuery blur effect
 
@@ -34,7 +31,7 @@ function sm_setup_scripts() {
 	wp_register_script( 'flat-application', $flatuidir . 'js/application.js', array( 'jquery' ), null, true );
 
 	/////////////////////////////////////////////
-	/* Enqueue all scripts here */
+	/* Enqueue all scripts & stylesheets here */
 
 	if( ! is_admin() ) {
 
@@ -46,17 +43,13 @@ function sm_setup_scripts() {
 				wp_enqueue_style( 'insights-dashboard', $rtdir . 'compass/stylesheets/dashboard/insights-dashboard.css', array(), '', 'screen' );
 
 				wp_enqueue_script( 'insights-dashboard' );
-				//wp_enqueue_script( 'blur' );
 				wp_enqueue_script( 'yui' );
 				wp_enqueue_script( 'jquery-masonry' );
 				wp_enqueue_script( 'jquery-highcharts' );
-				wp_enqueue_script( 'datepicker' );
-				wp_enqueue_script( 'datepicker-eye' );
-				wp_enqueue_script( 'datepicker-utils' );
-				wp_enqueue_script( 'datepicker-layout' );
 			}
 		}
 
+		wp_enqueue_script( 'modernizr' );
 		wp_enqueue_script( 'touch-punch' );
 		wp_enqueue_script( 'bootstrap-select' );
 		wp_enqueue_script( 'bootstrap-switch' );
@@ -75,4 +68,13 @@ function sm_setup_jquery() {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', "http://codeorigin.jquery.com/jquery-1.8.3.min.js", false, '1.8.3', false);
 	wp_enqueue_script('jquery');
+}
+
+if( !is_admin() ) add_action( 'init', 'register_skillsmarket_ajax' );
+
+function register_skillsmarket_ajax() {
+	wp_register_script( "skillsmarket-ajax", trailingslashit( get_template_directory_uri() ).'library/ajax/skillsmarket_ajax.js', array('jquery') );
+	wp_localize_script( 'skillsmarket-ajax', 'TheSkillsMarket_AJAX', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
+
+	wp_enqueue_script( 'skillsmarket-ajax' );
 }

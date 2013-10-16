@@ -100,17 +100,19 @@ jQuery(document).ready(function($) {
 	
 	$('.dropdown-toggle').dropdown();
 
-	$( '#masonry-container div.sm_widget' ).masonry( {
-		itemSelector: '.sm_widget',
-		columnWidth: 300,
-		gutterWidth: 10,
-		isAnimated: true,
-		animationOptions: {
-			duration: 500,
-			easing: 'linear',
-			queue: false
-		}
-	} );
+	if( $('body').hasClass('sm-dashboard') && $('body').hasClass('insights-dashboard') ) {
+		$( '#masonry-container div.sm_widget' ).masonry( {
+			itemSelector: '.sm_widget',
+			columnWidth: 300,
+			gutterWidth: 10,
+			isAnimated: true,
+			animationOptions: {
+				duration: 500,
+				easing: 'linear',
+				queue: false
+			}
+		} );
+	}
 
 	//$('.unavailable-widget').foggy();
  

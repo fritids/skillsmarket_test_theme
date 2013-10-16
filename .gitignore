@@ -1,8 +1,7 @@
 admin/themes/
 library/js/Highcharts/examples/
-library/js/Highcharts/examples/*
-compass/.sass-cache/
-compass/.sass-cache/*
+*examples/*
+*compass/.sass-cache/*
 
 .DS_Store
 Thumbs.db

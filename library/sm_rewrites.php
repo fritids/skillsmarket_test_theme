@@ -17,6 +17,8 @@ function add_hacks_rewrite_rules($aRules) {
 	  'hacks/?$' => 'index.php?hacks=1',
 	  'hacks/([^/]+)/?$' => 'index.php?hacks=1&hack_term=$matches[1]',
 	  'insights/?$' => 'index.php?sm_taxonomy=sm_dashboard&sm_term=insights',
+	  /* Test Geolocations here */
+	  'tests/([^/]+)/?$' => 'index.php?sm_taxonomy=testing_page&sm_term=geolocation'
 	);
 	$aRules = $aNewRules + $aRules;
 	return $aRules;

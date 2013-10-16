@@ -25,16 +25,17 @@ html[xmlns] .clearfix {
 }
 
 /* line 5, ../../sass/dashboard/insights-dashboard.scss */
-#insights-dashboard header {
+#insights-dashboard > header {
   height: 50px;
   line-height: 50px;
+  margin-bottom: 20px;
 }
-/* line 8, ../../sass/dashboard/insights-dashboard.scss */
-#insights-dashboard header h1 {
+/* line 9, ../../sass/dashboard/insights-dashboard.scss */
+#insights-dashboard > header h1 {
   font-family: 'Lobster', 'sans-serif';
   color: #dd8026;
 }
-/* line 16, ../../sass/dashboard/insights-dashboard.scss */
+/* line 17, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content .sm_widget.unavailable-widget {
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
@@ -47,7 +48,7 @@ html[xmlns] .clearfix {
   user-select: none;
   pointer-events: none;
 }
-/* line 25, ../../sass/dashboard/insights-dashboard.scss */
+/* line 26, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul {
   padding: 0;
   margin: 0;
@@ -59,7 +60,7 @@ html[xmlns] .clearfix {
   display: table;
   clear: both;
 }
-/* line 30, ../../sass/dashboard/insights-dashboard.scss */
+/* line 31, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul .widget {
   background-color: #dd8026;
   -webkit-border-radius: 5px;
@@ -67,11 +68,11 @@ html[xmlns] .clearfix {
   border-radius: 5px;
   margin-right: 2.4em;
 }
-/* line 36, ../../sass/dashboard/insights-dashboard.scss */
+/* line 37, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul .widget:nth-child(3), #insights-dashboard .dashboard-content ul .widget:nth-child(4), #insights-dashboard .dashboard-content ul .widget:last-child {
   margin-right: 0;
 }
-/* line 41, ../../sass/dashboard/insights-dashboard.scss */
+/* line 42, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li {
   display: -moz-inline-stack;
   display: inline-block;
@@ -89,21 +90,21 @@ html[xmlns] .clearfix {
   display: table;
   clear: both;
 }
-/* line 49, ../../sass/dashboard/insights-dashboard.scss */
+/* line 50, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views {
   width: 300px;
   height: 400px;
 }
-/* line 54, ../../sass/dashboard/insights-dashboard.scss */
+/* line 55, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views #profile_views_chart .highcharts-legend {
   width: 300px;
   height: 70px;
 }
-/* line 59, ../../sass/dashboard/insights-dashboard.scss */
+/* line 60, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views #profile_views_legend {
   background-color: #dd8026;
 }
-/* line 62, ../../sass/dashboard/insights-dashboard.scss */
+/* line 63, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views #profile_views_legend .city {
   text-align: center;
   background-color: #7f6c72;
@@ -121,49 +122,49 @@ html[xmlns] .clearfix {
   padding: 0;
   margin-right: 1px;
 }
-/* line 73, ../../sass/dashboard/insights-dashboard.scss */
+/* line 74, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views #profile_views_legend .city:last-child {
   margin-right: 0;
   width: 75px;
 }
-/* line 78, ../../sass/dashboard/insights-dashboard.scss */
+/* line 79, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views #profile_views_legend .city:first-child {
   border-top-color: #1e63bd;
 }
-/* line 81, ../../sass/dashboard/insights-dashboard.scss */
+/* line 82, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views #profile_views_legend .city:nth-child(2) {
   border-top-color: #06121d;
 }
-/* line 84, ../../sass/dashboard/insights-dashboard.scss */
+/* line 85, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views #profile_views_legend .city:nth-child(3) {
   border-top-color: #76a718;
 }
-/* line 87, ../../sass/dashboard/insights-dashboard.scss */
+/* line 88, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views #profile_views_legend .city:last-child {
   border-top-color: #820000;
 }
-/* line 91, ../../sass/dashboard/insights-dashboard.scss */
+/* line 92, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views #profile_views_legend .city > span {
   display: block;
 }
-/* line 93, ../../sass/dashboard/insights-dashboard.scss */
+/* line 94, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views #profile_views_legend .city > span.name {
   color: #8f98b7;
   font-weight: bold;
   margin-top: 0.75em;
 }
-/* line 98, ../../sass/dashboard/insights-dashboard.scss */
+/* line 99, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_profile_views #profile_views_legend .city > span.percent {
   color: #f7f5f6;
   font-size: 16px;
   font-weight: bold;
 }
-/* line 108, ../../sass/dashboard/insights-dashboard.scss */
+/* line 109, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students {
   width: 300px;
   height: 400px;
 }
-/* line 113, ../../sass/dashboard/insights-dashboard.scss */
+/* line 114, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_chart,
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_chart .highcharts-container {
   -moz-border-radius-topleft: 5px;
@@ -173,7 +174,7 @@ html[xmlns] .clearfix {
   -webkit-border-top-right-radius: 5px;
   border-top-right-radius: 5px;
 }
-/* line 117, ../../sass/dashboard/insights-dashboard.scss */
+/* line 118, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info {
   height: 200px;
   max-height: 200px;
@@ -185,11 +186,11 @@ html[xmlns] .clearfix {
   border-bottom-right-radius: 5px;
   background-color: #7f6c72;
 }
-/* line 124, ../../sass/dashboard/insights-dashboard.scss */
+/* line 125, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .btn-group {
   text-align: center;
 }
-/* line 128, ../../sass/dashboard/insights-dashboard.scss */
+/* line 129, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info a.btn {
   text-align: center;
   padding: 0 10px;
@@ -197,18 +198,18 @@ html[xmlns] .clearfix {
   display: inline-block;
   margin-top: 20px;
 }
-/* line 136, ../../sass/dashboard/insights-dashboard.scss */
+/* line 137, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .details {
   padding-top: 10px;
   width: 100%;
 }
-/* line 140, ../../sass/dashboard/insights-dashboard.scss */
+/* line 141, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .details .wrapper {
   width: 86%;
   margin: 0 7%;
   position: relative;
 }
-/* line 145, ../../sass/dashboard/insights-dashboard.scss */
+/* line 146, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .details .wrapper > section {
   display: block;
   float: none;
@@ -218,19 +219,19 @@ html[xmlns] .clearfix {
   font-size: 16px;
   font-weight: bold;
 }
-/* line 155, ../../sass/dashboard/insights-dashboard.scss */
+/* line 156, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .details .wrapper .month {
   color: white;
 }
-/* line 158, ../../sass/dashboard/insights-dashboard.scss */
+/* line 159, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .details .wrapper .year {
   color: #8b91ab;
 }
-/* line 161, ../../sass/dashboard/insights-dashboard.scss */
+/* line 162, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students #ss_detailed_info .details .wrapper .plus {
   color: #e54b65;
 }
-/* line 167, ../../sass/dashboard/insights-dashboard.scss */
+/* line 168, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_number_students .highcharts-legend {
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -239,12 +240,12 @@ html[xmlns] .clearfix {
   -webkit-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-/* line 173, ../../sass/dashboard/insights-dashboard.scss */
+/* line 174, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating {
   height: 210px;
   width: 300px;
 }
-/* line 177, ../../sass/dashboard/insights-dashboard.scss */
+/* line 178, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -254,7 +255,7 @@ html[xmlns] .clearfix {
   position: relative;
   width: 100%;
 }
-/* line 184, ../../sass/dashboard/insights-dashboard.scss */
+/* line 185, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio header {
   background-color: #7f6c72;
   -moz-border-radius-topleft: 5px;
@@ -268,14 +269,16 @@ html[xmlns] .clearfix {
   font-weight: bold;
   text-transform: uppercase;
   color: white;
+  height: 50px;
+  line-height: 50px;
 }
-/* line 195, ../../sass/dashboard/insights-dashboard.scss */
+/* line 198, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .widget-content {
   position: relative;
   width: 100%;
   height: 100%;
 }
-/* line 201, ../../sass/dashboard/insights-dashboard.scss */
+/* line 204, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .star-five {
   margin-top: 4em;
   margin-bottom: 0;
@@ -294,7 +297,7 @@ html[xmlns] .clearfix {
   -o-transform: rotate(35deg);
   transform: rotate(35deg);
 }
-/* line 215, ../../sass/dashboard/insights-dashboard.scss */
+/* line 218, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .star-five:before {
   top: -2.25em;
   left: -3.25em;
@@ -307,7 +310,7 @@ html[xmlns] .clearfix {
   -o-transform: rotate(-35deg);
   transform: rotate(-35deg);
 }
-/* line 224, ../../sass/dashboard/insights-dashboard.scss */
+/* line 227, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .star-five:before, #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .star-five:after {
   content: '';
   position: absolute;
@@ -316,7 +319,7 @@ html[xmlns] .clearfix {
   height: 0;
   z-index: -1;
 }
-/* line 233, ../../sass/dashboard/insights-dashboard.scss */
+/* line 236, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .star-five:after {
   top: 0.15em;
   left: -5.25em;
@@ -329,7 +332,7 @@ html[xmlns] .clearfix {
   -o-transform: rotate(-70deg);
   transform: rotate(-70deg);
 }
-/* line 242, ../../sass/dashboard/insights-dashboard.scss */
+/* line 245, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_average_rating #widget-average-ratio .star-five .rating {
   -webkit-transform: rotate(-35deg);
   -moz-transform: rotate(-35deg);
@@ -347,12 +350,12 @@ html[xmlns] .clearfix {
   font-size: 32px;
   color: white;
 }
-/* line 259, ../../sass/dashboard/insights-dashboard.scss */
+/* line 262, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio {
   height: 170px;
   width: 300px;
 }
-/* line 263, ../../sass/dashboard/insights-dashboard.scss */
+/* line 266, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -362,7 +365,7 @@ html[xmlns] .clearfix {
   position: relative;
   width: 100%;
 }
-/* line 270, ../../sass/dashboard/insights-dashboard.scss */
+/* line 273, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio header {
   background-color: #7f6c72;
   -moz-border-radius-topleft: 5px;
@@ -376,8 +379,10 @@ html[xmlns] .clearfix {
   font-weight: bold;
   text-transform: uppercase;
   color: white;
+  height: 50px;
+  line-height: 50px;
 }
-/* line 281, ../../sass/dashboard/insights-dashboard.scss */
+/* line 286, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content {
   height: 90px;
   padding: 10px;
@@ -390,7 +395,7 @@ html[xmlns] .clearfix {
   display: table;
   clear: both;
 }
-/* line 288, ../../sass/dashboard/insights-dashboard.scss */
+/* line 293, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .male,
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .female {
   display: -moz-inline-stack;
@@ -401,12 +406,12 @@ html[xmlns] .clearfix {
   *display: inline;
   width: 40%;
 }
-/* line 291, ../../sass/dashboard/insights-dashboard.scss */
+/* line 296, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .male img,
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .female img {
   height: 104px;
 }
-/* line 295, ../../sass/dashboard/insights-dashboard.scss */
+/* line 300, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .male span,
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .female span {
   padding: 0 10px;
@@ -418,25 +423,25 @@ html[xmlns] .clearfix {
   font-size: 16px;
   font-weight: bold;
 }
-/* line 304, ../../sass/dashboard/insights-dashboard.scss */
+/* line 309, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .male span {
   background-color: #13649c;
 }
-/* line 307, ../../sass/dashboard/insights-dashboard.scss */
+/* line 312, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_gender_ratio #widget-gender-ratio .widget-content .female span {
   background-color: #6e1992;
 }
-/* line 314, ../../sass/dashboard/insights-dashboard.scss */
+/* line 319, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_calendar {
   height: 315px;
   width: 300px;
   clear: left;
 }
-/* line 315, ../../sass/dashboard/insights-dashboard.scss */
+/* line 320, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_calendar * {
   outline: 0;
 }
-/* line 322, ../../sass/dashboard/insights-dashboard.scss */
+/* line 327, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_calendar #calendar {
   width: 300px;
   padding: 0 !important;
@@ -447,11 +452,11 @@ html[xmlns] .clearfix {
   background: none !important;
   background-color: #dd8026;
 }
-/* line 330, ../../sass/dashboard/insights-dashboard.scss */
+/* line 335, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_calendar #calendar .yui3-u-1 {
   margin: 0 10px;
 }
-/* line 334, ../../sass/dashboard/insights-dashboard.scss */
+/* line 339, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_calendar #calendar .yui3-calendar-header {
   padding-left: 0;
   padding-right: 0;
@@ -461,12 +466,24 @@ html[xmlns] .clearfix {
   line-height: 50px;
   background: #7f6c72;
   position: relative !important;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
-/* line 344, ../../sass/dashboard/insights-dashboard.scss */
+/* line 351, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_calendar #calendar .yui3-calendar-header .yui3-calendar-header-label {
   color: white;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
-/* line 348, ../../sass/dashboard/insights-dashboard.scss */
+/* line 357, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_calendar #calendar .yui3-calendar-header a.yui3-calendarnav-prevmonth {
   position: absolute;
   left: 20px;
@@ -482,12 +499,12 @@ html[xmlns] .clearfix {
   color: white;
   text-decoration: none;
 }
-/* line 358, ../../sass/dashboard/insights-dashboard.scss */
+/* line 367, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_calendar #calendar .yui3-calendar-header a.yui3-calendarnav-prevmonth span {
   color: white;
   display: block !important;
 }
-/* line 363, ../../sass/dashboard/insights-dashboard.scss */
+/* line 372, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_calendar #calendar .yui3-calendar-header a.yui3-calendarnav-nextmonth {
   position: absolute;
   right: 20px;
@@ -503,17 +520,17 @@ html[xmlns] .clearfix {
   color: white;
   text-decoration: none;
 }
-/* line 373, ../../sass/dashboard/insights-dashboard.scss */
+/* line 382, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_calendar #calendar .yui3-calendar-header a.yui3-calendarnav-nextmonth span {
   color: white;
   display: block !important;
 }
-/* line 386, ../../sass/dashboard/insights-dashboard.scss */
+/* line 395, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson {
   width: 250px;
   height: 315px;
 }
-/* line 390, ../../sass/dashboard/insights-dashboard.scss */
+/* line 399, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -522,7 +539,7 @@ html[xmlns] .clearfix {
   position: relative;
   width: 100%;
 }
-/* line 396, ../../sass/dashboard/insights-dashboard.scss */
+/* line 405, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson header {
   background-color: #7f6c72;
   -moz-border-radius-topleft: 5px;
@@ -536,21 +553,23 @@ html[xmlns] .clearfix {
   font-weight: bold;
   text-transform: uppercase;
   color: white;
+  height: 50px;
+  line-height: 50px;
 }
-/* line 408, ../../sass/dashboard/insights-dashboard.scss */
+/* line 419, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson .widget-content #headshot {
   margin: 10px auto 0;
   overflow: hidden;
   max-width: 150px;
   max-height: 150px;
 }
-/* line 413, ../../sass/dashboard/insights-dashboard.scss */
+/* line 424, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson .widget-content #headshot img {
   -webkit-border-radius: 75px;
   -moz-border-radius: 75px;
   border-radius: 75px;
 }
-/* line 417, ../../sass/dashboard/insights-dashboard.scss */
+/* line 428, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson .widget-content .details {
   text-align: center;
   padding: 10px 0;
@@ -558,18 +577,18 @@ html[xmlns] .clearfix {
   color: white;
   font-weight: bold;
 }
-/* line 424, ../../sass/dashboard/insights-dashboard.scss */
+/* line 435, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson .widget-content .details .title {
   margin-bottom: 5px;
 }
-/* line 429, ../../sass/dashboard/insights-dashboard.scss */
+/* line 440, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson .widget-content .details .date,
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson .widget-content .details .location,
 #insights-dashboard .dashboard-content ul li.widget_insights_next_lesson #widget-next-lesson .widget-content .details .subject {
   font-weight: 400;
   font-size: 13px;
 }
-/* line 438, ../../sass/dashboard/insights-dashboard.scss */
+/* line 449, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_age_demographic {
   width: 350px;
   height: 315px;
@@ -581,12 +600,12 @@ html[xmlns] .clearfix {
   display: table;
   clear: both;
 }
-/* line 443, ../../sass/dashboard/insights-dashboard.scss */
+/* line 454, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_age_demographic #age-demographic-chart {
   width: 270px;
   float: left;
 }
-/* line 447, ../../sass/dashboard/insights-dashboard.scss */
+/* line 458, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend {
   width: 75px;
   height: 315px;
@@ -600,7 +619,7 @@ html[xmlns] .clearfix {
   border-bottom-right-radius: 5px;
   position: relative;
 }
-/* line 456, ../../sass/dashboard/insights-dashboard.scss */
+/* line 467, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age {
   height: 60px;
   display: -moz-inline-stack;
@@ -612,37 +631,40 @@ html[xmlns] .clearfix {
   text-align: center;
   width: 100%;
 }
-/* line 462, ../../sass/dashboard/insights-dashboard.scss */
+/* line 473, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age:first-child {
   border-top: 3px solid #1e63bd;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
-/* line 465, ../../sass/dashboard/insights-dashboard.scss */
+/* line 477, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age:nth-child(2) {
   border-top: 3px solid #06121d;
 }
-/* line 468, ../../sass/dashboard/insights-dashboard.scss */
+/* line 480, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age:nth-child(3) {
   border-top: 3px solid #76a718;
 }
-/* line 471, ../../sass/dashboard/insights-dashboard.scss */
+/* line 483, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age:nth-child(4) {
   border-top: 3px solid #820000;
 }
-/* line 474, ../../sass/dashboard/insights-dashboard.scss */
+/* line 486, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age:last-child {
   border-top: 3px solid #19aacb;
 }
-/* line 478, ../../sass/dashboard/insights-dashboard.scss */
+/* line 490, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age > span {
   display: block;
 }
-/* line 480, ../../sass/dashboard/insights-dashboard.scss */
+/* line 492, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age > span.range {
   color: #8f98b7;
   font-weight: bold;
   margin-top: 0.60em;
 }
-/* line 485, ../../sass/dashboard/insights-dashboard.scss */
+/* line 497, ../../sass/dashboard/insights-dashboard.scss */
 #insights-dashboard .dashboard-content ul li.widget_insights_age_demographic .age-demographic-legend .age > span.percent {
   color: #f7f5f6;
   font-size: 16px;
@@ -655,43 +677,43 @@ Copyright 2013 Yahoo! Inc. All rights reserved.
 Licensed under the BSD License.
 http://yuilibrary.com/license/
 */
-/* line 506, ../../sass/dashboard/insights-dashboard.scss */
+/* line 518, ../../sass/dashboard/insights-dashboard.scss */
 tr th {
   text-align: center;
 }
 
-/* line 507, ../../sass/dashboard/insights-dashboard.scss */
+/* line 519, ../../sass/dashboard/insights-dashboard.scss */
 tr.yui3-calendar-weekdayrow {
   color: #ec3d68;
 }
 
-/* line 510, ../../sass/dashboard/insights-dashboard.scss */
+/* line 522, ../../sass/dashboard/insights-dashboard.scss */
 tr.yui3-calendar-row {
   color: #716d6e;
 }
 
-/* line 514, ../../sass/dashboard/insights-dashboard.scss */
+/* line 526, ../../sass/dashboard/insights-dashboard.scss */
 td.yui3-calendar-prevmonth-day,
 td.yui3-calendar-nextmonth-day {
   color: white !important;
 }
 
-/* line 517, ../../sass/dashboard/insights-dashboard.scss */
+/* line 529, ../../sass/dashboard/insights-dashboard.scss */
 table.yui3-calendar-grid {
   margin-top: 0.5em;
 }
 
-/* line 521, ../../sass/dashboard/insights-dashboard.scss */
+/* line 533, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-widget-hidden {
   display: none;
 }
 
-/* line 524, ../../sass/dashboard/insights-dashboard.scss */
+/* line 536, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-widget-content {
   overflow: hidden;
 }
 
-/* line 527, ../../sass/dashboard/insights-dashboard.scss */
+/* line 539, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-widget-content-expanded {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -700,12 +722,12 @@ table.yui3-calendar-grid {
   height: 100%;
 }
 
-/* line 533, ../../sass/dashboard/insights-dashboard.scss */
+/* line 545, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-widget-tmp-forcesize {
   overflow: hidden !important;
 }
 
-/* line 536, ../../sass/dashboard/insights-dashboard.scss */
+/* line 548, ../../sass/dashboard/insights-dashboard.scss */
 #yui3-css-stamp.skin-sam-widget-base {
   display: none;
 }
@@ -716,22 +738,22 @@ Copyright 2013 Yahoo! Inc. All rights reserved.
 Licensed under the BSD License.
 http://yuilibrary.com/license/
 */
-/* line 546, ../../sass/dashboard/insights-dashboard.scss */
+/* line 558, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendar-pane {
   width: 100%;
 }
 
-/* line 548, ../../sass/dashboard/insights-dashboard.scss */
+/* line 560, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendar-grid {
   width: 100%;
 }
 
-/* line 550, ../../sass/dashboard/insights-dashboard.scss */
+/* line 562, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendar-column-hidden, .yui3-calendar-hidden {
   display: none;
 }
 
-/* line 553, ../../sass/dashboard/insights-dashboard.scss */
+/* line 565, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-content {
   padding: 10px;
   color: #000;
@@ -748,25 +770,25 @@ http://yuilibrary.com/license/
   border-radius: 5px;
 }
 
-/* line 568, ../../sass/dashboard/insights-dashboard.scss */
+/* line 580, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-grid {
   padding: 5px;
   border-collapse: collapse;
 }
 
-/* line 572, ../../sass/dashboard/insights-dashboard.scss */
+/* line 584, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-header {
   padding-bottom: 10px;
 }
 
-/* line 575, ../../sass/dashboard/insights-dashboard.scss */
+/* line 587, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-header-label {
   margin: 0;
   font-size: 1em;
   font-weight: bold;
 }
 
-/* line 580, ../../sass/dashboard/insights-dashboard.scss */
+/* line 592, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-day, .yui3-skin-sam .yui3-calendar-prevmonth-day, .yui3-skin-sam .yui3-calendar-nextmonth-day {
   padding: 5px;
   border: 0;
@@ -774,7 +796,7 @@ http://yuilibrary.com/license/
   text-align: center;
 }
 
-/* line 586, ../../sass/dashboard/insights-dashboard.scss */
+/* line 598, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendar-day {
   height: 30px !important;
   -webkit-border-radius: 20px;
@@ -782,65 +804,65 @@ http://yuilibrary.com/license/
   border-radius: 20px;
 }
 
-/* line 590, ../../sass/dashboard/insights-dashboard.scss */
+/* line 602, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-day:hover {
   background-color: #ec3d68;
   color: white;
 }
 
-/* line 594, ../../sass/dashboard/insights-dashboard.scss */
+/* line 606, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-selection-disabled, .yui3-skin-sam .yui3-calendar-selection-disabled:hover {
   color: #a6a6a6;
   background: #ccc;
 }
 
-/* line 598, ../../sass/dashboard/insights-dashboard.scss */
+/* line 610, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-weekday {
   font-weight: bold;
 }
 
-/* line 601, ../../sass/dashboard/insights-dashboard.scss */
+/* line 613, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-prevmonth-day, .yui3-skin-sam .yui3-calendar-nextmonth-day {
   color: #a6a6a6;
 }
 
-/* line 604, ../../sass/dashboard/insights-dashboard.scss */
+/* line 616, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-day {
   font-weight: bold;
 }
 
-/* line 607, ../../sass/dashboard/insights-dashboard.scss */
+/* line 619, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-day-selected {
   background-color: #ec3d68;
   color: white;
 }
 
-/* line 611, ../../sass/dashboard/insights-dashboard.scss */
+/* line 623, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-header-label {
   text-align: center;
 }
 
-/* line 614, ../../sass/dashboard/insights-dashboard.scss */
+/* line 626, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-left-grid {
   margin-right: 1em;
 }
 
-/* line 617, ../../sass/dashboard/insights-dashboard.scss */
+/* line 629, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-right-grid {
   margin-left: 1em;
 }
 
-/* line 620, ../../sass/dashboard/insights-dashboard.scss */
+/* line 632, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-day-highlighted {
   background-color: #dcdef5;
 }
 
-/* line 623, ../../sass/dashboard/insights-dashboard.scss */
+/* line 635, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-day-selected.yui3-calendar-day-highlighted {
   background-color: #758fbb;
 }
 
-/* line 626, ../../sass/dashboard/insights-dashboard.scss */
+/* line 638, ../../sass/dashboard/insights-dashboard.scss */
 #yui3-css-stamp.skin-sam-calendar-base {
   display: none;
 }
@@ -851,28 +873,28 @@ Copyright 2013 Yahoo! Inc. All rights reserved.
 Licensed under the BSD License.
 http://yuilibrary.com/license/
 */
-/* line 636, ../../sass/dashboard/insights-dashboard.scss */
+/* line 648, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendar-header {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-/* line 640, ../../sass/dashboard/insights-dashboard.scss */
+/* line 652, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendar-header-label {
   width: 100%;
 }
 
-/* line 642, ../../sass/dashboard/insights-dashboard.scss */
+/* line 654, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendarnav-prevmonth {
   cursor: pointer;
 }
 
-/* line 645, ../../sass/dashboard/insights-dashboard.scss */
+/* line 657, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendarnav-nextmonth {
   cursor: pointer;
 }
 
-/* line 648, ../../sass/dashboard/insights-dashboard.scss */
+/* line 660, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendarnav-prevmonth, .yui3-skin-sam .yui3-calendarnav-nextmonth {
   color: #000;
   width: 12px;
@@ -880,36 +902,36 @@ http://yuilibrary.com/license/
   background-repeat: no-repeat;
 }
 
-/* line 655, ../../sass/dashboard/insights-dashboard.scss */
+/* line 667, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendarnav-prevmonth:hover, .yui3-skin-sam .yui3-calendarnav-nextmonth:hover {
   color: #06c;
 }
 
-/* line 659, ../../sass/dashboard/insights-dashboard.scss */
+/* line 671, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendarnav-month-disabled, .yui3-skin-sam .yui3-calendarnav-month-disabled:hover {
   cursor: default;
   color: #ccc;
 }
 
-/* line 664, ../../sass/dashboard/insights-dashboard.scss */
+/* line 676, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendarnav-prevmonth, .yui3-skin-sam .yui3-calendarnav-prevmonth:hover {
   background-position: 0 0;
   margin-left: -12px;
 }
 
-/* line 668, ../../sass/dashboard/insights-dashboard.scss */
+/* line 680, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendarnav-nextmonth, .yui3-skin-sam .yui3-calendarnav-nextmonth:hover {
   background-position: -12px 0;
   margin-right: -12px;
 }
 
-/* line 672, ../../sass/dashboard/insights-dashboard.scss */
+/* line 684, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendarnav-prevmonth span, .yui3-skin-sam .yui3-calendarnav-nextmonth span {
   display: none;
   *display: block;
 }
 
-/* line 676, ../../sass/dashboard/insights-dashboard.scss */
+/* line 688, ../../sass/dashboard/insights-dashboard.scss */
 #yui3-css-stamp.skin-sam-calendarnavigator {
   display: none;
 }
@@ -920,47 +942,47 @@ Copyright 2013 Yahoo! Inc. All rights reserved.
 Licensed under the BSD License.
 http://yuilibrary.com/license/
 */
-/* line 686, ../../sass/dashboard/insights-dashboard.scss */
+/* line 698, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendar-column-hidden, .yui3-calendar-hidden {
   display: none;
 }
 
-/* line 689, ../../sass/dashboard/insights-dashboard.scss */
+/* line 701, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendar-day {
   cursor: pointer;
 }
 
-/* line 692, ../../sass/dashboard/insights-dashboard.scss */
+/* line 704, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendar-selection-disabled {
   cursor: default;
 }
 
-/* line 695, ../../sass/dashboard/insights-dashboard.scss */
+/* line 707, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendar-prevmonth-day {
   cursor: default;
 }
 
-/* line 698, ../../sass/dashboard/insights-dashboard.scss */
+/* line 710, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendar-nextmonth-day {
   cursor: default;
 }
 
-/* line 701, ../../sass/dashboard/insights-dashboard.scss */
+/* line 713, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-calendar-content:hover .yui3-calendar-day, .yui3-calendar-content:hover .yui3-calendar-prevmonth-day, .yui3-calendar-content:hover .yui3-calendar-nextmonth-day {
   -moz-user-select: none;
 }
 
-/* line 704, ../../sass/dashboard/insights-dashboard.scss */
+/* line 716, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-day-highlighted {
   background-color: #dcdef5;
 }
 
-/* line 707, ../../sass/dashboard/insights-dashboard.scss */
+/* line 719, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-calendar-day-selected.yui3-calendar-day-highlighted {
   background-color: #758fbb;
 }
 
-/* line 710, ../../sass/dashboard/insights-dashboard.scss */
+/* line 722, ../../sass/dashboard/insights-dashboard.scss */
 #yui3-css-stamp.skin-sam-calendar {
   display: none;
 }
@@ -971,7 +993,7 @@ Copyright 2013 Yahoo! Inc. All rights reserved.
 Licensed under the BSD License.
 http://yuilibrary.com/license/
 */
-/* line 720, ../../sass/dashboard/insights-dashboard.scss */
+/* line 732, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-button {
   display: inline-block;
   *display: inline;
@@ -1016,14 +1038,14 @@ http://yuilibrary.com/license/
   transition: .1s linear box-shadow;
 }
 
-/* line 763, ../../sass/dashboard/insights-dashboard.scss */
+/* line 775, ../../sass/dashboard/insights-dashboard.scss */
 a.yui3-button {
   color: rgba(0, 0, 0, 0.8);
   color: #444;
   text-decoration: none;
 }
 
-/* line 768, ../../sass/dashboard/insights-dashboard.scss */
+/* line 780, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-button-hover, .yui3-button:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#26000000', GradientType=0);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.15)));
@@ -1034,7 +1056,7 @@ a.yui3-button {
   background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.15));
 }
 
-/* line 777, ../../sass/dashboard/insights-dashboard.scss */
+/* line 789, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-button-active, .yui3-button:active {
   border: inset 1px solid #999;
   border: none rgba(0, 0, 0, 0);
@@ -1050,7 +1072,7 @@ a.yui3-button {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 4px rgba(0, 0, 0, 0.3) inset;
 }
 
-/* line 791, ../../sass/dashboard/insights-dashboard.scss */
+/* line 803, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-button[disabled], .yui3-button-disabled, .yui3-button-disabled:hover, .yui3-button-disabled:active {
   cursor: default;
   background-image: none;
@@ -1064,23 +1086,23 @@ a.yui3-button {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset;
 }
 
-/* line 803, ../../sass/dashboard/insights-dashboard.scss */
+/* line 815, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-button-hidden {
   display: none;
 }
 
-/* line 806, ../../sass/dashboard/insights-dashboard.scss */
+/* line 818, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
 
-/* line 810, ../../sass/dashboard/insights-dashboard.scss */
+/* line 822, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-button:-moz-focusring {
   outline: thin dotted;
 }
 
-/* line 813, ../../sass/dashboard/insights-dashboard.scss */
+/* line 825, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-button-primary, .yui3-skin-sam .yui3-button-selected {
   background-color: #345fcb;
   color: #fff;
@@ -1089,12 +1111,12 @@ a.yui3-button {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 0 rgba(255, 255, 255, 0.17) inset, 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* line 820, ../../sass/dashboard/insights-dashboard.scss */
+/* line 832, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-sam .yui3-button:-moz-focusring {
   outline-color: rgba(0, 0, 0, 0.85);
 }
 
-/* line 823, ../../sass/dashboard/insights-dashboard.scss */
+/* line 835, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-night .yui3-button {
   border: 0;
   background-color: #343536;
@@ -1104,18 +1126,18 @@ a.yui3-button {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 2px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* line 831, ../../sass/dashboard/insights-dashboard.scss */
+/* line 843, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-night .yui3-button-primary, .yui3-skin-night .yui3-button-selected {
   background-color: #747576;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
-/* line 835, ../../sass/dashboard/insights-dashboard.scss */
+/* line 847, ../../sass/dashboard/insights-dashboard.scss */
 .yui3-skin-night .yui3-button:-moz-focusring {
   outline-color: rgba(255, 255, 255, 0.85);
 }
 
-/* line 838, ../../sass/dashboard/insights-dashboard.scss */
+/* line 850, ../../sass/dashboard/insights-dashboard.scss */
 #yui3-css-stamp.cssbutton {
   display: none;
 }

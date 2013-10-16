@@ -2,9 +2,10 @@
 @import "../partials/constants_and_mixins";
 
 #insights-dashboard {
-	header {
+	> header {
 		height: 50px;
 		line-height: 50px;
+		margin-bottom: 20px;
 		h1 {
 			font-family: 'Lobster', 'sans-serif';
 			color: $sm_orange_color;
@@ -190,6 +191,8 @@
 							font-weight: bold;
 							text-transform: uppercase;
 							color: white;
+							height: 50px;
+							line-height: 50px;
 						}
 
 						.widget-content { 
@@ -276,6 +279,8 @@
 							font-weight: bold;
 							text-transform: uppercase;
 							color: white;
+							height: 50px;
+							line-height: 50px;
 						}
 
 						.widget-content {
@@ -340,9 +345,13 @@
 							line-height: 50px;
 							background: #7f6c72;
 							position: relative!important;
+							@include border-top-left-radius(5px);
+							@include border-top-right-radius(5px);
 
 							.yui3-calendar-header-label {
 								color: white;
+								@include border-top-left-radius(5px);
+								@include border-top-right-radius(5px);
 							}
 
 							a.yui3-calendarnav-prevmonth {
@@ -402,6 +411,8 @@
 							font-weight: bold;
 							text-transform: uppercase;
 							color: white;
+							height: 50px;
+							line-height: 50px;
 						}
 
 						.widget-content {
@@ -461,6 +472,7 @@
 							
 							&:first-child {
 								border-top: 3px solid #1e63bd;
+								@include border-top-right-radius(5px);
 							}
 							&:nth-child(2) {
 								border-top: 3px solid #06121d;
