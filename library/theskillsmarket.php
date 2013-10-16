@@ -4,6 +4,7 @@ global $wp_query;
 
 $libdir = trailingslashit( get_template_directory() ) . 'library/';
 
+require_once( $libdir . 'ajax/skillsmarket_ajax.php' );
 require_once( $libdir . 'sm_rewrites.php' ); // Custom rewrite rules
 require_once( $libdir . 'sm_javascripts.php' ); // Javascripts
 require_once( $libdir . 'sm_body_classes.php' ); // Modify body classes
@@ -44,4 +45,16 @@ function sm_get_current_taxonomy() {
 	global $wp_query;
 
 	echo get_query_var( 'sm_taxonomy' );
+}
+
+function sm_curl_get($url){
+	$useragent = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; Media Center PC 4.0)';
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,$url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,5);
+	curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
+	$data=curl_exec($ch);
+	curl_close($ch);
+	return $data;
 }

@@ -1,0 +1,62 @@
+<?php
+
+/* AJAX file */
+
+add_action("wp_ajax_TEST_AJAX_Get_Country_Code", "TEST_AJAX_Get_Country_Code");
+add_action("wp_ajax_nopriv_TEST_AJAX_Get_Country_Code", "sm_you_must_login");
+function TEST_AJAX_Get_Country_Code() {
+	$longitude = $_POST['sm_long'];
+	$latitude = $_POST['sm_lat'];
+	$cc_check_url = 'http://ws.geonames.org/countryCode?lat='.$latitude.'&lng='.$longitude;
+	$nonce = $_POST['sm_nonce'];
+
+	if ( !wp_verify_nonce( $nonce, "test_ajax_get_country_code" ) ) {
+		exit( "No naughty business please" );
+	}
+
+	$htmlContent = sm_curl_get( $cc_check_url );
+
+	echo $htmlContent;
+
+	die();
+}
+
+add_action("wp_ajax_TEST_AJAX_Get_Geocode", "TEST_AJAX_Get_Geocode");
+add_action("wp_ajax_nopriv_TEST_AJAX_Get_Geocode", "sm_you_must_login");
+function TEST_AJAX_Get_Geocode() {
+	$from = $_POST['from'];
+
+	$geocode_json = sm_curl_get( $from );
+
+	$geocode = json_decode( $geocode_json );
+	$geo_status = $geocode->status;
+	if( $geo_status == 'OK' || strtolower( $geo_status ) == 'ok' ) {
+		$lat = $geocode->results[0]->geometry->location->lat;
+		$lng = $geocode->results[0]->geometry->location->lng;
+
+		$street_number = $geocode->results[0]->address_components[0]->long_name;
+		$street_name = $geocode->results[0]->address_components[1]->long_name;
+		$short_street_name = $geocode->results[0]->address_components[1]->short_name;
+		$administrative_area = $geocode->results[0]->address_components[2]->long_name;
+		$short_administrative_area = $geocode->results[0]->address_components[2]->short_name;
+		$country_name = $geocode->results[0]->address_components[3]->long_name;
+		$short_country_name = $geocode->results[0]->address_components[3]->short_name;
+		$city_name = $geocode->results[0]->address_components[5]->long_name;
+		$post_code = $geocode->results[1]->address_components[0]->long_name;
+
+		$geometry_lat = $geocode->results[0]->geometry->location->lat;
+		$geometry_lng = $geocode->results[0]->geometry->location->lng;
+
+		$formatted_address = $street_number . ' ' . $street_name . ', ' . $city_name . ' ' . $post_code . ', ' . $administrative_area . ', ' . $country_name;
+	}
+		
+	echo $formatted_address;
+
+	die();
+}
+
+/* Fallback function for not logged in */
+function sm_you_must_login() {
+	echo "You must log in to vote";
+	die();
+}

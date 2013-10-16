@@ -404,3 +404,17 @@ footer .wrapper .widget:last-child {
   margin: 0px;
   padding: 0px;
 }
+
+/* line 2, ../sass/partials/test/_geolocation.scss */
+body.sm-test-page.geolocation-test h1, body.sm-test-page.geolocation-test h2, body.sm-test-page.geolocation-test h3, body.sm-test-page.geolocation-test h4, body.sm-test-page.geolocation-test h5, body.sm-test-page.geolocation-test h6 {
+  font-family: 'Lobster', sans-serif;
+  color: #dd8026;
+}
+/* line 7, ../sass/partials/test/_geolocation.scss */
+body.sm-test-page.geolocation-test .locate_me #map-canvas {
+  border: 3px solid white;
+}
+/* line 11, ../sass/partials/test/_geolocation.scss */
+body.sm-test-page.geolocation-test #coordinates span {
+  color: white;
+}

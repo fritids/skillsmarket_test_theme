@@ -1,0 +1,14 @@
+body.sm-test-page.geolocation-test {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Lobster', sans-serif;
+		color: $sm_orange_color;
+	}
+	.locate_me {
+		#map-canvas {
+			border:3px solid white;
+		}
+	}
+	#coordinates span {
+		color: white;
+	}
+}
