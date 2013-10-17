@@ -65,18 +65,44 @@ function sm_setup_scripts() {
 
 	} // end if admin
 }
-if (!is_admin()) add_action("wp_enqueue_scripts", "sm_setup_jquery", 11);
+if (!is_admin())
+	add_action("wp_enqueue_scripts", "sm_setup_jquery", 11);
+
 function sm_setup_jquery() {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', "http://codeorigin.jquery.com/jquery-1.8.3.min.js", false, '1.8.3', false);
 	wp_enqueue_script('jquery');
 }
 
-if( !is_admin() ) add_action( 'init', 'register_skillsmarket_ajax' );
+/* Register custom AJAX functions */
+if( !is_admin() )
+	add_action( 'init', 'register_skillsmarket_geolocation_ajax' );
 
-function register_skillsmarket_ajax() {
-	wp_register_script( "skillsmarket-ajax", trailingslashit( get_template_directory_uri() ).'library/ajax/skillsmarket_ajax.js', array('jquery', 'google-maps') );
-	wp_localize_script( 'skillsmarket-ajax', 'TheSkillsMarket_AJAX', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
+function register_skillsmarket_geolocation_ajax() {
+	global $wp_query;
 
-	wp_enqueue_script( 'skillsmarket-ajax' );
+	$ajax_dir = trailingslashit( get_template_directory_uri() ).'library/ajax/';
+	// GEOLOCATION AJAX
+	wp_register_script( 'skillsmarket-ajax-geolocation', $ajax_dir . 'skillsmarket_ajax_geolocation.js', array('jquery', 'google-maps') );
+	wp_localize_script( 'skillsmarket-ajax-geolocation', 'TheSkillsMarket_GEO_LOCATION_AJAX', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+	wp_enqueue_script( 'skillsmarket-ajax-geolocation' );
+}
+
+// Execute the action only if the user isn't logged in
+if ( !is_user_logged_in() )
+	add_action('init', 'skillsmarket_ajax_login');
+
+function skillsmarket_ajax_login() {
+	global $wp_query;
+
+	$ajax_dir = trailingslashit( get_template_directory_uri() ).'library/ajax/';
+	// LOGIN AJAX
+	wp_register_script( 'skillsmarket-ajax-login', $ajax_dir . 'skillsmarket_ajax_login.js', array( 'jquery' ) );
+	wp_enqueue_script( 'skillsmarket-ajax-login' );
+
+	wp_localize_script( 'skillsmarket-ajax-login', 'TheSkillsMarket_LOGIN_AJAX', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		'redirecturl' => home_url().'/tests/login/',
+		'loadingmessage' => __( 'Sending user info, please wait...' ) ) );
 }

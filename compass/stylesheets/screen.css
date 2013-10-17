@@ -418,3 +418,35 @@ body.sm-test-page.geolocation-test .locate_me #map-canvas {
 body.sm-test-page.geolocation-test #coordinates span {
   color: white;
 }
+
+/* line 2, ../sass/partials/test/_login.scss */
+body.sm-test-page.login-test h1, body.sm-test-page.login-test h2, body.sm-test-page.login-test h3, body.sm-test-page.login-test h4, body.sm-test-page.login-test h5, body.sm-test-page.login-test h6 {
+  font-family: 'Lobster', sans-serif;
+  color: #dd8026;
+}
+/* line 6, ../sass/partials/test/_login.scss */
+body.sm-test-page.login-test form#login {
+  display: none;
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 200px;
+  padding: 40px 25px 25px 25px;
+  width: 350px;
+  z-index: 999;
+  left: 50%;
+  margin-left: -200px;
+}
+/* line 17, ../sass/partials/test/_login.scss */
+body.sm-test-page.login-test form#login p.status {
+  display: none;
+}
+/* line 22, ../sass/partials/test/_login.scss */
+body.sm-test-page.login-test .login_overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #F6F6F6;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+  position: fixed;
+  z-index: 998;
+}

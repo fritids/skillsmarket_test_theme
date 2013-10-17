@@ -1,0 +1,30 @@
+body.sm-test-page.login-test {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Lobster', sans-serif;
+		color: $sm_orange_color;
+	}
+	form#login{
+		display: none;
+		background-color: #FFFFFF;
+		position: fixed;
+		top: 200px;
+		padding: 40px 25px 25px 25px;
+		width: 350px;
+		z-index: 999;
+		left: 50%;
+		margin-left: -200px;
+
+		p.status{
+			display: none;
+		}
+	}
+
+	.login_overlay{
+		height: 100%;
+		width: 100%;
+		background-color: #F6F6F6;
+		@include opacity(0.9);
+		position: fixed;
+		z-index: 998;
+	}
+}

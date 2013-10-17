@@ -1,6 +1,6 @@
 jQuery.ajaxSetup({
    type: 'POST',
-   url: TheSkillsMarket_AJAX.ajaxurl,
+   url: TheSkillsMarket_GEO_LOCATION_AJAX.ajaxurl,
    global: false,
    type: "POST"
 });
@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
    if (navigator.geolocation) {
       var timeoutVal = 10 * 1000 * 1000;
       navigator.geolocation.getCurrentPosition(
-         sm_get_user_geolocation,
+         sm_get_user_geolocation_test,
          displayError, {
             enableHighAccuracy: true,
             timeout: timeoutVal,
@@ -29,35 +29,36 @@ jQuery(document).ready(function($) {
 var map, latlng;
 var geocoder = new google.maps.Geocoder();
 
-// Add Event Listener
-google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load', initialize); // Add Event Listener
 
 function initialize() {
    var mapOptions = {
       zoom: 10,
       mapTypeId: google.maps.MapTypeId.ROADMAP
    };
-   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+   if( jQuery('body').hasClass('geolocation-test') ) {
+      map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-   // Try HTML5 geolocation
-   if(navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-         var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-         latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      // Try HTML5 geolocation
+      if(navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-         var infowindow = new google.maps.InfoWindow({
-            map: map,
-            position: pos,
-            content: 'The SkillsMarket knows where you are mate...'
+            var infowindow = new google.maps.InfoWindow({
+               map: map,
+               position: pos,
+               content: 'The SkillsMarket knows where you are mate...'
+            });
+
+            map.setCenter(pos);
+         }, function() {
+            handleNoGeolocation(true);
          });
-
-         map.setCenter(pos);
-      }, function() {
-         handleNoGeolocation(true);
-      });
-   } else {
-      // Browser doesn't support Geolocation
-      handleNoGeolocation(false);
+      } else {
+         // Browser doesn't support Geolocation
+         handleNoGeolocation(false);
+      }
    }
 }
 
@@ -82,7 +83,7 @@ function handleNoGeolocation(errorFlag) {
 /* AJAX FUNCTIONS */
 
 /* Get user geo location details */
-function sm_get_user_geolocation(position) {
+function sm_get_user_geolocation_test(position) {
    var sm_lat = position.coords.latitude;
    var sm_long = position.coords.longitude;
    var nonce = jQuery('#wp_nonce').val();
@@ -102,6 +103,7 @@ function sm_get_user_geolocation(position) {
       }
    });
 }
+
 function displayError(error) {
    var errors = {
       1: 'Permission denied',
