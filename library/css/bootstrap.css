@@ -856,6 +856,7 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
+/*
 form {
   margin: 0 0 20px;
 }
@@ -980,7 +981,6 @@ input[type="color"]:focus,
   border-color: rgba(82, 168, 236, 0.8);
   outline: 0;
   outline: thin dotted \9;
-  /* IE6-9 */
 
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
   -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
@@ -990,10 +990,8 @@ input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
   *margin-top: 0;
-  /* IE7 */
 
   margin-top: 1px \9;
-  /* IE8-9 */
 
   line-height: normal;
 }
@@ -1009,10 +1007,8 @@ input[type="checkbox"] {
 select,
 input[type="file"] {
   height: 30px;
-  /* In IE7, the height of the select element cannot be changed by height, only font-size */
 
   *margin-top: 4px;
-  /* For IE7, add top margin to align select with labels */
 
   line-height: 30px;
 }
@@ -1410,7 +1406,6 @@ select:focus:invalid:focus {
 .help-inline {
   display: inline-block;
   *display: inline;
-  /* IE7 inline-block hack */
 
   *zoom: 1;
   vertical-align: middle;
@@ -1561,14 +1556,12 @@ input.search-query {
   padding-right: 4px \9;
   padding-left: 14px;
   padding-left: 4px \9;
-  /* IE7-8 doesn't have border-radius, so don't indent the padding */
 
   margin-bottom: 0;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
 }
-/* Allow for input prepend/append in search forms */
 .form-search .input-append .search-query,
 .form-search .input-prepend .search-query {
   -webkit-border-radius: 0;
@@ -1618,7 +1611,6 @@ input.search-query {
 .form-horizontal .input-append {
   display: inline-block;
   *display: inline;
-  /* IE7 inline-block hack */
 
   *zoom: 1;
   margin-bottom: 0;
@@ -1706,6 +1698,7 @@ legend + .control-group {
 .form-horizontal .form-actions {
   padding-left: 180px;
 }
+*/
 table {
   max-width: 100%;
   background-color: transparent;

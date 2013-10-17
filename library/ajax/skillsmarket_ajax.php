@@ -56,8 +56,9 @@ function TEST_AJAX_Get_Geocode() {
 }
 
 add_action("wp_ajax_SM_AJAX_Get_Geocode", "SM_AJAX_Get_Geocode");
-add_action("wp_ajax_nopriv_SM_AJAX_Get_Geocode", "sm_you_must_login");
+add_action("wp_ajax_nopriv_SM_AJAX_Get_Geocode", "SM_AJAX_Get_Geocode");
 function SM_AJAX_Get_Geocode() {
+
 	global $wp_query, $current_user;
 
 	$current_user = wp_get_current_user();
@@ -68,6 +69,7 @@ function SM_AJAX_Get_Geocode() {
 	$geocode_json = sm_curl_get( $from );
 
 	$geocode = json_decode( $geocode_json );
+
 	$geo_status = $geocode->status;
 	if( $geo_status == 'OK' || strtolower( $geo_status ) == 'ok' ) {
 		$lat = $geocode->results[0]->geometry->location->lat;
@@ -89,9 +91,32 @@ function SM_AJAX_Get_Geocode() {
 		$formatted_address = $street_number . ' ' . $street_name . ', ' . $city_name . ' ' . $post_code . ', ' . $administrative_area . ', ' . $country_name;
 	}
 		
-	echo $uer_id;
+	$json = json_encode(array(
+		'street_number' => $street_number,
+		'street_name' => array(
+			'short' => $short_street_name,
+			'long' => $street_name
+		),
+		'administrative_area' => array(
+			'short' => $short_administrative_area,
+			'long' => $administrative_area
+		),
+		'country_name' => array(
+			'short' => $short_country_name,
+			'long' => $country_name
+		),
+		'city_name' => $city_name,
+		'post_code' => $post_code,
+		'geometry' => array(
+			'lat' => $geometry_lat,
+			'lng' => $geometry_lng
+		),
+		'formatted_address' => $formatted_address,
+		'status' => $geo_status
+	));
 
-	die();
+	//echo ;
+	die($json);
 }
 
 add_action("wp_ajax_nopriv_SM_AJAX_User_Login", "SM_AJAX_User_Login");
@@ -120,55 +145,26 @@ function SM_AJAX_User_Login() {
 add_action( 'wp_ajax_SM_AJAX_User_Register', 'SM_AJAX_User_Register' );
 add_action( 'wp_ajax_nopriv_SM_AJAX_User_Register', 'SM_AJAX_User_Register' );
 function SM_AJAX_User_Register() {
-	$error = '';
+	$error = $msg = '';
 
 	$uname = trim( $_POST['username'] );
 	$email = trim( $_POST['mail_id'] );
 	$fname = trim( $_POST['firname'] );
 	$lname = trim( $_POST['lasname'] );
-	$pswrd = $_POST['passwrd'];
+	$role = $_POST['role'];
+	$geolocation = $_POST['geolocation'];
+	$geolocation = preg_replace('#<\?.*?(\?>|$)#s', '', $geolocation);
 
-	if( empty( $_POST['username'] ) )
-		$error .= '<p class="error">Enter Username</p>';
+	$user_id = username_exists( $uname );
+	if ( !$user_id and email_exists($email) == false ) {
 
-	if( empty( $_POST['mail_id'] ) )
-		$error .= '<p class="error">Enter Email Id</p>';
-	elseif( !filter_var( $email, FILTER_VALIDATE_EMAIL ) )
-		$error .= '<p class="error">Enter Valid Email</p>';
-
-	if( empty( $_POST['passwrd'] ) )
-		$error .= '<p class="error">Password should not be blank</p>';
-
-	if( empty( $_POST['firname'] ) )
-		$error .= '<p class="error">Enter First Name</p>';
-	elseif( !preg_match("/^[a-zA-Z'-]+$/",$fname) )
-		$error .= '<p class="error">Enter Valid First Name</p>';
-
-	if( empty( $_POST['lasname'] ) )
-		$error .= '<p class="error">Enter Last Name</p>';
-	elseif( !preg_match("/^[a-zA-Z'-]+$/",$lname) )
-		$error .= '<p class="error">Enter Valid Last Name</p>';
-
-	if( empty( $error ) ) {
-		$status = wp_create_user( $uname, $pswrd ,$email );
-
-		if( is_wp_error( $status ) ) {
-			$msg = '';
-
-			foreach( $status->errors as $key => $val ) {
-				foreach( $val as $k => $v ) {
-					$msg = '<p class="error">'.$v.'</p>';
-				}
-			}
-			echo $msg;
-		} else {
-			$msg = '<p class="success">Registration Successful</p>';
-			echo $msg;
-		}
+		$random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+		$user_id = wp_create_user( $uname, $random_password, $email );
+		
+		add_user_meta( $user_id, '_geolocation', $geolocation );
+		wp_update_user( array ( 'ID' => $user_id, 'role' => $role ) );
 	}
-	else {
-		echo $error;
-	}
+
 	die();
 }
 

@@ -456,3 +456,77 @@ body.sm-test-page.register-test h1, body.sm-test-page.register-test h2, body.sm-
   font-family: 'Lobster', sans-serif;
   color: #dd8026;
 }
+/* line 6, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test h2 {
+  text-align: center;
+}
+/* line 9, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test form {
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+  position: relative;
+}
+/* line 17, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test form .field {
+  margin-bottom: 20px;
+}
+/* line 19, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test form .field:last-child {
+  margin-bottom: 0;
+}
+/* line 24, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test form .field.role-select {
+  position: relative;
+}
+/* line 28, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test form .open > .dropdown-menu {
+  margin-top: 17px !important;
+  padding: 0 !important;
+}
+/* line 34, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test form input[type="text"],
+body.sm-test-page.register-test form input[type="password"] {
+  width: 100%;
+}
+/* line 37, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test form input[type="text"].error,
+body.sm-test-page.register-test form input[type="password"].error {
+  color: white;
+  border-color: #e74c3c;
+  background-color: #f3a8a0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 44, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test form .disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 52, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test form .frm-button {
+  padding-top: 20px;
+}
+/* line 56, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test form .ajax_loader {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  display: none;
+  content: url("../../library/img/fb_loader.gif");
+}

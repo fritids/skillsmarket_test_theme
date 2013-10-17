@@ -1,8 +1,7 @@
 jQuery.ajaxSetup({
    type: 'POST',
    url: TheSkillsMarket_GEO_LOCATION_AJAX.ajaxurl,
-   global: false,
-   type: "POST"
+   global: false
 });
 
 jQuery(document).ready(function($) {
