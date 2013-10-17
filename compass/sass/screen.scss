@@ -16,11 +16,12 @@
   @include susy-grid-background;
 }
 
-@import "compass/reset";
+@import "compass/reset"; // compass reset stylesheet
 
-@import "partials/imports";
-@import "partials/constants_and_mixins";
-@import "partials/general";
-@import "partials/googlemaps";
-@import "partials/test/geolocation";
-@import "partials/test/login";
+@import "partials/imports"; // all necessary compass imports
+@import "partials/constants_and_mixins"; // compass custom constants and mixins
+@import "partials/general"; // main stylesheet
+@import "partials/googlemaps"; // google maps stylesheet
+@import "partials/test/geolocation"; // geolocation page stylesheet (test)
+@import "partials/test/login"; // login page stylesheet (test)
+@import "partials/test/register"; // register page stylesheet (test)

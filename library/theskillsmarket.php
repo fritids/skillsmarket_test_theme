@@ -4,7 +4,6 @@ global $wp_query;
 
 $libdir = trailingslashit( get_template_directory() ) . 'library/';
 
-require_once( $libdir . 'Net_GeoIP/Net/GeoIP.php' ); // Geo Locator
 require_once( $libdir . 'ajax/skillsmarket_ajax.php' ); // AJAX
 
 require_once( $libdir . 'sm_user.php' ); // Custom User actions & Hooks

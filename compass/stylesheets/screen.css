@@ -450,3 +450,9 @@ body.sm-test-page.login-test .login_overlay {
   position: fixed;
   z-index: 998;
 }
+
+/* line 2, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test h1, body.sm-test-page.register-test h2, body.sm-test-page.register-test h3, body.sm-test-page.register-test h4, body.sm-test-page.register-test h5, body.sm-test-page.register-test h6 {
+  font-family: 'Lobster', sans-serif;
+  color: #dd8026;
+}
