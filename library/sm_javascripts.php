@@ -9,6 +9,8 @@ function sm_setup_scripts() {
 	$libdir =   $rtdir . 'library/'; // library dir
 	$flatuidir = $libdir . 'css/flat-ui-bootstrap/'; // flat UI dir
 
+	$ajax_dir = trailingslashit( get_template_directory_uri() ).'library/ajax/'; // AJAX dir
+
 	/////////////////////////////////////////////
 	/* Register all scripts first */
 	wp_register_script( 'modernizr', $jsdir . 'modernizr.custom.67578.js', array( 'jquery' ), null, false ); // Modernizr HTML & CSS detector
@@ -18,6 +20,11 @@ function sm_setup_scripts() {
 	wp_register_script( 'yui', $jsdir . 'calendar/yui-min.js', array( 'jquery' ), null, false ); // Yahoo! YUI framework
 	wp_register_script( 'blur', $jsdir . 'blur.min.js', array( 'jquery' ), null, false ); // jQuery blur effect
 	wp_register_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true', array( 'jquery' ), null, false ); // Google Maps API
+
+	/* Register AJAX */
+	wp_register_script( 'skillsmarket-ajax-geolocation', $ajax_dir . 'skillsmarket_ajax_geolocation.js', array('jquery', 'google-maps') );
+	wp_register_script( 'skillsmarket-ajax-login', $ajax_dir . 'skillsmarket_ajax_login.js', array( 'jquery' ) );
+	wp_register_script( 'skillsmarket-ajax-register', $ajax_dir . 'skillsmarket_ajax_register.js', array( 'jquery' ) );
 
 	## Register Flat UI here ##
 	wp_register_script( 'touch-punch', $flatuidir . 'js/jquery.ui.touch-punch.min.js', array( 'jquery' ), null, true );
@@ -38,6 +45,10 @@ function sm_setup_scripts() {
 
 		wp_enqueue_style( 'sm_style', $rtdir . 'compass/stylesheets/screen.css', array(), '', 'screen' );
 		wp_enqueue_style( 'flat-ui', $flatuidir . 'css/flat-ui.css', array(), '', 'screen' );
+
+		wp_enqueue_script( 'skillsmarket-ajax-geolocation' );
+		wp_enqueue_script( 'skillsmarket-ajax-login' );
+		wp_enqueue_script( 'skillsmarket-ajax-register' );
 
 		if( is_sm_dashboard() ) {
 			if( get_query_var('sm_term') == 'insights' ) {
@@ -65,43 +76,17 @@ function sm_setup_scripts() {
 
 	} // end if admin
 }
-if (!is_admin())
-	add_action("wp_enqueue_scripts", "sm_setup_jquery", 11);
-
-function sm_setup_jquery() {
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', "http://codeorigin.jquery.com/jquery-1.8.3.min.js", false, '1.8.3', false);
-	wp_enqueue_script('jquery');
-}
 
 /* Register custom AJAX functions */
-if( !is_admin() )
-	add_action( 'init', 'register_skillsmarket_geolocation_ajax' );
 
-function register_skillsmarket_geolocation_ajax() {
+function register_skillsmarket_ajax() {
 	global $wp_query;
 
 	$ajax_dir = trailingslashit( get_template_directory_uri() ).'library/ajax/';
 	// GEOLOCATION AJAX
-	wp_register_script( 'skillsmarket-ajax-geolocation', $ajax_dir . 'skillsmarket_ajax_geolocation.js', array('jquery', 'google-maps') );
-	wp_localize_script( 'skillsmarket-ajax-geolocation', 'TheSkillsMarket_GEO_LOCATION_AJAX', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+	wp_register_script( 'skillsmarket-ajax', $ajax_dir . 'skillsmarket_ajax.js', array('jquery', 'google-maps') );
+	wp_enqueue_script( 'skillsmarket-ajax' );
 
-	wp_enqueue_script( 'skillsmarket-ajax-geolocation' );
+	wp_localize_script( 'skillsmarket-ajax', 'SkillsMarket_AJAX', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 }
-
-add_action('init', 'skillsmarket_ajax_login');
-function skillsmarket_ajax_login() {
-	global $wp_query;
-
-	$ajax_dir = trailingslashit( get_template_directory_uri() ).'library/ajax/';
-	// LOGIN AJAX
-	wp_register_script( 'skillsmarket-ajax-login', $ajax_dir . 'skillsmarket_ajax_login.js', array( 'jquery' ) );
-	wp_enqueue_script( 'skillsmarket-ajax-login' );
-
-	wp_localize_script( 'skillsmarket-ajax-login', 'TheSkillsMarket_LOGIN_AJAX', array(
-		'ajaxurl' => admin_url( 'admin-ajax.php' ),
-		'redirecturl' => home_url().'/tests/login/',
-		'loadingmessage' => __( 'Sending user info, please wait...' ) ) );
-}
-
-
+add_action( 'init', 'register_skillsmarket_ajax' );

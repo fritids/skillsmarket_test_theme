@@ -1,10 +1,4 @@
-jQuery.ajaxSetup({
-   type: 'POST',
-   url: TheSkillsMarket_GEO_LOCATION_AJAX.ajaxurl,
-   global: false
-});
-
-jQuery(document).ready(function($) {
+$(document).ready(function() {
    
    // Try HTML5 geolocation
    if (navigator.geolocation) {
@@ -35,7 +29,7 @@ function initialize() {
       zoom: 10,
       mapTypeId: google.maps.MapTypeId.ROADMAP
    };
-   if( jQuery('body').hasClass('geolocation-test') ) {
+   if( $('body').hasClass('geolocation-test') ) {
       map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
       // Try HTML5 geolocation
@@ -85,13 +79,13 @@ function handleNoGeolocation(errorFlag) {
 function sm_get_user_geolocation_test(position) {
    var sm_lat = position.coords.latitude;
    var sm_long = position.coords.longitude;
-   var nonce = jQuery('#wp_nonce').val();
-   var ajax_loader = jQuery('span#ajax_loader.country_code');
+   var nonce = $('#wp_nonce').val();
+   var ajax_loader = $('span#ajax_loader.country_code');
    var maps_api_url = 'http://maps.googleapis.com/maps/api/geocode/json';
 
    ajax_loader.show();
 
-   jQuery.ajax({
+   $.ajax({
       data: {
          action: "TEST_AJAX_Get_Geocode",
          from: maps_api_url+"?latlng="+sm_lat+","+sm_long+"&sensor=false"

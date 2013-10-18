@@ -2,8 +2,6 @@
 
 /* AJAX file */
 
-add_action("wp_ajax_TEST_AJAX_Get_Country_Code", "TEST_AJAX_Get_Country_Code");
-add_action("wp_ajax_nopriv_TEST_AJAX_Get_Country_Code", "sm_you_must_login");
 function TEST_AJAX_Get_Country_Code() {
 	$longitude = $_POST['sm_long'];
 	$latitude = $_POST['sm_lat'];
@@ -20,9 +18,9 @@ function TEST_AJAX_Get_Country_Code() {
 
 	die();
 }
+add_action("wp_ajax_TEST_AJAX_Get_Country_Code", "TEST_AJAX_Get_Country_Code");
+add_action("wp_ajax_nopriv_TEST_AJAX_Get_Country_Code", "sm_you_must_login");
 
-add_action("wp_ajax_TEST_AJAX_Get_Geocode", "TEST_AJAX_Get_Geocode");
-add_action("wp_ajax_nopriv_TEST_AJAX_Get_Geocode", "sm_you_must_login");
 function TEST_AJAX_Get_Geocode() {
 	$from = $_POST['from'];
 
@@ -54,19 +52,22 @@ function TEST_AJAX_Get_Geocode() {
 
 	die();
 }
+add_action("wp_ajax_TEST_AJAX_Get_Geocode", "TEST_AJAX_Get_Geocode");
+add_action("wp_ajax_nopriv_TEST_AJAX_Get_Geocode", "sm_you_must_login");
 
-add_action("wp_ajax_SM_AJAX_Get_Geocode", "SM_AJAX_Get_Geocode");
-add_action("wp_ajax_nopriv_SM_AJAX_Get_Geocode", "SM_AJAX_Get_Geocode");
 function SM_AJAX_Get_Geocode() {
 
 	global $wp_query, $current_user;
 
 	$current_user = wp_get_current_user();
 
-	$from = $_POST['src'];
+	$from = $_REQUEST['src'];
 	$user_id = $current_user->ID;
 
 	$geocode_json = sm_curl_get( $from );
+
+	echo "kurwa macc";
+	die();
 
 	$geocode = json_decode( $geocode_json );
 
@@ -91,7 +92,7 @@ function SM_AJAX_Get_Geocode() {
 		$formatted_address = $street_number . ' ' . $street_name . ', ' . $city_name . ' ' . $post_code . ', ' . $administrative_area . ', ' . $country_name;
 	}
 		
-	$json = json_encode(array(
+	/*die(json_encode(array(
 		'street_number' => $street_number,
 		'street_name' => array(
 			'short' => $short_street_name,
@@ -113,13 +114,11 @@ function SM_AJAX_Get_Geocode() {
 		),
 		'formatted_address' => $formatted_address,
 		'status' => $geo_status
-	));
-
-	//echo ;
-	die($json);
+	)));*/
 }
+add_action("wp_ajax_SM_AJAX_Get_Geocode", "SM_AJAX_Get_Geocode");
+add_action("wp_ajax_nopriv_SM_AJAX_Get_Geocode", "SM_AJAX_Get_Geocode");
 
-add_action("wp_ajax_nopriv_SM_AJAX_User_Login", "SM_AJAX_User_Login");
 function SM_AJAX_User_Login() {
 	// First check the nonce, if it fails the function will break
 	check_ajax_referer( 'ajax-login-nonce', 'security' );
@@ -141,9 +140,8 @@ function SM_AJAX_User_Login() {
 
 	die();
 }
+add_action("wp_ajax_nopriv_SM_AJAX_User_Login", "SM_AJAX_User_Login");
 
-add_action( 'wp_ajax_SM_AJAX_User_Register', 'SM_AJAX_User_Register' );
-add_action( 'wp_ajax_nopriv_SM_AJAX_User_Register', 'SM_AJAX_User_Register' );
 function SM_AJAX_User_Register() {
 	$error = $msg = '';
 
@@ -152,9 +150,10 @@ function SM_AJAX_User_Register() {
 	$fname = trim( $_POST['firname'] );
 	$lname = trim( $_POST['lasname'] );
 	$role = $_POST['role'];
-	$geolocation = $_POST['geolocation'];
-	$geolocation = preg_replace('#<\?.*?(\?>|$)#s', '', $geolocation);
+	$geolocation = json_decode($_POST['geolocation']);
+	/*$geolocation = preg_replace('#<\?.*?(\?>|$)#s', '', $geolocation);*/
 
+	/*
 	$user_id = username_exists( $uname );
 	if ( !$user_id and email_exists($email) == false ) {
 
@@ -164,6 +163,8 @@ function SM_AJAX_User_Register() {
 		add_user_meta( $user_id, '_geolocation', $geolocation );
 		wp_update_user( array ( 'ID' => $user_id, 'role' => $role ) );
 	}
+	*/
+	echo maybe_serialize($_POST['geolocation']);
 
 	die();
 }
@@ -173,3 +174,6 @@ function sm_you_must_login() {
 	echo "You must log in";
 	die();
 }
+add_action( 'wp_ajax_SM_AJAX_User_Register', 'SM_AJAX_User_Register' );
+add_action( 'wp_ajax_nopriv_SM_AJAX_User_Register', 'SM_AJAX_User_Register' );
+?>

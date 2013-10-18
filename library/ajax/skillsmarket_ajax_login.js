@@ -1,10 +1,4 @@
-jQuery.ajaxSetup({
-   type: 'POST',
-   url: TheSkillsMarket_LOGIN_AJAX.ajaxurl,
-   global: false
-});
-
-jQuery(document).ready(function($) {
+$(document).ready(function() {
 
 	// Show the login dialog box on click
 	$('a#show_login').on('click', function(e){

@@ -13,7 +13,7 @@ require_once($libdir.'bones.php');            // core functions (don't remove)
 require_once($libdir.'plugins.php');          // plugins & extra functions (optional)
 
 // Options panel
-require_once($libdir.'options-panel.php');
+//require_once($libdir.'options-panel.php');
 
 // Shortcodes
 require_once($libdir.'shortcodes.php');
