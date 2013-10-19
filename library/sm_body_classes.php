@@ -20,5 +20,12 @@ function sm_modify_body_classes($wp_classes) {
 		$wp_classes[] = get_query_var( 'sm_term' ) . '-test';
 	endif;
 
+	foreach( $wp_classes as $key => $value ) {
+		if ( $value == 'custom-background' ) 
+			unset( $wp_classes[$key] );
+	}
+
 	return $wp_classes;
 }
+
+?>

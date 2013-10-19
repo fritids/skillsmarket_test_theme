@@ -1,5 +1,4 @@
-<!doctype html>  
-
+<!doctype html>
 <!--[if IEMobile 7 ]><html <?php language_attributes(); ?>class="no-js iem7"><![endif]-->
 <!--[if lt IE 7 ]><html <?php language_attributes(); ?> class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]><html <?php language_attributes(); ?> class="no-js ie7"> <![endif]-->
@@ -27,14 +26,13 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
 		<link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 		<link href="<?php echo get_template_directory_uri(); ?>/growth-hacks/css/jquery-ui.min.css" rel="stylesheet">
-  		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+
+		<script id="skills-market-ajax-js" type="text/javascript">var SkillsMarket_AJAX = { ajaxurl: '<?php echo admin_url( "admin-ajax.php" ); ?>' }</script>
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
-
-		<!-- typeahead plugin - if top nav search bar enabled -->
-		<?php require_once('library/typeahead.php'); ?>
 		
 		<script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
 

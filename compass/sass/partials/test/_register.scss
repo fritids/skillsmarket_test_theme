@@ -32,7 +32,9 @@ body.sm-test-page.register-test {
 
 		input[type="text"],
 		input[type="password"] {
-			width: 100%;
+			width: 472px;
+			padding-top: 0;
+			padding-bottom: 0;
 
 			&.error {
 				color: white;

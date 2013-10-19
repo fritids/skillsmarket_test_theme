@@ -10,7 +10,7 @@ URL: http://themble.com/bones/
 */
 
 // Adding Translation Option
-load_theme_textdomain( 'bonestheme', TEMPLATEPATH.'/languages' );
+load_theme_textdomain( 'skillsmarket', TEMPLATEPATH.'/languages' );
 $locale = get_locale();
 $locale_file = TEMPLATEPATH."/languages/$locale.php";
 if ( is_readable($locale_file) ) require_once($locale_file);
@@ -28,17 +28,22 @@ function bones_head_cleanup() {
 	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 ); // Links for Adjacent Posts
 	remove_action( 'wp_head', 'wp_generator' );                           // WP version
 }
-	// launching operation cleanup
-	add_action('init', 'bones_head_cleanup');
-	// remove WP version from RSS
-	function bones_rss_version() { return ''; }
-	add_filter('the_generator', 'bones_rss_version');
-	
+// launching operation cleanup
+add_action('init', 'bones_head_cleanup');
+
+// remove WP version from RSS
+function bones_rss_version() { return ''; }
+add_filter('the_generator', 'bones_rss_version');
+
 // loading jquery reply elements on single pages automatically
-function bones_queue_js(){ if (!is_admin()){ if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) wp_enqueue_script( 'comment-reply' ); }
+function bones_queue_js(){ 
+	if (!is_admin()){ 
+		if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) 
+			wp_enqueue_script( 'comment-reply' ); 
+	}
 }
-	// reply on comments script
-	add_action('wp_print_scripts', 'bones_queue_js');
+// reply on comments script
+add_action('wp_print_scripts', 'bones_queue_js');
 
 // Fixing the Read More in the Excerpts
 // This removes the annoying […] to a Read More link
@@ -79,14 +84,12 @@ function bones_theme_support() {
 	);	
 }
 
-	// launching this stuff after theme setup
-	add_action('after_setup_theme','bones_theme_support');	
-	// adding sidebars to Wordpress (these are created in functions.php)
-	add_action( 'widgets_init', 'bones_register_sidebars' );
-	// adding the bones search form (created in functions.php)
-	add_filter( 'get_search_form', 'bones_wpsearch' );
-	
-
+// launching this stuff after theme setup
+add_action('after_setup_theme','bones_theme_support');
+// adding sidebars to Wordpress (these are created in functions.php)
+add_action( 'widgets_init', 'bones_register_sidebars' );
+// adding the bones search form (created in functions.php)
+add_filter( 'get_search_form', 'bones_wpsearch' );
  
 function bones_main_nav() {
 	// display the wp3 menu if available

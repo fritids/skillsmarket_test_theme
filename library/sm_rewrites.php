@@ -23,3 +23,5 @@ function add_hacks_rewrite_rules($aRules) {
 	$aRules = $aNewRules + $aRules;
 	return $aRules;
 }
+
+?>

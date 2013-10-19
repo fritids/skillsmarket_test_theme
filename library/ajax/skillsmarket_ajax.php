@@ -66,9 +66,6 @@ function SM_AJAX_Get_Geocode() {
 
 	$geocode_json = sm_curl_get( $from );
 
-	echo "kurwa macc";
-	die();
-
 	$geocode = json_decode( $geocode_json );
 
 	$geo_status = $geocode->status;
@@ -92,7 +89,7 @@ function SM_AJAX_Get_Geocode() {
 		$formatted_address = $street_number . ' ' . $street_name . ', ' . $city_name . ' ' . $post_code . ', ' . $administrative_area . ', ' . $country_name;
 	}
 		
-	/*die(json_encode(array(
+	echo json_encode(array(
 		'street_number' => $street_number,
 		'street_name' => array(
 			'short' => $short_street_name,
@@ -114,7 +111,9 @@ function SM_AJAX_Get_Geocode() {
 		),
 		'formatted_address' => $formatted_address,
 		'status' => $geo_status
-	)));*/
+	));
+
+	die();
 }
 add_action("wp_ajax_SM_AJAX_Get_Geocode", "SM_AJAX_Get_Geocode");
 add_action("wp_ajax_nopriv_SM_AJAX_Get_Geocode", "SM_AJAX_Get_Geocode");
@@ -142,15 +141,19 @@ function SM_AJAX_User_Login() {
 }
 add_action("wp_ajax_nopriv_SM_AJAX_User_Login", "SM_AJAX_User_Login");
 
+add_action( 'wp_ajax_SM_AJAX_User_Register', 'SM_AJAX_User_Register' );
+add_action( 'wp_ajax_nopriv_SM_AJAX_User_Register', 'SM_AJAX_User_Register' );
 function SM_AJAX_User_Register() {
 	$error = $msg = '';
 
-	$uname = trim( $_POST['username'] );
-	$email = trim( $_POST['mail_id'] );
-	$fname = trim( $_POST['firname'] );
-	$lname = trim( $_POST['lasname'] );
-	$role = $_POST['role'];
-	$geolocation = json_decode($_POST['geolocation']);
+	$username = $_POST['username'];
+	$mail_id = $_POST['mail_id'];
+	$firstname = $_POST['firname'];
+	$lastname = $_POST['lasname'];
+	$user_role = $_POST['role'];
+	$latitude = $_POST['lat'];
+	$longitude =  $_POST['lng'];
+	$api =  $_POST['api'];
 	/*$geolocation = preg_replace('#<\?.*?(\?>|$)#s', '', $geolocation);*/
 
 	/*
@@ -164,8 +167,7 @@ function SM_AJAX_User_Register() {
 		wp_update_user( array ( 'ID' => $user_id, 'role' => $role ) );
 	}
 	*/
-	echo maybe_serialize($_POST['geolocation']);
-
+	echo $api;
 	die();
 }
 
@@ -174,6 +176,4 @@ function sm_you_must_login() {
 	echo "You must log in";
 	die();
 }
-add_action( 'wp_ajax_SM_AJAX_User_Register', 'SM_AJAX_User_Register' );
-add_action( 'wp_ajax_nopriv_SM_AJAX_User_Register', 'SM_AJAX_User_Register' );
 ?>

@@ -254,3 +254,5 @@ class Skills_Market_Footer_Supporters extends WP_Widget {
 	}
 
 } // class Social
+
+?>

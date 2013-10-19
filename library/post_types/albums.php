@@ -109,3 +109,5 @@ function albums_custom_help_tab() {
 
 }
 add_action('admin_head', 'albums_custom_help_tab');
+
+?>

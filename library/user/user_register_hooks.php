@@ -16,3 +16,5 @@ function skillsmarket_user_metadata( $user_id ) {
 }
 add_action( 'user_register', 'skillsmarket_user_metadata' );
 add_action( 'profile_update', 'skillsmarket_user_metadata' );
+
+?>

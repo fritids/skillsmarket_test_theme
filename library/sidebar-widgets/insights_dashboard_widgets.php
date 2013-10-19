@@ -440,3 +440,5 @@ class Insights_Age_Demographic extends WP_Widget {
 	}
 
 } // class Age Demographic
+
+?>

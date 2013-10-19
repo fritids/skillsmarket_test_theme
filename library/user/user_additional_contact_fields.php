@@ -8,3 +8,5 @@ function sm_modify_contact_methods($profile_fields) {
 	return $profile_fields;
 }
 add_filter('user_contactmethods', 'sm_modify_contact_methods');
+
+?>

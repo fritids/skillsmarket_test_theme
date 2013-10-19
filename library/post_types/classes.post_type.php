@@ -109,3 +109,5 @@ function classes_custom_help_tab() {
 
 }
 add_action('admin_head', 'classes_custom_help_tab');
+
+?>

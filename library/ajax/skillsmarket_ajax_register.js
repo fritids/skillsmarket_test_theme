@@ -10,36 +10,51 @@ $(document).ready(function() {
 			$(this).addClass('error');
 	});
 
-	$('a#register').on('click', function(e) {
+	var map, latlng;
+	var geocoder = new google.maps.Geocoder();
+
+	/** Let's try to geolocate new user **/
+	// Try HTML5 geolocation
+	if (navigator.geolocation) {
+
+		var timeoutVal = 10 * 1000 * 1000;
+		var options = {
+			enableHighAccuracy: true,
+			timeout: timeoutVal,
+			maximumAge: 0
+		};
+		navigator.geolocation.getCurrentPosition(
+			sm_get_user_geolocation,
+			sm_display_error,
+			options
+		);
+	}
+	else {
+		sm_set_user_no_geolocation();
+	}
+
+	$('a#register').on( 'click', function(e) {
+		var nonce = $('#wp_nonce').val();
+		var ajax_loader = $('span#ajax_loader');
+		var gmapi_url = $('input#gmapi').val();
+		var geolocation=null;
+
+		// run loader
 		ajax_loader.show();
-		e.preventDefault();
 
-		/* Add Coordinates */
-		var map, latlng;
-		var geocoder = new google.maps.Geocoder();
+		var has_geo = parseInt( $('input#has_user_geo').val() );
+		var lat_inp = $('input#user_lat').val();
+		var lng_inp = $('input#user_lng').val();
+		var gmapi = $('input#gmapi').val();
 
-		/** Let's try to geolocate new user **/
-		// Try HTML5 geolocation
-		if (navigator.geolocation) {
-			
-			$('span.ajax_action').html('Geolocating you');
+		$('span.ajax_action').html('Registering you');
 
-			var timeoutVal = 10 * 1000 * 1000;
-			var options = {
-				enableHighAccuracy: true,
-				timeout: timeoutVal,
-				maximumAge: 0
-			};
-			navigator.geolocation.getCurrentPosition(
-				sm_get_user_geolocation,
-				sm_display_error,
-				options
-			);
-		}
-		else {
-			//skillsmarket_register_new_user_no_geo();
-			alert('No Geo');
-		}
+		if( has_geo == 1 )
+			skillsmarket_register_new_user( lat_inp, lng_inp, gmapi );
+		else
+			skillsmarket_register_new_user_no_geo();
+
+		e.preventDefault(); // prevent reloading page
 	});
 });
 
@@ -47,34 +62,33 @@ $(document).ready(function() {
 function sm_get_user_geolocation(position) {
 	var sm_lat = position.coords.latitude;
 	var sm_long = position.coords.longitude;
-
-	var nonce = $('#wp_nonce').val();
-	var ajax_loader = $('span#ajax_loader');
 	var maps_api_url = 'http://maps.googleapis.com/maps/api/geocode/json';
-	var geolocation=null;
 
-	ajax_loader.show();
+	var has_geo = $('input#has_user_geo');
+	var lat_inp = $('input#user_lat');
+	var lng_inp = $('input#user_lng');
+	var gmapi = $('input#gmapi');
 
-	$.ajax({
-		dateType: "json",
-		data: {
-			action: "SM_AJAX_Get_Geocode",
-			src: maps_api_url+"?latlng="+sm_lat+","+sm_long+"&sensor=false"
-		},
-		success: function(geolocation) {
-			$('span.ajax_action').html('Registering you');
-			if( geolocation ) {
-				ajax_loader.hide();
-				alert(geolocation);
-			}
-			else {
-				alert('I wasn\'t able to locate you. Click OK to continue registration.');
-				skillsmarket_register_new_user_no_geo();
-			}
-		}
-	});
+	has_geo.val(1);
+	lat_inp.val(sm_lat);
+	lng_inp.val(sm_long);
+	gmapi.val(maps_api_url+"?latlng="+sm_lat+","+sm_long+"&sensor=false");
 }
 
+/* Set user with no geolocation */
+function sm_set_user_no_geolocation() {
+	var has_geo = $('input#has_user_geo');
+	var lat_inp = $('input#user_lat');
+	var lng_inp = $('input#user_lng');
+	var gmapi = $('input#gmapi');
+
+	has_geo.val(0);
+	lat_inp.val(null);
+	lng_inp.val(null);
+	gmapi.val(null);
+}
+
+/* Display error */
 function sm_display_error(error) {
 	var errors = {
 		1: 'Permission denied',
@@ -84,7 +98,8 @@ function sm_display_error(error) {
 	alert("Error: " + errors[error.code]);
 }
 
-function skillsmarket_register_new_user(geolocation) {
+/* Register new user at The Skills Market with geolocation */
+function skillsmarket_register_new_user(latitude, longitude, map_api) {
 	var error_counter = 0;
 	var ajax_loader = $('span.ajax_loader.register_loader');
 	var action = 'SM_AJAX_User_Register';
@@ -93,7 +108,6 @@ function skillsmarket_register_new_user(geolocation) {
 	var firname = $("#st-fname").val() || null;
 	var lasname = $("#st-lname").val() || null;
 	var role = $("#st-role").val() || null;
-	var passwrd = $("#st-psw").val() || null;
 
 	/* Disable submit button if errors */
 	if( username == null || mail_id == null || firname == null || lasname == null || role == null ) {
@@ -135,7 +149,9 @@ function skillsmarket_register_new_user(geolocation) {
 		firname: firname,
 		lasname: lasname,
 		role: role,
-		geolocation: geolocation
+		lat: latitude,
+		lng: longitude,
+		api: map_api
 	};
 
 	/* Post AJAX request and see what happens */
@@ -143,7 +159,7 @@ function skillsmarket_register_new_user(geolocation) {
 		data: ajaxdata,
 		success: function(results) {
 			ajax_loader.hide();
-			$("span.ajax_action").html(results);
+			alert(results);
 		},
 		error: function(xhr, textStatus, erorrThrown) {
 			ajax_loader.hide();

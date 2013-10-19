@@ -339,7 +339,3 @@ function wpbs_refresh_themes() {
 
 	die(); // this is required to return a proper result
 }
-
-
-
-?>

@@ -1,7 +1,5 @@
 <?php
 
-require_once('lib/user-roles.php');
-
 require_once('lib/user-growth-hacks-options.php');
 
 require_once('lib/javascripts.php');

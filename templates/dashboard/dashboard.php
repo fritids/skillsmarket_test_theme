@@ -11,3 +11,5 @@ if ( 0 == $current_user->ID ) {
 	$dashboard_type = get_query_var('sm_term');
 	get_template_part( 'templates/dashboard/' . $dashboard_type );
 }
+
+?>

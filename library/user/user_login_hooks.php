@@ -17,3 +17,5 @@ function skillsmarket_redirect_after_login() {
 		return admin_url();
 }
 add_filter('login_redirect', 'skillsmarket_redirect_after_login');
+
+?>
