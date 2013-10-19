@@ -33,6 +33,16 @@ $(document).ready(function() {
 		sm_set_user_no_geolocation();
 	}
 
+	$('#st-username').on('keypress', function (e) {
+		if (e.which == 32) { //space bar
+			e.preventDefault();
+		}
+		var valid = (e.which >= 48 && e.which <= 57) || (e.which >= 65 && e.which <= 90) || (e.which >= 97 && e.which <= 122);
+		if (!valid) {
+			e.preventDefault();
+		}
+	});
+
 	$('a#register').on( 'click', function(e) {
 		var nonce = $('#wp_nonce').val();
 		var ajax_loader = $('span#ajax_loader');
@@ -41,6 +51,8 @@ $(document).ready(function() {
 
 		// run loader
 		ajax_loader.show();
+		$('#ajx_response_dialog').find('h4').html('We\'re locating you...');
+		$('#ajx_response_dialog').fadeIn(300);
 
 		var has_geo = parseInt( $('input#has_user_geo').val() );
 		var lat_inp = $('input#user_lat').val();
@@ -49,8 +61,11 @@ $(document).ready(function() {
 
 		$('span.ajax_action').html('Registering you');
 
-		if( has_geo == 1 )
+		if( has_geo == 1 ) {
+			$('#ajx_response_dialog').find('h4').html('Creating new user...');
+			$('#ajx_response_dialog').fadeIn(300);
 			skillsmarket_register_new_user( lat_inp, lng_inp, gmapi );
+		}
 		else
 			skillsmarket_register_new_user_no_geo();
 
@@ -155,11 +170,18 @@ function skillsmarket_register_new_user(latitude, longitude, map_api) {
 	};
 
 	/* Post AJAX request and see what happens */
+	$('a#register').addClass('disabled'); // disable button
 	$.ajax({
 		data: ajaxdata,
 		success: function(results) {
 			ajax_loader.hide();
-			alert(results);
+			$('a#register').removeClass('disabled btn-danger').addClass('btn-success');
+			$('#ajx_response_dialog').find('h4').html('New user created!');
+			$('#ajx_response_dialog').fadeIn(300);
+			setTimeout(function(){ 
+				$('#ajx_response_dialog').fadeOut();
+				location.reload();
+			}, 3000);
 		},
 		error: function(xhr, textStatus, erorrThrown) {
 			ajax_loader.hide();

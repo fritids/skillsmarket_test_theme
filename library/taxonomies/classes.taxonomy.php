@@ -25,6 +25,12 @@ function add_custom_taxonomies() {
 			'new_item_name' => __( 'New Class type Name' ),
 			'menu_name' => __( 'Class types' ),
 		),
+		'capabilities' => array(
+			'manage_terms'=> 'manage_class_types',
+			'edit_terms'=> 'manage_class_types',
+			'delete_terms'=> 'manage_class_types',
+			'assign_terms' => 'read'
+		),
 		'show_ui' => true,
 		'query_var' => 'class-type',
 		// Control the slugs used for this taxonomy

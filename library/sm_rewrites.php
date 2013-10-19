@@ -16,7 +16,11 @@ function add_hacks_rewrite_rules($aRules) {
 	$aNewRules = array(
 	  'hacks/?$' => 'index.php?hacks=1',
 	  'hacks/([^/]+)/?$' => 'index.php?hacks=1&hack_term=$matches[1]',
+	  /* Dashboard */
 	  'insights/?$' => 'index.php?sm_taxonomy=sm_dashboard&sm_term=insights',
+	  /* Profiles */
+	  'profile/?$' => 'index.php?sm_taxonomy=sm_profile&sm_term=my-profile',
+	  'profile/([^/]+)/?$' => 'index.php?sm_taxonomy=sm_profile&sm_term=$matches[1]',
 	  /* Test Geolocations here */
 	  'tests/([^/]+)/?$' => 'index.php?sm_taxonomy=testing_page&sm_term=$matches[1]'
 	);

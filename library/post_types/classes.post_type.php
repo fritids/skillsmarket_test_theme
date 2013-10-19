@@ -7,7 +7,7 @@ function register_custom_post_type_clases() {
 		'add_new_item'       => 'Add New Class',
 		'edit_item'          => 'Edit Class',
 		'new_item'           => 'New Class',
-		'all_items'          => 'All Classs',
+		'all_items'          => 'All Classes',
 		'view_item'          => 'View Class',
 		'search_items'       => 'Search Classes',
 		'not_found'          => 'No classes found',

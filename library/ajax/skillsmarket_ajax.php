@@ -147,27 +147,30 @@ function SM_AJAX_User_Register() {
 	$error = $msg = '';
 
 	$username = $_POST['username'];
-	$mail_id = $_POST['mail_id'];
+	$email = $_POST['mail_id'];
 	$firstname = $_POST['firname'];
 	$lastname = $_POST['lasname'];
 	$user_role = $_POST['role'];
 	$latitude = $_POST['lat'];
 	$longitude =  $_POST['lng'];
 	$api =  $_POST['api'];
-	/*$geolocation = preg_replace('#<\?.*?(\?>|$)#s', '', $geolocation);*/
 
-	/*
-	$user_id = username_exists( $uname );
-	if ( !$user_id and email_exists($email) == false ) {
+	$geolocation = sm_curl_get( $api );
+	$geolocation = json_decode( $geolocation );
+	$geolocation = maybe_serialize( $geolocation );
+	
+	$user_id = username_exists( $username );
+	if ( !$user_id and email_exists( $email ) == false ) {
 
 		$random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
-		$user_id = wp_create_user( $uname, $random_password, $email );
+		$user_id = wp_create_user( $username, $random_password, $email );
 		
 		add_user_meta( $user_id, '_geolocation', $geolocation );
-		wp_update_user( array ( 'ID' => $user_id, 'role' => $role ) );
+		wp_update_user( array ( 'ID' => $user_id, 'role' => $user_role ) );
 	}
-	*/
-	echo $api;
+
+	echo "1";
+
 	die();
 }
 

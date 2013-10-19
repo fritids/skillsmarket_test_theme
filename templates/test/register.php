@@ -45,11 +45,17 @@
 						<input type="hidden" id="user_lng">
 						<input type="hidden" id="gmapi">
 					</div>
+
 					<a href="#" class="btn btn-block btn-lg btn-danger" id="register">Register</a>
 					<span class="ajax_loader register_loader"></span>
 					<span class="ajax_action"></span>
 				</div>
 			</form>
 		</div>
+	</div>
+</div>
+<div id="ajx_response_dialog" class="modal">
+	<div class="wrapper">
+		<h4>User has successfully created</h4>
 	</div>
 </div>

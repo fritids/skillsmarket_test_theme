@@ -461,6 +461,42 @@ body.sm-test-page.register-test h2 {
   text-align: center;
 }
 /* line 9, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test #ajx_response_dialog {
+  display: none;
+  position: absolute;
+  width: 400px;
+  height: 100px;
+  top: 50%;
+  margin-top: -50px;
+  left: 50%;
+  margin-left: -200px;
+  background-color: #333;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 30px rgba(4, 4, 4, 0.7);
+  -moz-box-shadow: 0 0 30px rgba(4, 4, 4, 0.7);
+  box-shadow: 0 0 30px rgba(4, 4, 4, 0.7);
+}
+/* line 22, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test #ajx_response_dialog .wrapper {
+  text-align: center;
+  width: 100%;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+/* line 26, ../sass/partials/test/_register.scss */
+body.sm-test-page.register-test #ajx_response_dialog .wrapper h4 {
+  margin: 0;
+  padding: 0;
+  line-height: 100px;
+  text-shadow: 0 1px 0 #9e5a19;
+}
+/* line 34, ../sass/partials/test/_register.scss */
 body.sm-test-page.register-test form {
   margin: 0;
   padding: 0;
@@ -469,29 +505,31 @@ body.sm-test-page.register-test form {
   width: 500px;
   position: relative;
 }
-/* line 17, ../sass/partials/test/_register.scss */
+/* line 42, ../sass/partials/test/_register.scss */
 body.sm-test-page.register-test form .field {
   margin-bottom: 20px;
 }
-/* line 19, ../sass/partials/test/_register.scss */
+/* line 44, ../sass/partials/test/_register.scss */
 body.sm-test-page.register-test form .field:last-child {
   margin-bottom: 0;
 }
-/* line 24, ../sass/partials/test/_register.scss */
+/* line 49, ../sass/partials/test/_register.scss */
 body.sm-test-page.register-test form .field.role-select {
   position: relative;
 }
-/* line 28, ../sass/partials/test/_register.scss */
+/* line 53, ../sass/partials/test/_register.scss */
 body.sm-test-page.register-test form .open > .dropdown-menu {
   margin-top: 17px !important;
   padding: 0 !important;
 }
-/* line 34, ../sass/partials/test/_register.scss */
+/* line 59, ../sass/partials/test/_register.scss */
 body.sm-test-page.register-test form input[type="text"],
 body.sm-test-page.register-test form input[type="password"] {
-  width: 100%;
+  width: 472px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
-/* line 37, ../sass/partials/test/_register.scss */
+/* line 64, ../sass/partials/test/_register.scss */
 body.sm-test-page.register-test form input[type="text"].error,
 body.sm-test-page.register-test form input[type="password"].error {
   color: white;
@@ -501,7 +539,7 @@ body.sm-test-page.register-test form input[type="password"].error {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 44, ../sass/partials/test/_register.scss */
+/* line 71, ../sass/partials/test/_register.scss */
 body.sm-test-page.register-test form .disabled {
   pointer-events: none;
   cursor: not-allowed;
@@ -515,11 +553,11 @@ body.sm-test-page.register-test form .disabled {
   -ms-user-select: none;
   user-select: none;
 }
-/* line 52, ../sass/partials/test/_register.scss */
+/* line 79, ../sass/partials/test/_register.scss */
 body.sm-test-page.register-test form .frm-button {
   padding-top: 20px;
 }
-/* line 56, ../sass/partials/test/_register.scss */
+/* line 83, ../sass/partials/test/_register.scss */
 body.sm-test-page.register-test form .ajax_loader {
   display: -moz-inline-stack;
   display: inline-block;
@@ -529,4 +567,63 @@ body.sm-test-page.register-test form .ajax_loader {
   *display: inline;
   display: none;
   content: url("../../library/img/fb_loader.gif");
+}
+
+/* line 2, ../sass/partials/_user_profile.scss */
+body.sm-user-profile #profile {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+body.sm-user-profile #profile:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 4, ../sass/partials/_user_profile.scss */
+body.sm-user-profile #profile .top-card {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+body.sm-user-profile #profile .top-card:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 7, ../sass/partials/_user_profile.scss */
+body.sm-user-profile #profile .profile-picture {
+  width: 150px;
+  height: 150px;
+  line-height: 149px;
+  text-align: center;
+  overflow: hidden;
+}
+/* line 14, ../sass/partials/_user_profile.scss */
+body.sm-user-profile #profile .profile-picture img {
+  border: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* line 23, ../sass/partials/_user_profile.scss */
+body.sm-user-profile #profile .profile-overview,
+body.sm-user-profile #profile .profile-picture {
+  position: relative;
+  z-index: 1;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 30, ../sass/partials/_user_profile.scss */
+body.sm-user-profile #profile .masthead {
+  padding-left: 20px;
+}
+/* line 37, ../sass/partials/_user_profile.scss */
+body.sm-user-profile #profile .masthead #user_basic_info_panel h1 {
+  margin-top: 0 !important;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 26px;
+  color: #dd8026;
+  font-family: 'Oswald', sans-serif;
 }

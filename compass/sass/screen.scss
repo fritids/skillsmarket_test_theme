@@ -22,6 +22,9 @@
 @import "partials/constants_and_mixins"; // compass custom constants and mixins
 @import "partials/general"; // main stylesheet
 @import "partials/googlemaps"; // google maps stylesheet
+
 @import "partials/test/geolocation"; // geolocation page stylesheet (test)
 @import "partials/test/login"; // login page stylesheet (test)
 @import "partials/test/register"; // register page stylesheet (test)
+
+@import "partials/user_profile"; // user profiles stylesheet
